@@ -51,6 +51,33 @@ export function register(config) {
         registerValidSW(swUrl, config);
       }
     });
+
+    const handleRequest = async event => {
+      const response = await fetch(event.request);
+      if (
+        event.request.url.indexOf("https://fonts.googleapis.com/css") === 0 &&
+        response.status < 400
+      ) {
+        // Assuming you have a specific cache name setup
+        const cache = await caches.open("google-fonts-stylesheets");
+        const cacheResponse = await cache.match(event.request);
+        if (cacheResponse) {
+          return cacheResponse;
+        }
+        const css = await response.text();
+        const patched = css.replace(/}/g, "font-display: swap; }");
+        const newResponse = new Response(patched, {
+          headers: response.headers
+        });
+        cache.put(event.request, newResponse.clone());
+        return newResponse;
+      }
+      return response;
+    };
+
+    window.addEventListener("fetch", event => {
+      event.respondWith(handleRequest(event));
+    });
   }
 }
 
