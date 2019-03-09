@@ -30,13 +30,19 @@ const header = {
   title: "hello.",
   description:
     "I’m a proud Software Engineer based in Ireland. Working with software development since 2006 " +
-    "I’ve been challenging my self on trying to understand what’s next."
+    "I’ve been challenging my self on trying to understand what’s next.",
+  keywords:
+    "software engineer,java,scala,kotlin,react.js,angularjs,full stack developer,developer,coding,programming back-end,front-end,software architecture"
 };
 
 const Routes = () => {
   return (
     <div>
-      <Head title={header.title} description={header.description} />
+      <Head
+        title={header.title}
+        description={header.description}
+        keywords={header.keywords}
+      />
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={Home} />
