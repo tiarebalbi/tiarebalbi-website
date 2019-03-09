@@ -1,12 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import Loadable from "react-loadable";
+import Routes from "./routes";
+import { HelmetProvider } from "react-helmet-async";
+import { Router } from "react-router";
+import { history } from "./helpers/history";
+import * as serviceWorker from "./helpers/serviceWorker";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const app = (
+  <HelmetProvider>
+    <Router history={history}>
+      <Routes />
+    </Router>
+  </HelmetProvider>
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function render() {
+  return ReactDOM.render(app, document.querySelector("#root"));
+}
+
+Loadable.preloadReady()
+  .then(render)
+  .catch(err => {
+    console.error(err);
+  });
+
+serviceWorker.register();
