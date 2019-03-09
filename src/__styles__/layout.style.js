@@ -24,7 +24,6 @@ export const StyledMenu = styled.div`
         font-size: 16px;
         line-height: 50px;
         transition: background-color 100ms linear;
-        transition: color 100ms linear;
 
         &:hover {
           color: #013884;
