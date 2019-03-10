@@ -7,7 +7,7 @@ const StyledContent = styled.div`
 `;
 
 const Content = props => {
-  return <StyledContent>{props.children}</StyledContent>;
+  return <StyledContent style={props.style}>{props.children}</StyledContent>;
 };
 
 export default Content;

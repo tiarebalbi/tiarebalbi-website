@@ -1,4 +1,5 @@
 import React from "react";
+import { theme } from "../../helpers/globalStyle";
 
 const Github = () => {
   return (
@@ -12,7 +13,7 @@ const Github = () => {
         height="80"
         viewBox="0 0 250 250"
         style={{
-          fill: "#151513",
+          fill: theme.primary,
           color: "#fff",
           position: "absolute",
           top: 0,

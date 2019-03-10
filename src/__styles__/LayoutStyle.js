@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { theme } from "../helpers/globalStyle";
 
 export const Header = styled.header`
   display: flex;
-  width: calc(100vw-35px);
+  width: calc(100vw - 75px);
   height: 50px;
   padding: 35px;
+  padding-right: 0;
   margin-bottom: 25px;
 `;
 
@@ -26,7 +28,7 @@ export const StyledMenu = styled.div`
         transition: background-color 200ms linear;
 
         &:hover {
-          color: #013884;
+          color: ${theme.primary};
         }
       }
 
@@ -43,6 +45,7 @@ export const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  align-items: normal;
 `;
 
 export const BackgroundMask = styled.div`
@@ -51,6 +54,6 @@ export const BackgroundMask = styled.div`
   bottom: 0;
   left: 0;
   width: 50vw;
-  background: #013884;
+  background: ${theme.primary};
   height: 50vh;
 `;

@@ -1,6 +1,18 @@
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
 
+export const theme = {
+  primary: "#013884",
+  secondary: "#3eb2e0",
+  alternate: "#aaede6",
+  grey: "#c7d7e5",
+  light: "#edeff4",
+  text: {
+    dark: "#25272A",
+    light: "#ffffff"
+  }
+};
+
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Oxygen');
   
@@ -8,12 +20,12 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Oxygen', sans-serif;
     font-size: 16px;
-    color: #25272A;
+    color: ${theme.text.dark};
   }
   
   a {
     text-decoration: none;
-    color: #25272A;
+    color: ${theme.text.dark};
   }
   
   .github-corner:hover .octo-arm {
@@ -43,7 +55,4 @@ export const GlobalStyle = createGlobalStyle`
       animation: octocat-wave 560ms ease-in-out;
     }
   }
-
-
-
 `;

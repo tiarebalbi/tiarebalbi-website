@@ -7,7 +7,7 @@ import {
   BackgroundMask,
   Header,
   StyledLayout
-} from "../../__styles__/layout.style";
+} from "../../__styles__/LayoutStyle";
 import Github from "./github";
 
 const Layout = props => {
@@ -18,7 +18,7 @@ const Layout = props => {
         <Menu />
         <Github />
       </Header>
-      <Content>{props.children}</Content>
+      <Content style={props.style}>{props.children}</Content>
       <Footer />
       <BackgroundMask />
     </StyledLayout>
