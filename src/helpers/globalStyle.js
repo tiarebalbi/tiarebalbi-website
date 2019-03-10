@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Oxygen', sans-serif;
     font-size: 16px;
     color: ${theme.text.dark};
+    background: #edeff4;
   }
   
   a {

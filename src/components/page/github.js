@@ -14,7 +14,7 @@ const Github = () => {
         viewBox="0 0 250 250"
         style={{
           fill: theme.primary,
-          color: "#fff",
+          color: "#edeff4",
           position: "absolute",
           top: 0,
           border: 0,
