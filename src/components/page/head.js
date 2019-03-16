@@ -1,12 +1,13 @@
 import React from "react";
 import Helmet from "react-helmet-async";
 
-const Head = ({ title, description, type, children }) => {
-  const localTitle = `Tiarê Balbi Bonamini - ${title}`;
+const Head = ({ title, description, keywords, type, children }) => {
+  const localTitle = `${title} - Tiarê Balbi Bonamini`;
   return (
     <Helmet>
       <title>{localTitle}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       <meta name="twitter:title" content={localTitle} />
       <meta name="twitter:description" content={description} />
       <meta property="og:title" content={localTitle} />
