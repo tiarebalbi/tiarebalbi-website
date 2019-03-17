@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { theme } from "../../helpers/globalStyle";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { theme } from '../../helpers/globalStyle';
 
 const StyledLink = styled(NavLink)`
   background: ${theme.secondary};

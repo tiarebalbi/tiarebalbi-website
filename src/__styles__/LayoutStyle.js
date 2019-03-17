@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { theme } from "../helpers/globalStyle";
+import styled from 'styled-components';
+import { theme } from '../helpers/globalStyle';
+import { media } from './utils';
 
 export const Header = styled.header`
   display: flex;
@@ -56,4 +57,7 @@ export const BackgroundMask = styled.div`
   width: 50vw;
   background: ${theme.primary};
   height: 50vh;
+  ${media.tablet`
+    width: 5vw;
+  `}
 `;

@@ -1,11 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Loadable from "react-loadable";
-import Routes from "./routes";
-import { HelmetProvider } from "react-helmet-async";
-import { Router } from "react-router";
-import { history } from "./helpers/history";
-import * as serviceWorker from "./helpers/serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'lazysizes/lazysizes';
+import Loadable from 'react-loadable';
+import Routes from './routes';
+import { HelmetProvider } from 'react-helmet-async';
+import { Router } from 'react-router';
+import { history } from './helpers/history';
+import * as serviceWorker from './helpers/serviceWorker';
 
 const app = (
   <HelmetProvider>
@@ -16,7 +17,7 @@ const app = (
 );
 
 function render() {
-  return ReactDOM.render(app, document.querySelector("#root"));
+  return ReactDOM.render(app, document.querySelector('#root'));
 }
 
 Loadable.preloadReady()

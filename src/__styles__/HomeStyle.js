@@ -1,22 +1,32 @@
-import styled from "styled-components";
-import { theme } from "../helpers/globalStyle";
-import dots from "../views/images/dots-pattern.png";
+import styled from 'styled-components';
+import { theme } from '../helpers/globalStyle';
+import dots from '../views/images/dots-pattern.png';
+import { media } from './utils';
 
 export const StyledImageContent = styled.img`
   box-shadow: -10px 10px 30px -10px rgba(0, 0, 0, 0.5);
 `;
 
 export const homeStyle = {
-  display: "flex"
+  display: 'flex',
+  alignItems: 'center',
 };
 
 export const ImageContainer = styled.div`
   width: calc(50vw + 30px);
   text-align: right;
+  ${media.tablet`
+    display: none;
+  `}
 `;
 
 export const ContentContainer = styled.div`
   width: calc(50vw - 145px);
+  z-index: 10;
+  ${media.tablet`
+    width: 80vw;
+    margin: auto;
+  `}
 
   h1 {
     font-size: calc(100vw / 10);
@@ -25,6 +35,9 @@ export const ContentContainer = styled.div`
     margin-left: -3vw;
     margin-top: 10%;
     margin-bottom: 30px;
+    ${media.tablet`
+      margin-left: 45px;  
+    `}
   }
 
   h2 {
@@ -56,5 +69,9 @@ export const ContentContainer = styled.div`
 export const PatternPage = styled.div`
   width: 115px;
   background: url(${dots}) no-repeat;
-  margin-top: 55px;
+  background-position: center center;
+  height: 644px;
+  ${media.tablet`
+    display: none;
+  `}
 `;

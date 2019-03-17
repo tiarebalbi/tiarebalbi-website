@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { theme } from "../../helpers/globalStyle";
+import React from 'react';
+import styled from 'styled-components';
+import { theme } from '../../helpers/globalStyle';
 
 const StyledTag = styled.div`
   display: inline-block;
@@ -13,11 +13,7 @@ const StyledTag = styled.div`
 `;
 
 const Tag = props => {
-  return (
-    <StyledTag style={{ backgroundColor: props.color }}>
-      {props.children}
-    </StyledTag>
-  );
+  return <StyledTag style={{ backgroundColor: props.color }}>{props.children}</StyledTag>;
 };
 
 export default Tag;
