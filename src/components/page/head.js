@@ -1,5 +1,5 @@
-import React from "react";
-import Helmet from "react-helmet-async";
+import React from 'react';
+import Helmet from 'react-helmet-async';
 
 const Head = ({ title, description, keywords, type, children }) => {
   const localTitle = `${title} - Tiarê Balbi Bonamini`;
@@ -12,7 +12,7 @@ const Head = ({ title, description, keywords, type, children }) => {
       <meta name="twitter:description" content={description} />
       <meta property="og:title" content={localTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={type || "website"} />
+      <meta property="og:type" content={type || 'website'} />
       {children}
     </Helmet>
   );

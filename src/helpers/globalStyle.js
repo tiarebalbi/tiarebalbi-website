@@ -1,16 +1,16 @@
-import reset from "styled-reset";
-import { createGlobalStyle } from "styled-components";
+import reset from 'styled-reset';
+import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
-  primary: "#013884",
-  secondary: "#3eb2e0",
-  alternate: "#aaede6",
-  grey: "#c7d7e5",
-  light: "#edeff4",
+  primary: '#013884',
+  secondary: '#0B5F7A',
+  alternate: '#aaede6',
+  grey: '#c7d7e5',
+  light: '#edeff4',
   text: {
-    dark: "#25272A",
-    light: "#ffffff"
-  }
+    dark: '#25272A',
+    light: '#ffffff',
+  },
 };
 
 export const GlobalStyle = createGlobalStyle`

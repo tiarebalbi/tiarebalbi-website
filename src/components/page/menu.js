@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { withRouter } from "react-router";
-import { StyledMenu } from "../../__styles__/LayoutStyle";
-import Button from "../ui-kit/button";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { StyledMenu } from '../../__styles__/LayoutStyle';
+import Button from '../ui-kit/button';
 
 const Menu = () => {
   return (
