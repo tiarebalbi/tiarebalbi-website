@@ -17,6 +17,7 @@ const StyledFooter = styled.div`
     color: ${theme.text.dark};
     width: 70vw;
     margin: auto;
+    display: none;
   `}
 `;
 
