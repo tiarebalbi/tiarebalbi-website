@@ -1,5 +1,7 @@
 # Tiarê Balbi Bonamini - Landing Page
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8ca10db0-9c46-42e2-a1f2-54198f4fdd08/deploy-status)](https://app.netlify.com/sites/tiarebalbi/deploys)
+
 My name is Tiarê Balbi! I’m a proud Software Engineer based in Dublin, Ireland. Working with software development since 2006 I’ve been challenging my self on trying to understand what’s next.
 
 Focusing my career on better understand the challenges behind of complex infrastructure and different types of software architecture.
