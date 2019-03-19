@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../../helpers/globalStyle';
-import { media } from '../../__styles__/utils';
+import { media } from '../../styles/utils';
 
 const StyledFooter = styled.div`
   color: ${theme.primary};
