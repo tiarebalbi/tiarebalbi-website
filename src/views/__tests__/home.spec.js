@@ -8,10 +8,6 @@ describe('home', () => {
     expect(wrapper.instance()).toBeNull();
   });
 
-  it('should match snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should move image on MouseMove under image container', () => {
     const target = wrapper.find('div.card1');
 
