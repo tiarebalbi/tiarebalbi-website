@@ -2,7 +2,7 @@ import React from 'react';
 import Content from './content';
 import Footer from './footer';
 import Logo from './logo';
-import { BackgroundMask, Header, StyledLayout } from '../../__styles__/LayoutStyle';
+import { BackgroundMask, Header, StyledLayout } from '../../styles/LayoutStyle';
 import Github from './github';
 
 const Layout = props => {
