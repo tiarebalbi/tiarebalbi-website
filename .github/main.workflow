@@ -6,17 +6,10 @@ workflow "Run Tests" {
   ]
 }
 
-action "Enabling Workspace" {
-  uses = "borales/actions-yarn@master"
-  runs = "yarn config set workspaces-experimental true"
-  secrets = ["GITHUB_TOKEN"]
-}
-
 action "Installing Depdencies" {
   uses = "borales/actions-yarn@master"
   runs = "yarn"
   secrets = ["GITHUB_TOKEN"]
-  needs = ["Enabling Workspace"]
 }
 
 action "Running Test" {
