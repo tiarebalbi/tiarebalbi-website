@@ -26,8 +26,8 @@ action "Running Test" {
 action "Release Version" {
   uses = "nuxt/actions-yarn@master"
   runs = "yarn release"
-  secrets = ["GITHUB_TOKEN"]
   needs = ["Running Test"]
+  secrets = ["GH_TOKEN"]
 }
 
 action "netlify/actions/build@master" {
