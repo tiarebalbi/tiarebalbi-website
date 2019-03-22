@@ -16,7 +16,7 @@ action "Running Test" {
   uses = "nuxt/actions-yarn@master"
   secrets = ["GITHUB_TOKEN"]
   needs = ["Installing Dependencies"]
-  runs = "yarn test"
+  runs = "yarn ci"
   env = {
     SKIP_PREFLIGHT_CHECK = "true"
   }

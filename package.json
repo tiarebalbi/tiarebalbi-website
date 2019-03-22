@@ -27,6 +27,7 @@
     "start": "react-scripts start",
     "build": "cross-env VERSION=$(node -p 'require(\"./package.json\").version') react-scripts build",
     "test": "react-scripts test",
+    "ci": "react-scripts test --ci --coverage",
     "eject": "react-scripts eject",
     "release": "semantic-release"
   },
