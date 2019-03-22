@@ -35,7 +35,7 @@ action "netlify/actions/build@master" {
   secrets = ["GITHUB_TOKEN", "NETLIFY_SITE_ID"]
   needs = ["Running Test"]
   env = {
-    NETLIFY_CMD = "npm install -g yarn && yarn && yarn build"
+    NETLIFY_CMD = "npm install -g yarn cross-env && yarn && yarn build"
     NETLIFY_DIR = "build/\n"
     NETLIFY_BASE = ""
   }
