@@ -3,6 +3,7 @@ workflow "Run Tests" {
   resolves = [
     "netlify/actions/build@master",
     "Running Test",
+    "Release Version",
   ]
 }
 
