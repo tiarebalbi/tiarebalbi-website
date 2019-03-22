@@ -21,7 +21,10 @@ const GetInTouch = Loadable({
   loading: ({ isLoading }) => isLoading && <Loading />,
 });
 
-const NotFound = () => <Redirect to="/" />;
+const NotFound = Loadable({
+  loader: () => import('./views/not-found' /* webpackChunkName: "not-found" */),
+  loading: ({ isLoading }) => isLoading && <Loading />,
+});
 
 const header = {
   title: 'hello.',
