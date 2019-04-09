@@ -1,0 +1,7 @@
+organization=tiarebalbi-github
+projectKey=tiarebalbi_tiarebalbi-website
+serverUrl=https://sonarcloud.io
+serverVersion=7.8.0.23279
+dashboardUrl=https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website
+ceTaskId=AWoBMPE_8FPh9JKrfq4C
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWoBMPE_8FPh9JKrfq4C
