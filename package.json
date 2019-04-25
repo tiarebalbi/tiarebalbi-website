@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "ci": "react-scripts test --ci --coverage",
+    "ci": "react-scripts test --ci --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "release": "semantic-release"
   },
