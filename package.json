@@ -21,7 +21,7 @@
     "react-spring": "^8.0.20",
     "styled-components": "^4.2.0",
     "styled-reset": "^2.0.10",
-    "yarn": "^1.15.2"
+    "yarn": "^1.16.0"
   },
   "scripts": {
     "start": "react-scripts start",
