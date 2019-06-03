@@ -42,7 +42,7 @@
   ],
   "devDependencies": {
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-adapter-react-16": "^1.13.2",
     "husky": "^2.3.0",
     "jest-enzyme": "^7.0.2",
     "lint-staged": "^8.1.7",
