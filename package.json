@@ -47,7 +47,7 @@
     "jest-enzyme": "^7.0.2",
     "lint-staged": "^8.1.7",
     "prettier": "1.17.1",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^15.13.12"
   },
   "husky": {
     "hooks": {
