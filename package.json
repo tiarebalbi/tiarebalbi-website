@@ -45,7 +45,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "husky": "^2.3.0",
     "jest-enzyme": "^7.0.2",
-    "lint-staged": "^8.1.7",
+    "lint-staged": "^8.2.0",
     "prettier": "1.18.1",
     "semantic-release": "^15.13.12"
   },
