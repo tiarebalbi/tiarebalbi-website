@@ -11,13 +11,8 @@ const Home = Loadable({
   loading: ({ isLoading }) => isLoading && <Loading />,
 });
 
-const Products = Loadable({
-  loader: () => import('./views/products' /* webpackChunkName: "products" */),
-  loading: ({ isLoading }) => isLoading && <Loading />,
-});
-
-const GetInTouch = Loadable({
-  loader: () => import('./views/contact' /* webpackChunkName: "contact" */),
+const Blog = Loadable({
+  loader: () => import('./views/blog' /* webpackChunkName: "blog" */),
   loading: ({ isLoading }) => isLoading && <Loading />,
 });
 
@@ -42,8 +37,7 @@ const Routes = () => {
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/products" component={Products} />
-        <Route exact path="/get-in-touch" component={GetInTouch} />
+        <Route exact path="/blog" component={Blog} />
         <Route component={NotFound} />
       </Switch>
     </div>

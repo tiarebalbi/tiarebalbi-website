@@ -33,9 +33,10 @@ export const StyledMenu = styled.div`
         }
       }
 
-      &.selected {
-        a {
+      & {
+        a.active {
           font-weight: bold;
+          color: ${theme.secondary};
         }
       }
     }
