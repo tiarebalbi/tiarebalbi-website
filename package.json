@@ -20,7 +20,7 @@
     "react-scripts": "3.0.1",
     "react-spring": "^8.0.27",
     "styled-components": "^4.3.2",
-    "styled-reset": "^2.0.16",
+    "styled-reset": "^3.0.0",
     "yarn": "^1.17.3"
   },
   "scripts": {
