@@ -5,7 +5,7 @@
   "author": "Tiarê Balbi Bonamini <me at tiarebalbi.com> (https://tiarebalbi.com)",
   "homepage": "https://tiarebalbi.com",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/fontawesome-svg-core": "^1.2.23",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "add": "^2.0.6",
