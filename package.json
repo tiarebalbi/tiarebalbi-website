@@ -9,6 +9,10 @@
   "files": [
     "build"
   ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/tiarebalbi/tiarebalbi-website.git"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
