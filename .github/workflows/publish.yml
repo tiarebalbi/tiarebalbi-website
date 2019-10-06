@@ -14,8 +14,17 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: [12.x]
+          node-version: "12.x"
       - run: yarn
       - run: yarn ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  logs4netlify:
+    name: Logs for Netlify
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Deploy Logs
+      uses: bdougie/loglify@master
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
