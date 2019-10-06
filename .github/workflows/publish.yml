@@ -19,9 +19,3 @@ jobs:
       - run: yarn ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: GitHub Pages Deploy
-        uses: maxheld83/ghpages@v0.2.1
-        env:
-          GH_PAT: ${{secrets.GH_PAT}}
-        with:
-          BUILD_DIR: "/home/runner/work/vigilant-react-typescript/vigilant-react-typescript/docs"
