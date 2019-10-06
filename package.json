@@ -1,7 +1,6 @@
 {
   "name": "website",
   "version": "0.1.0",
-  "private": true,
   "author": "Tiarê Balbi Bonamini <me at tiarebalbi.com> (https://tiarebalbi.com)",
   "homepage": "https://tiarebalbi.com",
   "publishConfig": {
