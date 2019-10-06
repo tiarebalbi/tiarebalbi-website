@@ -11,6 +11,7 @@ My name is Tiarê Balbi! I’m a proud Software Engineer based in Dublin, Irelan
 
 Focusing my career on better understand the challenges behind of complex infrastructure and different types of software architecture.
 
+
 ## Getting Start
 
 In the project directory, you can run:
