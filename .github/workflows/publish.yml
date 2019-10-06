@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: 0 2 * * 1-5
+    - cron: 0 3 * * 1-5
 
 jobs:
   build-publish:
@@ -19,12 +19,3 @@ jobs:
       - run: yarn ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  logs4netlify:
-    name: Logs for Netlify
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Deploy Logs
-      uses: bdougie/loglify@master
-    env:
-      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
