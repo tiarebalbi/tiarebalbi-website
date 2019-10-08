@@ -30,7 +30,7 @@
     "react-spring": "^8.0.27",
     "styled-components": "^4.4.0",
     "styled-reset": "^4.0.2",
-    "yarn": "^1.19.0"
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "start": "react-scripts start",
