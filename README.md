@@ -7,9 +7,15 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=security_rating)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
 
-My name is Tiarê Balbi! I’m a proud Software Engineer based in Dublin, Ireland. Working with software development since 2006 I’ve been challenging my self on trying to understand what’s next.
-
-Focusing my career on better understand the challenges behind of complex infrastructure and different types of software architecture.
+Proud Software Engineer based in Dublin, Ireland. 
+Working with software development since 2006 had the chance to work 
+with an extensive range of solutions for small and large companies, 
+from design until getting the product to the final step of production.
+Have you heard about the continues learning, I see myself as one of 
+those, if you ask what I am doing in my free time, 
+I will probably answer that I'm studying something new or 
+I'm in the Gym. Currently, focusing my time in research/study 
+new technologies always thinking about the next disruption and how to get there.
 
 
 ## Getting Start

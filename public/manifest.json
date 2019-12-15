@@ -1,8 +1,8 @@
 {
   "name": "Tiarê Balbi Bonamini",
   "short_name": "tiarebalbi",
-  "theme_color": "#013884",
-  "background_color": "#edeff4",
+  "theme_color": "#001220",
+  "background_color": "#172734",
   "display": "fullscreen",
   "orientation": "portrait",
   "start_url": ".",
