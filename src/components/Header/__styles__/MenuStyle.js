@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Dots from '../../resources/Dots';
-import Square from '../../resources/Square';
-import { DARK_COLOR, LIGHT_COLOR, SECONDARY_COLOR } from '../../components/Theme';
+import Dots from '../../../resources/Dots';
+import Square from '../../../resources/Square';
+import { DARK_COLOR, LIGHT_COLOR, SECONDARY_COLOR } from '../../Theme';
 
 export const NavWrapper = styled.ul`
   margin: 0;

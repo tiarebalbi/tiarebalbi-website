@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import LogoIcon from '../resources/LogoIcon';
+import LogoIcon from '../../resources/LogoIcon';
 
 const LogoIconWrapper = styled(LogoIcon)`
   animation: slide-in-blurred-tl 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;

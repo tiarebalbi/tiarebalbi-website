@@ -2,7 +2,8 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import Header from '../components/Header';
-import ErrorHandler from '../components/ErrorHandler';
+import AboutMe from '../components/AboutMe';
+import ErrorHandler from '../components/Common/ErrorHandler';
 import { darkModeTheme, GlobalStyles, lightModeTheme } from '../components/Theme';
 import { useDarkMode } from '../hooks/useDarkMode';
 
@@ -24,6 +25,7 @@ const App = () => {
         <RootWrapper>
           <Grid>
             <Header theme={theme} />
+            <AboutMe theme={theme} />
             <button onClick={toggleTheme}>Toggle theme</button>
           </Grid>
         </RootWrapper>
