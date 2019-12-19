@@ -2,9 +2,13 @@ import React from 'react';
 import Logo from './Logo';
 import {
   BottomDotWrapper,
+  CircleOneWrapper,
+  CircleTwoWrapper,
   NavItem,
   NavWrapper,
+  OvalWrapper,
   ProfileImage,
+  RectangleWrapper,
   RootWrapper,
   SquareWrapper,
   TopDotWrapper,
@@ -28,6 +32,10 @@ const Menu = ({ theme }) => {
           <SquareWrapper theme={theme} />
           <ProfileImage />
           <BottomDotWrapper theme={theme} opacity={0.7} />
+          <CircleOneWrapper />
+          <CircleTwoWrapper />
+          <RectangleWrapper />
+          <OvalWrapper />
         </Col>
       </Row>
     </RootWrapper>

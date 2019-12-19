@@ -12,6 +12,7 @@ const RootWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow-x: hidden;
 `;
 
 const App = () => {
@@ -24,9 +25,9 @@ const App = () => {
         <GlobalStyles />
         <RootWrapper>
           <Grid>
+            <button onClick={toggleTheme}>Toggle theme</button>
             <Header theme={theme} />
             <AboutMe theme={theme} />
-            <button onClick={toggleTheme}>Toggle theme</button>
           </Grid>
         </RootWrapper>
       </ErrorHandler>

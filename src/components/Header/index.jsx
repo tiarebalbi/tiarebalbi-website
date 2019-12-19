@@ -9,6 +9,7 @@ const Wrapper = styled.header`
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 `;
 
 const Header = ({ theme }) => {

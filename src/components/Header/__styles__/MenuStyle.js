@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import Dots from '../../../resources/Dots';
 import Square from '../../../resources/Square';
 import { DARK_COLOR, LIGHT_COLOR, SECONDARY_COLOR } from '../../Theme';
+import CircleOne from '../../../resources/CircleOne';
+import CircleTwo from '../../../resources/CircleTwo';
+import Rectangle from '../../../resources/Rectangle';
+import Oval from '../../../resources/Oval';
 
 export const NavWrapper = styled.ul`
   margin: 0;
@@ -73,4 +77,32 @@ export const ProfileImage = styled.div`
   z-index: 110;
   top: 230px;
   right: 60px;
+`;
+
+export const CircleOneWrapper = styled(CircleOne)`
+  position: absolute;
+  top: 370px;
+  right: 20px;
+  animation: rotate-scale-up 0.65s linear 1s both;
+`;
+
+export const CircleTwoWrapper = styled(CircleTwo)`
+  position: absolute;
+  top: 190px;
+  right: 220px;
+  animation: rotate-scale-up 0.65s linear 1.4s both;
+`;
+
+export const RectangleWrapper = styled(Rectangle)`
+  position: absolute;
+  top: 190px;
+  right: 0;
+  animation: rotate-scale-up 0.65s linear 1.8s both;
+`;
+
+export const OvalWrapper = styled(Oval)`
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  animation: rotate-scale-up 0.65s linear 2.2s both;
 `;
