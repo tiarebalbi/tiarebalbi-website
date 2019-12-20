@@ -9,6 +9,17 @@ const Wrapper = styled.a`
   border-radius: 20px;
   padding: 10px 20px;
   display: inline-block;
+  text-underline: none;
+  outline: none;
+
+  &:hover,
+  &:active {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none !important;
+  }
 `;
 
 const Button = props => {

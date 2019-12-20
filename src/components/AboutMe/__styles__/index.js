@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  margin-bottom: 30px;
+  margin-bottom: 230px;
 
   b {
     font-weight: bold;
@@ -54,7 +54,7 @@ export const SquareWrapper = styled(Square)`
   animation: slide-in-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
   position: absolute;
   top: -110px;
-  left: -915px;
+  left: -1050px;
   width: auto;
   z-index: -90;
 `;
