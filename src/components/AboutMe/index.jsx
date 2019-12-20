@@ -24,9 +24,9 @@ const AboutMe = props => {
         <h1>About Me</h1>
         <div className="content-text">
           <p>
-            Proud Software Engineer based in <b>Dublin, Ireland</b>. Working with software development since
-            2006 had the chance to work with an extensive range of solutions for small and large companies,
-            from design until getting the product to the final step of production.
+            Proud Software Engineer based in Dublin, Ireland. Working with software development since 2006 had
+            the chance to work with an extensive range of solutions for small and large companies from
+            designing the software until getting it out the door.
           </p>
           <p className="space">
             Have you heard about the continues learning, I see myself as one of those, if you ask what I am

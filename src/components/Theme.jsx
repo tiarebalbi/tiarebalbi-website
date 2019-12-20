@@ -41,8 +41,8 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100vh;
     width: 100vw;
+    min-height: 200px;
     margin: 0;
     padding: 0;
     transition: all 0.25s linear;
