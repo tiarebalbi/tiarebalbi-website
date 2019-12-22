@@ -1,7 +1,7 @@
 # Definition
 
 - Customize your
-- Java
+- Java 2
 - http://miro.medium.com/max/12000/1*XjcmK3XjHJP3LLqWnoqRtg.jpeg
 - This article is part of a series.
 

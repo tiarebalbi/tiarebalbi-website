@@ -46,26 +46,27 @@ Let’s write that program!
 So, how would you write the program to estimate the value of a house like in our example above? Think about it for a second before you read further.
 If you didn’t know anything about machine learning, you’d probably try to write out some basic rules for estimating the price of a house like this:
 def estimate_house_sales_price(num_of_bedrooms, sqft, neighborhood):
-  price = 0
-  # In my area, the average house costs $200 per sqft
-  price_per_sqft = 200
-  if neighborhood == "hipsterton":
-    # but some areas cost a bit more
-    price_per_sqft = 400
-  elif neighborhood == "skid row":
-    # and some areas cost less
-    price_per_sqft = 100
-  # start with a base price estimate based on how big the place is
-  price = price_per_sqft * sqft
-  # now adjust our estimate based on the number of bedrooms
-  if num_of_bedrooms == 0:
-    # Studio apartments are cheap
-    price = price — 20000
-  else:
-    # places with more bedrooms are usually
-    # more valuable
-    price = price + (num_of_bedrooms * 1000)
- return price
+price = 0
+
+# In my area, the average house costs \$200 per sqft
+
+price_per_sqft = 200
+if neighborhood == "hipsterton": # but some areas cost a bit more
+price_per_sqft = 400
+elif neighborhood == "skid row": # and some areas cost less
+price_per_sqft = 100
+
+# start with a base price estimate based on how big the place is
+
+price = price_per_sqft \* sqft
+
+# now adjust our estimate based on the number of bedrooms
+
+if num_of_bedrooms == 0: # Studio apartments are cheap
+price = price — 20000
+else: # places with more bedrooms are usually # more valuable
+price = price + (num_of_bedrooms \* 1000)
+return price
 If you fiddle with this for hours and hours, you might end up with something that sort of works. But your program will never be perfect and it will be hard to maintain as prices change.
 Wouldn’t it be better if the computer could just figure out how to implement this function for you? Who cares what exactly the function does as long is it returns the correct number:
 def estimate_house_sales_price(nu

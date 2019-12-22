@@ -9,11 +9,14 @@ const log = console.log;
  *
  * Convention:
  * * Line 0 -> Ignored
- * * Line 1 -> Title
- * * Line 2 -> Category
- * * Line 3 -> Image
- * * Line 4 -> Slogan
- * * Line 5 -> Ignored
+ * * Line 1 -> Ignored
+ * * Line 2 -> Title
+ * * Line 3 -> Category
+ * * Line 4 -> Image
+ * * Line 5 -> Slogan
+ * * Line 6 -> Ignored
+ * * Line 7 -> Ignored
+ * * Line 8 -> Ignored
  *
  * Features:
  * * Download of Images with compression and resizing
@@ -28,6 +31,7 @@ const articlesFolder = '../src/resources/articles';
 const imageBuildFolder = `../public${pathPublicImages}`;
 const markdownBuildFolder = `../public/md`;
 const outputFileName = `../public/articles.json`;
+const LINE_START = '- ';
 
 const folder = path.join(__dirname, articlesFolder);
 const imagesDir = path.join(__dirname, imageBuildFolder);
@@ -108,19 +112,19 @@ function getFilePath(file) {
 }
 
 function getTitle(content) {
-  return content.split('\n')[1].replace('* ', '');
+  return content.split('\n')[2].replace(LINE_START, '');
 }
 
 function getCategory(content) {
-  return content.split('\n')[2].replace('* ', '');
+  return content.split('\n')[3].replace(LINE_START, '');
 }
 
 function getSlogan(content) {
-  return content.split('\n')[4].replace('* ', '');
+  return content.split('\n')[5].replace(LINE_START, '');
 }
 
 async function getImage(content, slug) {
-  const imageUrl = content.split('\n')[3].replace('* ', '');
+  const imageUrl = content.split('\n')[4].replace(LINE_START, '');
   const format = path.extname(imageUrl);
 
   const imageName = `${slug}-profile${format}`;
@@ -146,7 +150,10 @@ function getMarkdown(content, slug) {
     .replace(lines[2] + '\n', '')
     .replace(lines[3] + '\n', '')
     .replace(lines[4] + '\n', '')
-    .replace(lines[5] + '\n', '');
+    .replace(lines[5] + '\n', '')
+    .replace(lines[6] + '\n', '')
+    .replace(lines[7] + '\n', '')
+    .replace(lines[8] + '\n', '');
 
   const fileName = `${slug}.md`;
   const mdName = `${markdownDir}/${fileName}`;
