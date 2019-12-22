@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from '../Common/Button';
 import {
   Wrapper,
   SquareWrapper,
@@ -34,7 +33,6 @@ const AboutMe = props => {
             Currently, focusing my time in research/study new technologies always thinking about the next
             disruption and how to get there.
           </p>
-          <Button href="#">Download CV</Button>
         </div>
       </div>
       <TopDotWrapper theme={props.theme} />

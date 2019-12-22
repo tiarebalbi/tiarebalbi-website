@@ -31,7 +31,7 @@
   "scripts": {
     "package": "node scripts/exportArticles.js",
     "start": "yarn package && react-scripts start",
-    "build": "yarn && yarn package && react-scripts build",
+    "build": "yarn package && react-scripts build",
     "test": "yarn package && react-scripts test",
     "ci": "yarn test --watchAll=false",
     "postbuild": "react-snap"

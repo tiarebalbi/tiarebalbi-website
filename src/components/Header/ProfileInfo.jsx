@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Icon } from 'react-icons-kit';
 import { location2 } from 'react-icons-kit/icomoon/location2';
 import { buildingO } from 'react-icons-kit/fa/buildingO';
+import { warning } from 'react-icons-kit/fa/warning';
 import { Col, Row } from 'react-flexbox-grid';
 
 const ColWrapper = styled(Col)`
@@ -51,6 +52,10 @@ const ExtraDetails = styled.ul`
     i {
       margin-right: 10px;
     }
+
+    &.disclaimer {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -71,6 +76,10 @@ const ProfileInfo = () => (
         <li>
           <Icon size={21} icon={buildingO} />
           Software Engineer @ Workday
+        </li>
+        <li className="disclaimer">
+          <Icon size={12} icon={warning} />
+          Any ideas or content shared in the site is on my own and they do not reflect my employer.
         </li>
       </ExtraDetails>
     </ColWrapper>
