@@ -88,7 +88,7 @@ fs.readdir(folder, function(err, files) {
     fs.writeFileSync(
       outputFile,
       JSON.stringify({
-        lastUpdate: new Date().toISOString(),
+        lastUpdate: new Date().toLocaleDateString(),
         articles: articles.sort((a, b) => (a.order < b.order ? 1 : -1)),
       }),
     );
