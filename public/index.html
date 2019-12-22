@@ -39,17 +39,18 @@
       gtag('js', new Date());
       gtag('config', 'UA-54366759-7');
     </script>
-    <!-- OneTrust Cookies Consent Notice start -->
-    <script
-      src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"
-      type="text/javascript"
-      charset="UTF-8"
-      data-domain-script="14fd790d-d963-4176-ae42-aa88b389f419-test"
-    ></script>
-    <script type="text/javascript">
-      function OptanonWrapper() {}
+    <script>
+      (function() {
+        const s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://app.termly.io/embed.min.js';
+        s.id = '2370291d-a225-4b52-91f6-ba87d575beda';
+        s.setAttribute('data-name', 'termly-embed-banner');
+        const x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      })();
     </script>
-    <!-- OneTrust Cookies Consent Notice end -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
