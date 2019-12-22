@@ -1,6 +1,7 @@
 {
   "name": "tiarebalbi-website",
   "version": "2.0.1",
+  "license": "MIT",
   "dependencies": {
     "@atlaskit/css-reset": "^5.0.9",
     "@atlaskit/drawer": "^5.1.0",
