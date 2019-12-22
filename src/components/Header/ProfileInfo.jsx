@@ -79,7 +79,7 @@ const ProfileInfo = () => (
         </li>
         <li className="disclaimer">
           <Icon size={12} icon={warning} />
-          Any ideas or content shared in the site is on my own and they do not reflect my employer.
+          Any idea or content shared on this website is on my own.
         </li>
       </ExtraDetails>
     </ColWrapper>

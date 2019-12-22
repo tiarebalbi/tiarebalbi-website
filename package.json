@@ -1,7 +1,6 @@
 {
   "name": "tiarebalbi-website",
-  "version": "0.1.0",
-  "private": true,
+  "version": "2.0.1",
   "dependencies": {
     "@atlaskit/css-reset": "^5.0.9",
     "@atlaskit/drawer": "^5.1.0",
