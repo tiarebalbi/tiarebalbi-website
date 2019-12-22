@@ -1,5 +1,5 @@
 import React from 'react';
-import { LIGHT_COLOR } from '../components/Theme';
+import { LIGHT_COLOR } from '../../components/Theme';
 
 const Dots = props => {
   const fillColor = LIGHT_COLOR;

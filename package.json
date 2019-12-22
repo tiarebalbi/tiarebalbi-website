@@ -22,11 +22,12 @@
     "styled-components": "^4.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "ci": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "package": "node scripts/exportArticles.js",
+    "start": "yarn package && react-scripts start",
+    "build": "yarn package && react-scripts build",
+    "test": "yarn package && react-scripts test",
+    "ci": "yarn test --watchAll=false",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,12 +52,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn package && lint-staged"
     }
   },
   "devDependencies": {
+    "chalk": "^3.0.0",
     "husky": "^3.1.0",
+    "jimp": "^0.9.3",
     "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "react-snap": "^1.23.0",
+    "request": "^2.88.0"
   }
 }

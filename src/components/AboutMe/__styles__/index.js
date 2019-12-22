@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Square from '../../../resources/Square';
-import Dots from '../../../resources/Dots';
-import CircleOne from '../../../resources/CircleOne';
-import CircleTwo from '../../../resources/CircleTwo';
-import Rectangle from '../../../resources/Rectangle';
-import Oval from '../../../resources/Oval';
+import Square from '../../../resources/components/Square';
+import Dots from '../../../resources/components/Dots';
+import CircleOne from '../../../resources/components/CircleOne';
+import CircleTwo from '../../../resources/components/CircleTwo';
+import Rectangle from '../../../resources/components/Rectangle';
+import Oval from '../../../resources/components/Oval';
 
 export const Wrapper = styled.div`
   min-height: 200px;

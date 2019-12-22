@@ -4,8 +4,6 @@ const CircleOne = props => {
   const color = props.color ? props.color : '#fff';
   const opacity = props.opacity ? props.opacity : 1;
 
-  console.log(props);
-
   return (
     <svg width="1em" height="1em" viewBox="0 0 12 12" {...props}>
       <path

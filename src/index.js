@@ -1,11 +1,16 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import '@atlaskit/css-reset/dist/bundle.css';
 
 import App from './containers/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

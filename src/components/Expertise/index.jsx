@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
-import Icon03 from '../../resources/Icon03';
-import Icon02 from '../../resources/Icon02';
-import Icon01 from '../../resources/Icon01';
+import Icon03 from '../../resources/components/Icon03';
+import Icon02 from '../../resources/components/Icon02';
+import Icon01 from '../../resources/components/Icon01';
 
 const Wrapper = styled.div`
   min-height: 200px;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 120px;
   justify-items: center;
   align-items: center;
 

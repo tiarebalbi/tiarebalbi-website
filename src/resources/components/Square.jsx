@@ -1,5 +1,5 @@
 import React from 'react';
-import { DARK_COLOR, SECONDARY_COLOR } from '../components/Theme';
+import { DARK_COLOR, SECONDARY_COLOR } from '../../components/Theme';
 
 const Square = props => {
   const { theme } = props;

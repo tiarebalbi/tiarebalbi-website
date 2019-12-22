@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Dots from '../../../resources/Dots';
-import Square from '../../../resources/Square';
+import Dots from '../../../resources/components/Dots';
+import Square from '../../../resources/components/Square';
 import { DARK_COLOR, LIGHT_COLOR, SECONDARY_COLOR } from '../../Theme';
-import CircleOne from '../../../resources/CircleOne';
-import CircleTwo from '../../../resources/CircleTwo';
-import Rectangle from '../../../resources/Rectangle';
-import Oval from '../../../resources/Oval';
+import CircleOne from '../../../resources/components/CircleOne';
+import CircleTwo from '../../../resources/components/CircleTwo';
+import Rectangle from '../../../resources/components/Rectangle';
+import Oval from '../../../resources/components/Oval';
 
 export const NavWrapper = styled.ul`
   margin: 0;
