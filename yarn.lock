@@ -158,7 +158,7 @@
     tiny-invariant "^0.0.3"
     tslib "^1.9.3"
 
-"@atlaskit/spinner@^12.1.1":
+"@atlaskit/spinner@^12.1.1", "@atlaskit/spinner@^12.1.2":
   version "12.1.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/spinner/-/spinner-12.1.2.tgz#09d24f472ae4e5940dfe7315a69d1ca295232b0c"
   integrity sha512-WCdd40ThjnG+e5e8p09sV7BoYDHu1hXqkoGbMTtU3n7xgNOjqNhr4IaJyQHGMsE+fJIT5DP35nrP7MUyRudk3A==

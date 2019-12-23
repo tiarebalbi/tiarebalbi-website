@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  margin-bottom: 120px;
+  margin-bottom: 200px;
   justify-items: center;
   align-items: center;
 
@@ -38,7 +38,7 @@ const Card = styled.div`
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 18px;
   color: #6d7783;
-  min-height: 265px;
+  height: 265px;
   margin-right: 10px;
   margin-left: 10px;
   text-align: center;

@@ -7,6 +7,7 @@ import ErrorHandler from '../components/Common/ErrorHandler';
 import { darkModeTheme, GlobalStyles, lightModeTheme } from '../components/Theme';
 import { useDarkMode } from '../hooks/useDarkMode';
 import Expertise from '../components/Expertise';
+import Articles from '../components/Articles';
 
 const RootWrapper = styled.div`
   width: 100vw;
@@ -30,6 +31,7 @@ const App = () => {
             <Header theme={theme} />
             <AboutMe theme={theme} />
             <Expertise theme={theme} />
+            <Articles theme={theme} />
           </Grid>
         </RootWrapper>
       </ErrorHandler>

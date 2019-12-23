@@ -1,9 +1,9 @@
 # Definition
 
-- Customize your Java-JSON serialization using Jackson Annotations
+- Customize your Java-JSON serialization using Jackson Annotations 2
 - Kotlin
-- http://miro.medium.com/max/12000/1*XjcmK3XjHJP3LLqWnoqRtg.jpeg
-- This article is part of a series. Check out the full series: Part 1, Part 2, Part 3, Part 4, Part 5, Part 6, Part 7 and Part 8! You can also read this article in 日本語, Português, Português (alternate), Türkçe, Français, 한국어 , العَرَبِيَّة‎‎, Español (México), Español (España), Polski, Italiano, 普通话, Русский, 한국어 , Tiếng Việt or فارسی.
+- https://images.unsplash.com/photo-1516176966905-58371240ba28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80
+- This article is part of a series. Check out the full series.
 
 ---
 

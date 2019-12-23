@@ -32,6 +32,11 @@ export const GlobalStyles = createGlobalStyle`
   *::after,
   *::before {
     box-sizing: border-box;
+    outline: none;
+  }
+  
+  a:focus, a:active, a:hover {
+    outline: none;
   }
 
   body {

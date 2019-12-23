@@ -1,8 +1,8 @@
 # Definition
 
-- Customize your
+- Customize your 3
 - Java 2
-- http://miro.medium.com/max/12000/1*XjcmK3XjHJP3LLqWnoqRtg.jpeg
+- https://images.unsplash.com/photo-1506946526854-9aad1ec915cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80
 - This article is part of a series.
 
 ---
