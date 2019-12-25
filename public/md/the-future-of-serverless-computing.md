@@ -1,6 +1,6 @@
 # The Future of Serverless Computing
 
-The idea of serverless always called my attention, one single function doing one simple thing in a short living state.  In reality, serverless is more than just functions, it is a way to build software that can grow from day one with low cost (no events, no costs).
+The idea of serverless always called my attention, one single function doing one simple thing in a short living state. In reality, serverless is more than just functions, it is a way to build software that can grow from day one with low cost (no events, no costs).
 
 One of the main problems is one of the benefits of serverless, the state, but before get there, let's take a step back and think about how a simple software is developed these days.
 
@@ -31,16 +31,16 @@ You can find more about the design [here](https://github.com/cloudstateio/clouds
 
 **Cloudstate** is designed to extend the model and make it straightforward to implement use-cases such as:
 
- - Training and Serving of Machine Learning Models
- - Low-latency Real-time Prediction/Recommendation Serving
- - Low-latency Real-time Fraud Detection
- - Low-latency Real-time Anomaly Detection
- - User Session, Shopping Cart, and similar
- - Transaction and Workflow Management
- - Shared Collaborative Workspaces
- - Distributed counting, voting, etc.
- - Leader Election, and other distributed systems protocols for coordination
- - The goal of Cloudstate is to provide a way for implementing these use-cases in a scalable and available way, working in concert with the application itself, all the while providing end-to-end correctness, consistency, and safety.
+- Training and Serving of Machine Learning Models
+- Low-latency Real-time Prediction/Recommendation Serving
+- Low-latency Real-time Fraud Detection
+- Low-latency Real-time Anomaly Detection
+- User Session, Shopping Cart, and similar
+- Transaction and Workflow Management
+- Shared Collaborative Workspaces
+- Distributed counting, voting, etc.
+- Leader Election, and other distributed systems protocols for coordination
+- The goal of Cloudstate is to provide a way for implementing these use-cases in a scalable and available way, working in concert with the application itself, all the while providing end-to-end correctness, consistency, and safety.
 
 **Note:** Cloudstate content shared in this post was taken from their GitHub page, for more details check the link below.
 
