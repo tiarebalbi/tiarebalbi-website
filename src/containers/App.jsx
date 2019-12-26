@@ -23,7 +23,7 @@ const App = () => {
       <Router>
         <ErrorHandler>
           <GlobalStyles />
-          <Helmet titleTemplate="%s &leftarrow; Software Engineer &leftarrow; Tiarê Balbi Bonamini" />
+          <Helmet titleTemplate="%s ← Software Engineer ← Tiarê Balbi Bonamini" />
           <RootWrapper>
             <Routes theme={theme} />
           </RootWrapper>
