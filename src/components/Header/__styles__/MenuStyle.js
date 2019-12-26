@@ -11,27 +11,42 @@ export const NavWrapper = styled.ul`
   margin: 0;
   padding: 0;
   text-align: right;
+  z-index: 999;
+  position: relative;
 
-  li.selected {
+  li a.selected,
+  li button.selected {
     color: ${props => (props.mode === 'dark' ? DARK_COLOR : LIGHT_COLOR)};
     background: ${props => (props.mode === 'light' ? SECONDARY_COLOR : LIGHT_COLOR)};
   }
 
   li:hover {
-    color: ${props => (props.mode === 'dark' ? DARK_COLOR : LIGHT_COLOR)};
-    background: ${props => (props.mode === 'light' ? SECONDARY_COLOR : LIGHT_COLOR)};
-    opacity: 0.8;
+    a,
+    button {
+      color: ${props => (props.mode === 'dark' ? DARK_COLOR : LIGHT_COLOR)};
+      background: ${props => (props.mode === 'light' ? SECONDARY_COLOR : LIGHT_COLOR)};
+      opacity: 0.8;
+    }
   }
 `;
 export const NavItem = styled.li`
   display: inline-block;
-  line-height: 44px;
-  margin: 0 0 0 20px;
-  font-size: 16px;
-  color: #fff;
-  cursor: pointer;
-  padding: 0 10px;
-  border-radius: 5px;
+
+  a,
+  button {
+    background: transparent;
+    font-family: 'Oxygen', sans-serif !important;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    line-height: 44px;
+    margin: 0 0 0 20px;
+    padding: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
 `;
 
 export const TopDotWrapper = styled(Dots)`

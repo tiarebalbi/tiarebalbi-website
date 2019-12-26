@@ -1,111 +1,34 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { DARK_COLOR } from '../Theme';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import EditorSuccessIcon from '@atlaskit/icon/glyph/editor/success';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import { colors } from '@atlaskit/theme';
-import { useState } from 'react';
+import Spinner from '@atlaskit/spinner';
+import { DotWrapper, RectangleWrapper, SquareWrapper, Wrapper } from './__styles__';
 
-const Wrapper = styled.div`
-  min-height: 200px;
-  position: relative;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 120px;
-
-  & > h1 {
-    text-align: center;
-    font-size: 60px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 80px;
-    margin-bottom: 120px;
-  }
-
-  & > div {
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 18px;
-    color: #6d7783;
-    background: #ffffff;
-    min-height: 300px;
-    width: 65%;
-    margin: auto;
-    text-align: center;
-    padding: 80px 50px;
-
-    & > p {
-      color: #222a41;
-      margin-bottom: 50px;
-      font-size: 18px;
-    }
-
-    form {
-      width: 100%;
-      label,
-      input,
-      textarea {
-        width: 100%;
-        display: block;
-        border: none;
-        margin-bottom: 30px;
-
-        &&::placeholder {
-          color: #6d7783 !important;
-          font-family: 'Oxygen', sans-serif !important;
-        }
-      }
-
-      input,
-      textarea {
-        border-bottom: #aeb7c1 1px solid;
-      }
-
-      input {
-        line-height: 35px;
-      }
-
-      textarea {
-        height: 100px;
-      }
-
-      button[type='submit'] {
-        background: ${DARK_COLOR};
-        width: 150px;
-        line-height: 29px;
-        padding: 10px 10px;
-        border-radius: 45px;
-        text-align: center;
-        margin: auto;
-        color: #fff;
-      }
-    }
-  }
-`;
-
-const Contact = () => {
-  const { handleSubmit, register, errors } = useForm();
+const Contact = ({ theme }) => {
+  const { handleSubmit, register, errors, reset } = useForm();
   const [completed, setCompleted] = useState(false);
+  const [request, setRequest] = useState(false);
 
   const onSubmit = values => {
-    setCompleted(true);
-
-    fetch('https://ymhph7k28b.execute-api.us-east-1.amazonaws.com/Prod/send', {
+    setRequest(true);
+    fetch('https://f0ylf1sk9h.execute-api.us-east-1.amazonaws.com/Prod/submitForm', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        subject: 'New contact message via Site!',
-        toEmails: 'me@tiarebalbi.com',
-        message: `
-          Name: ${values.name} \n
-          Email: ${values.email} \n
-          Message: ${values.message} \n
-        `,
+        name: values.name,
+        email: values.email,
+        message: values.message,
       }),
     }).then(() => {
+      reset();
+      setCompleted(true);
+      setRequest(false);
       setTimeout(() => setCompleted(false), 3000);
     });
   };
@@ -142,9 +65,18 @@ const Contact = () => {
             />
           </label>
           <label>
-            <textarea placeholder="Your message here..." name="message" />
+            <textarea
+              ref={register({
+                required: 'The message is required',
+              })}
+              placeholder="Your message here..."
+              name="message"
+            />
           </label>
-          <button type="submit">Send Message</button>
+          <button disabled={request} type="submit">
+            {!request && 'Send Message'}
+            {request && <Spinner invertColor={theme === 'dark'} size="small" />}
+          </button>
         </form>
       </div>
       {(errors.email || errors.name) && (
@@ -171,6 +103,9 @@ const Contact = () => {
           />
         </FlagGroup>
       )}
+      <DotWrapper theme={theme} />
+      <SquareWrapper theme={theme} />
+      <RectangleWrapper />
     </Wrapper>
   );
 };
