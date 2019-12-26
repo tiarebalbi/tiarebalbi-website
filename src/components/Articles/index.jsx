@@ -89,20 +89,22 @@ const DotWrapper = styled(Dots)`
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
 `;
 
-const ArticleCard = ({ data }) => (
-  <ColWrapper md={4}>
-    <div style={{ background: `url(${data.image}) no-repeat top center`, backgroundSize: 'cover' }}>
-      <div className="details">
-        <span>{data.category}</span>
-        <h1>{data.title}</h1>
-        <p>{data.slogan}</p>
-        <a href={`/article/${data.slug}`} aria-label={data.title}>
-          Read more
-        </a>
+const ArticleCard = ({ data }) => {
+  return (
+    <ColWrapper md={4}>
+      <div style={{ background: `url(${data.image}) no-repeat top center`, backgroundSize: 'cover' }}>
+        <div className="details">
+          <span>{data.category}</span>
+          <h1>{data.title}</h1>
+          <p>{data.slogan}</p>
+          <a href={`/article/${data.slug}`} aria-label={data.title}>
+            Read more
+          </a>
+        </div>
       </div>
-    </div>
-  </ColWrapper>
-);
+    </ColWrapper>
+  );
+};
 
 const Articles = props => {
   const [data, loading] = useArticles(3);

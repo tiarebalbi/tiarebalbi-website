@@ -16,20 +16,26 @@ export const NavWrapper = styled.ul`
     color: ${props => (props.mode === 'dark' ? DARK_COLOR : LIGHT_COLOR)};
     background: ${props => (props.mode === 'light' ? SECONDARY_COLOR : LIGHT_COLOR)};
   }
+
+  li:hover {
+    color: ${props => (props.mode === 'dark' ? DARK_COLOR : LIGHT_COLOR)};
+    background: ${props => (props.mode === 'light' ? SECONDARY_COLOR : LIGHT_COLOR)};
+    opacity: 0.8;
+  }
 `;
 export const NavItem = styled.li`
-  padding: 0;
   display: inline-block;
   line-height: 44px;
   margin: 0 0 0 20px;
   font-size: 16px;
   color: #fff;
+  cursor: pointer;
+  padding: 0 10px;
+  border-radius: 5px;
 
-  &.selected {
+  &.selected,
+  &:hover {
     font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
   }
 `;
 

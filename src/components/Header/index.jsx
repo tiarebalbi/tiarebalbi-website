@@ -12,10 +12,10 @@ const Wrapper = styled.header`
   margin-bottom: 100px;
 `;
 
-const Header = ({ theme }) => {
+const Header = ({ theme, parallax }) => {
   return (
     <Wrapper>
-      <Menu theme={theme} />
+      <Menu parallax={parallax} theme={theme} />
       <ProfileInfo />
     </Wrapper>
   );

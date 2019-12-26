@@ -15,7 +15,7 @@ import {
 } from './__styles__/MenuStyle';
 import { Col, Row } from 'react-flexbox-grid';
 
-const Menu = ({ theme }) => {
+const Menu = ({ theme, parallax }) => {
   return (
     <RootWrapper>
       <Row>
@@ -24,9 +24,11 @@ const Menu = ({ theme }) => {
         </Col>
         <Col xs={8}>
           <NavWrapper mode={theme}>
-            <NavItem className="selected">Home</NavItem>
+            <NavItem onClick={() => parallax.scrollTo(0)} className="selected">
+              Home
+            </NavItem>
             <NavItem>Articles</NavItem>
-            <NavItem>Contact</NavItem>
+            <NavItem onClick={() => parallax.scrollTo(2)}>Contact</NavItem>
           </NavWrapper>
           <TopDotWrapper theme={theme} opacity={0.3} />
           <SquareWrapper theme={theme} />
