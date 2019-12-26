@@ -3,8 +3,11 @@ import React from 'react';
 const LogoIcon = props => {
   const { theme } = props;
   const fillColor = theme === 'light' ? '#001220' : '#fff';
+  const width = props.width ? props.width : 50;
+  const height = props.height ? props.height : 40;
+
   return (
-    <svg width={50} height={40} {...props}>
+    <svg width={width} height={height} viewBox="0 0 50 40" {...props}>
       <defs>
         <path
           d="M16.587 25.215l2.333.006a1 1 0 01.997.997l.006 2.34a1 1 0 01-1.003 1.002l-2.332-.006a1 1 0 01-.998-.997l-.006-2.34a1 1 0 011.003-1.002z"

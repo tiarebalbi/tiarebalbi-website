@@ -28,6 +28,10 @@ export const lightModeTheme = {
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
   
+  #root {
+    width: 100%;
+  }
+  
   *,
   *::after,
   *::before {

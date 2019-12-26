@@ -1,5 +1,4 @@
 import * as React from 'react';
-import useArticles from '../../hooks/useArticles';
 import Spinner from '@atlaskit/spinner';
 import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
@@ -35,7 +34,8 @@ const ColWrapper = styled(Col)`
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 18px;
     color: #6d7783;
-    height: 512px;
+    margin-bottom: 50px;
+    height: ${props => (props.mini === 'true' ? '210px' : '512px')};
     background-size: cover;
     width: 100%;
     position: relative;
@@ -45,7 +45,7 @@ const ColWrapper = styled(Col)`
       bottom: 20px;
       right: 20px;
       width: 80%;
-      min-height: 250px;
+      min-height: 50px;
       padding: 20px;
       background: #fff;
       text-align: right;
@@ -89,14 +89,14 @@ const DotWrapper = styled(Dots)`
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
 `;
 
-const ArticleCard = ({ data }) => {
+export const ArticleCard = ({ data, mini = false }) => {
   return (
-    <ColWrapper md={4}>
+    <ColWrapper mini={mini.toString()} md={4}>
       <div style={{ background: `url(${data.image}) no-repeat top center`, backgroundSize: 'cover' }}>
         <div className="details">
           <span>{data.category}</span>
           <h1>{data.title}</h1>
-          <p>{data.slogan}</p>
+          {!mini && <p>{data.slogan}</p>}
           <a href={`/article/${data.slug}`} aria-label={data.title}>
             Read more
           </a>
@@ -106,27 +106,29 @@ const ArticleCard = ({ data }) => {
   );
 };
 
-const Articles = props => {
-  const [data, loading] = useArticles(3);
+const Articles = ({ theme, loading, data, title, mini = false, style }) => {
   return (
-    <Wrapper>
-      <h1>Articles</h1>
-      <p>
-        In this section, I will include things that I have been studying or problems that I had to fix. The
-        main goal is to share what I have learned.
-      </p>
+    <Wrapper style={style}>
+      {!mini && <h1>{title || 'Articles'}</h1>}
+      {mini && <h2 style={{ marginBottom: 20 }}>{title || 'Articles'}</h2>}
+      {!mini && (
+        <p>
+          In this section, I will include things that I have been studying or problems that I had to fix. The
+          main goal is to share what I have learned.
+        </p>
+      )}
       <Row className="cards">
         {loading && (
           <Col xs={12} style={{ textAlign: 'center' }}>
-            <Spinner invertColor={props.theme === 'dark'} size="large" />
+            <Spinner invertColor={theme === 'dark'} size="large" />
           </Col>
         )}
         {!loading &&
-          data.articles.length > 0 &&
-          data.articles.map(article => <ArticleCard key={article.slug} data={article} />)}
+          data?.length > 0 &&
+          data?.map(article => <ArticleCard mini={mini} key={article.slug} data={article} />)}
       </Row>
-      <CircleWrapper color={props.theme === 'dark' ? SECONDARY_COLOR : DARK_COLOR} />
-      <DotWrapper theme={props.theme} />
+      <CircleWrapper color={theme === 'dark' ? SECONDARY_COLOR : DARK_COLOR} />
+      <DotWrapper theme={theme} />
     </Wrapper>
   );
 };

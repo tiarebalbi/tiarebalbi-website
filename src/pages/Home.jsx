@@ -1,29 +1,29 @@
 import * as React from 'react';
-import { useState } from 'react';
-import styled from 'styled-components';
 import AboutMe from '../components/AboutMe';
 import Expertise from '../components/Expertise';
 import Articles from '../components/Articles';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import { Parallax } from 'react-spring/renderprops-addons';
+import { Helmet } from 'react-helmet';
 import { Grid } from 'react-flexbox-grid';
 import Header from '../components/Header';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import { Helmet } from 'react-helmet/es/Helmet';
+import { ResponsiveParallaxLayer } from './__styles__';
+import ProfileInfo from '../components/Header/ProfileInfo';
+import useArticles from '../hooks/useArticles';
 
-const ResponsiveParallaxLayer = styled(ParallaxLayer)`
-  width: inherit !important;
-`;
 const Home = ({ theme }) => {
-  const [parallax, setParallax] = useState({});
+  const [data, loading] = useArticles(3);
   return (
-    <Parallax pages={2.89} scrolling={true} vertical ref={ref => setParallax(ref)}>
+    <Parallax pages={2.89} scrolling={true} vertical>
       <Helmet>
         <title>Home</title>
       </Helmet>
       <Grid>
         <ResponsiveParallaxLayer offset={0} speed={0.4}>
-          <Header parallax={parallax} theme={theme} />
+          <Header photo={true} theme={theme}>
+            <ProfileInfo />
+          </Header>
         </ResponsiveParallaxLayer>
         <ResponsiveParallaxLayer offset={0.8} speed={0.8}>
           <AboutMe theme={theme} />
@@ -32,7 +32,7 @@ const Home = ({ theme }) => {
           <Expertise theme={theme} />
         </ResponsiveParallaxLayer>
         <ResponsiveParallaxLayer offset={1.7} speed={0.8}>
-          <Articles theme={theme} />
+          <Articles data={data?.articles || []} loading={loading} theme={theme} />
         </ResponsiveParallaxLayer>
         <ResponsiveParallaxLayer offset={2.0} speed={0.4}>
           <Contact theme={theme} />

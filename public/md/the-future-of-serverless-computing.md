@@ -1,5 +1,3 @@
-# The Future of Serverless Computing
-
 The idea of serverless always called my attention, one single function doing one simple thing in a short living state. In reality, serverless is more than just functions, it is a way to build software that can grow from day one with low cost (no events, no costs).
 
 One of the main problems is one of the benefits of serverless, the state, but before get there, let's take a step back and think about how a simple software is developed these days.
