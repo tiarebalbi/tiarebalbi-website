@@ -32,11 +32,6 @@ export const NavItem = styled.li`
   cursor: pointer;
   padding: 0 10px;
   border-radius: 5px;
-
-  &.selected,
-  &:hover {
-    font-weight: bold;
-  }
 `;
 
 export const TopDotWrapper = styled(Dots)`

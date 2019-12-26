@@ -33,7 +33,7 @@ const App = () => {
     <ThemeProvider theme={theme === 'light' ? lightModeTheme : darkModeTheme}>
       <ErrorHandler>
         <GlobalStyles />
-        <Parallax pages={3} scrolling={true} vertical ref={ref => setParallax(ref)}>
+        <Parallax pages={2.89} scrolling={true} vertical ref={ref => setParallax(ref)}>
           <RootWrapper>
             <Grid>
               <ResponsiveParallaxLayer offset={0} speed={0.4}>
@@ -49,10 +49,10 @@ const App = () => {
               <ResponsiveParallaxLayer offset={1.7} speed={0.8}>
                 <Articles theme={theme} />
               </ResponsiveParallaxLayer>
-              <ResponsiveParallaxLayer offset={2.0} speed={0.6}>
+              <ResponsiveParallaxLayer offset={2.0} speed={0.4}>
                 <Contact theme={theme} />
               </ResponsiveParallaxLayer>
-              <ResponsiveParallaxLayer offset={2.8} speed={0.5}>
+              <ResponsiveParallaxLayer offset={2.71} speed={0.2}>
                 <Footer theme={theme} />
               </ResponsiveParallaxLayer>
             </Grid>

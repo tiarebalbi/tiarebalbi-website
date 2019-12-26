@@ -28,6 +28,7 @@ const Wrapper = styled.div`
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 18px;
     color: #6d7783;
+    background: #ffffff;
     min-height: 300px;
     width: 65%;
     margin: auto;
@@ -88,10 +89,25 @@ const Contact = () => {
   const [completed, setCompleted] = useState(false);
 
   const onSubmit = values => {
-    console.log('Submit', values, register, errors);
     setCompleted(true);
 
-    setTimeout(() => setCompleted(false), 5000);
+    fetch('https://ymhph7k28b.execute-api.us-east-1.amazonaws.com/Prod/send', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        subject: 'New contact message via Site!',
+        toEmails: 'me@tiarebalbi.com',
+        message: `
+          Name: ${values.name} \n
+          Email: ${values.email} \n
+          Message: ${values.message} \n
+        `,
+      }),
+    }).then(() => {
+      setTimeout(() => setCompleted(false), 3000);
+    });
   };
 
   return (
@@ -99,7 +115,7 @@ const Contact = () => {
       <h1>Contact</h1>
 
       <div>
-        <p>Fell free to contact me and say hello!</p>
+        <p>Fell free to contact me and say hi!</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>
             <input
