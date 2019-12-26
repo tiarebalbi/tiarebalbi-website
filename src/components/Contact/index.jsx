@@ -90,6 +90,8 @@ const Contact = () => {
   const onSubmit = values => {
     console.log('Submit', values, register, errors);
     setCompleted(true);
+
+    setTimeout(() => setCompleted(false), 8000);
   };
 
   return (
