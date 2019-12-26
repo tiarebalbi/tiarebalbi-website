@@ -1,5 +1,13 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet/es/Helmet';
 
-const NotFound = () => <span>Not Found</span>;
+const NotFound = () => (
+  <div>
+    <Helmet>
+      <title>Not Found</title>
+    </Helmet>
+    Not Found
+  </div>
+);
 
 export default NotFound;

@@ -5,6 +5,7 @@ import ErrorHandler from '../components/Common/ErrorHandler';
 import { darkModeTheme, GlobalStyles, lightModeTheme } from '../components/Theme';
 import { useDarkMode } from '../hooks/useDarkMode';
 import Routes from '../router';
+import { Helmet } from 'react-helmet/es/Helmet';
 
 const RootWrapper = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ const App = () => {
       <Router>
         <ErrorHandler>
           <GlobalStyles />
+          <Helmet titleTemplate="%s &leftarrow; Software Engineer &leftarrow; Tiarê Balbi Bonamini" />
           <RootWrapper>
             <Routes theme={theme} />
           </RootWrapper>

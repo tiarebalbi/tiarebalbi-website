@@ -16,6 +16,9 @@ export default ({ theme }) => (
     <Route exact path="/article/:slug">
       <ArticleViewer theme={theme} />
     </Route>
+    <Route exact path="/404.html">
+      <NotFound theme={theme} />
+    </Route>
     <Route path="*">
       <NotFound theme={theme} />
     </Route>
