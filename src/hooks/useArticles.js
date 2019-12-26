@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useLoading from './useLoading';
 
 const useArticles = (limit = 0) => {
   const ENDPOINT = '/articles.json';
@@ -6,7 +7,7 @@ const useArticles = (limit = 0) => {
     error: undefined,
     articles: [],
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useLoading(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -32,8 +33,8 @@ const useArticles = (limit = 0) => {
       }
     }
 
-    fetchData();
-  }, [limit]);
+    fetchData().then();
+  }, [limit, setLoading]);
 
   return [data, loading];
 };

@@ -1,6 +1,7 @@
 {
   "name": "tiarebalbi-website",
   "version": "2.0.1",
+  "homepage": "https://tiarebalbi.com",
   "license": "MIT",
   "dependencies": {
     "@atlaskit/css-reset": "^5.0.9",
@@ -27,17 +28,18 @@
     "react-icons-kit": "^1.3.1",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.2",
-    "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.3.0",
     "react-snap": "^1.23.0",
     "react-spring": "^8.0.27",
     "request": "^2.88.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "xmlbuilder": "^13.0.2"
   },
   "scripts": {
     "package": "node scripts/exportArticles.js",
+    "sitemap": "node scripts/sitemap.js",
     "start": "yarn package && react-scripts start",
-    "build": "yarn package && react-scripts build",
+    "build": "yarn package && yarn sitemap && react-scripts build",
     "test": "yarn package && react-scripts test",
     "ci": "yarn test --watchAll=false",
     "postbuild": "react-snap"
