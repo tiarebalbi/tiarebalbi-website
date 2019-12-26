@@ -91,7 +91,7 @@ const Contact = () => {
     console.log('Submit', values, register, errors);
     setCompleted(true);
 
-    setTimeout(() => setCompleted(false), 8000);
+    setTimeout(() => setCompleted(false), 5000);
   };
 
   return (
