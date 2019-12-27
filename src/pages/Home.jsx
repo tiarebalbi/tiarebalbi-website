@@ -3,7 +3,7 @@ import AboutMe from '../components/AboutMe';
 import Expertise from '../components/Expertise';
 import Articles from '../components/Articles';
 import { Parallax } from 'react-spring/renderprops-addons';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet/es/Helmet';
 import { Grid } from 'react-flexbox-grid';
 import Header from '../components/Header';
 import Contact from '../components/Contact';
