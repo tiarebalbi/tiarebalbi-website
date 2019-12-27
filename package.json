@@ -32,7 +32,6 @@
     "react-markdown": "^4.2.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "react-snap": "^1.23.0",
     "react-spring": "^8.0.27",
     "request": "^2.88.0",
     "styled-components": "^4.4.1",
@@ -44,8 +43,7 @@
     "start": "yarn package && react-scripts start",
     "build": "yarn package && yarn sitemap && react-scripts build",
     "test": "yarn package && react-scripts test",
-    "ci": "yarn test --watchAll=false",
-    "postbuild": "react-snap"
+    "ci": "yarn test --watchAll=false"
   },
   "eslintConfig": {
     "extends": "react-app"
