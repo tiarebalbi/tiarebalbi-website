@@ -5,6 +5,7 @@ import CircleOne from '../../../resources/components/CircleOne';
 import CircleTwo from '../../../resources/components/CircleTwo';
 import Rectangle from '../../../resources/components/Rectangle';
 import Oval from '../../../resources/components/Oval';
+import { media } from '../../Common/media';
 
 export const Wrapper = styled.div`
   min-height: 200px;
@@ -23,10 +24,15 @@ export const Wrapper = styled.div`
     margin-right: 80px;
 
     .image {
+      @media only screen and (max-width: ${media.tablet}) {
+        --size: 320px;
+      }
+
+      --size: 380px;
       box-shadow: -10px 2px 30px 0 rgba(0, 0, 0, 0.5);
       border-radius: 18px;
-      width: 380px;
-      height: 380px;
+      width: var(--size);
+      height: var(--size);
       background: url('/images/about-me.jpg') top center no-repeat;
       background-size: cover;
     }
@@ -43,6 +49,9 @@ export const Wrapper = styled.div`
   }
 
   .content-text {
+    @media only screen and (max-width: ${media.tablet}) {
+      width: 100%;
+    }
     width: 60%;
     .space {
       margin-bottom: 30px;

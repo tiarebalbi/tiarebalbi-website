@@ -58,11 +58,11 @@ export const ContentTitle = styled.div`
   height: 265px;
   padding-top: 45px;
   animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  color: ${props => (props.theme === 'dark' ? '#001220' : '#ffffff')} !important;
+  color: ${DARK_COLOR} !important;
 
   h1 {
     margin-bottom: 20px;
-    color: ${props => (props.theme === 'dark' ? '#001220' : '#ffffff')} !important;
+    color: ${DARK_COLOR} !important;
   }
 `;
 export const MarkdownContent = styled(Col)`

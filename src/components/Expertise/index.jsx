@@ -4,6 +4,7 @@ import { Col, Row } from 'react-flexbox-grid';
 import Icon03 from '../../resources/components/Icon03';
 import Icon02 from '../../resources/components/Icon02';
 import Icon01 from '../../resources/components/Icon01';
+import { media } from '../Common/media';
 
 const Wrapper = styled.div`
   min-height: 200px;
@@ -47,6 +48,10 @@ const Card = styled.div`
   justify-items: center;
   align-items: center;
   flex-direction: column;
+
+  @media only screen and (max-width: ${media.tablet}) {
+    height: 350px;
+  }
 
   &.space {
     margin-top: 40px;

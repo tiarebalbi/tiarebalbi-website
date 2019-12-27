@@ -3,6 +3,7 @@ import { DARK_COLOR, SECONDARY_COLOR } from '../../Theme';
 import Dots from '../../../resources/components/Dots';
 import Rectangle from '../../../resources/components/Rectangle';
 import Square from '../../../resources/components/Square';
+import { media } from '../../Common/media';
 
 export const Wrapper = styled.div`
   min-height: 200px;
@@ -92,6 +93,13 @@ export const DotWrapper = styled(Dots)`
   width: auto;
   z-index: -1;
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+
+  @media only screen and (max-width: ${media.tablet}) {
+    left: 0;
+  }
+  @media only screen and (max-width: ${media.desktopXS}) {
+    left: 15px;
+  }
 `;
 
 export const RectangleWrapper = styled(Rectangle)`
@@ -108,4 +116,11 @@ export const SquareWrapper = styled(Square)`
   left: -580px;
   width: auto;
   z-index: -90;
+
+  @media only screen and (max-width: ${media.desktopXS}) {
+    left: -685px;
+  }
+  @media only screen and (max-width: ${media.tablet}) {
+    left: -785px;
+  }
 `;

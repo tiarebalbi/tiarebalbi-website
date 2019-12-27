@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Lozenge from '@atlaskit/lozenge';
 import { BreadcrumbsItem, BreadcrumbsStateless } from '@atlaskit/breadcrumbs';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet/es/Helmet';
 import useArticle from '../hooks/useArticle';
 import Header from '../components/Header';
@@ -17,6 +17,7 @@ import Button from '../components/Common/Button';
 const ArticleViewer = ({ theme }) => {
   const { slug } = useParams();
   const [article, loading] = useArticle(slug);
+
   return (
     <Grid>
       <Helmet>
@@ -24,6 +25,9 @@ const ArticleViewer = ({ theme }) => {
         <meta name="description" content={article?.definition?.slogan} />
       </Helmet>
       {loading && <LoadingView theme={theme} />}
+
+      {(article.content && article?.content?.indexOf('<!DOCTYPE html>')) >= 0 && <Redirect to="/not-found" />}
+
       <Header theme={theme}>
         <MenuBar theme={theme} />
         <Background theme={theme} />

@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import { ResponsiveParallaxLayer } from './__styles__';
 import ProfileInfo from '../components/Header/ProfileInfo';
 import useArticles from '../hooks/useArticles';
+import LoadingView from '../components/Common/LoadingView';
 
 const Home = ({ theme }) => {
   const [data, loading] = useArticles(3);
@@ -19,6 +20,7 @@ const Home = ({ theme }) => {
       <Helmet>
         <title>Home</title>
       </Helmet>
+      {loading && <LoadingView theme={theme} />}
       <Grid>
         <ResponsiveParallaxLayer offset={0} speed={0.4}>
           <Header photo={true} theme={theme}>
@@ -37,7 +39,7 @@ const Home = ({ theme }) => {
         <ResponsiveParallaxLayer offset={2.0} speed={0.4}>
           <Contact theme={theme} />
         </ResponsiveParallaxLayer>
-        <ResponsiveParallaxLayer offset={2.71} speed={0.2}>
+        <ResponsiveParallaxLayer offset={2.74} speed={0.2}>
           <Footer theme={theme} />
         </ResponsiveParallaxLayer>
       </Grid>

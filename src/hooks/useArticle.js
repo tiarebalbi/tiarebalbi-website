@@ -23,6 +23,9 @@ const useArticle = slug => {
           .filter(item => item.category !== definition.category)
           .splice(0, 3);
 
+        if (definition === undefined) {
+        }
+
         setLoading(false);
         setArticle({ definition, content, related });
       } catch (e) {

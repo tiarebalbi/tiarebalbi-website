@@ -21,7 +21,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightModeTheme : darkModeTheme}>
       <Router>
-        <ErrorHandler>
+        <ErrorHandler theme={theme}>
           <GlobalStyles />
           <Helmet titleTemplate="%s ← Software Engineer ← Tiarê Balbi Bonamini" />
           <RootWrapper>

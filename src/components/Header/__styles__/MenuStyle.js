@@ -6,6 +6,7 @@ import CircleOne from '../../../resources/components/CircleOne';
 import CircleTwo from '../../../resources/components/CircleTwo';
 import Rectangle from '../../../resources/components/Rectangle';
 import Oval from '../../../resources/components/Oval';
+import { media } from '../../Common/media';
 
 export const NavWrapper = styled.ul`
   margin: 0;
@@ -64,6 +65,10 @@ export const BottomDotWrapper = styled(Dots)`
   width: auto;
   z-index: 100;
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s both;
+
+  @media only screen and (max-width: ${media.tablet}) {
+    right: -100px;
+  }
 `;
 
 export const SquareWrapper = styled(Square)`
@@ -73,6 +78,11 @@ export const SquareWrapper = styled(Square)`
   right: -936px;
   width: auto;
   z-index: -90;
+
+  @media only screen and (max-width: ${media.tablet}) {
+    top: -452px;
+    right: -1105px;
+  }
 `;
 
 export const RootWrapper = styled.div`
@@ -81,6 +91,11 @@ export const RootWrapper = styled.div`
 `;
 
 export const ProfileImage = styled.div`
+  @media only screen and (max-width: ${media.tablet}) {
+    --size: 280px;
+    right: -30px;
+  }
+
   --size: 320px;
   animation: roll-in-blurred-right 0.65s cubic-bezier(0.23, 1, 0.32, 1) 1.3s both;
   box-shadow: 40px 2px 80px 0 rgba(0, 0, 0, 0.5);
