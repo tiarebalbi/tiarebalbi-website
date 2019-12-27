@@ -69,6 +69,7 @@ export const MarkdownContent = styled(Col)`
   text-align: justify;
   margin-top: 20px;
   margin-bottom: 140px;
+  position: relative !important;
 
   & > p img {
     text-align: center;
