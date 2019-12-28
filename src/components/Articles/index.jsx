@@ -9,7 +9,7 @@ import Dots from '../../resources/components/Dots';
 const Wrapper = styled.div`
   min-height: 200px;
   position: relative;
-  z-index: 1000;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   margin-bottom: 120px;
