@@ -18,7 +18,7 @@ const Wrapper = styled.header`
 
   @media only screen and (max-width: ${media.mobile}) {
     width: 101vw;
-    height: 100vh;
+    height: 90vh;
     margin-left: -31px;
   }
 `;
