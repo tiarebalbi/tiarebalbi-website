@@ -45,7 +45,7 @@ export const Background = styled.div`
   top: 80px;
   left: 0;
   width: 200vw;
-  height: 300px;
+  height: 320px;
   margin-left: -100vw;
   animation: slide-in-right 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 `;
@@ -53,12 +53,13 @@ export const Background = styled.div`
 export const ContentTitle = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 40px;
   width: 60%;
-  height: 265px;
+  min-height: 265px;
   padding-top: 45px;
   animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   color: ${DARK_COLOR} !important;
+  margin-bottom: 10px;
 
   h1 {
     margin-bottom: 20px;
@@ -101,4 +102,21 @@ export const ImageArticle = styled.div`
   height: 200px;
   margin-top: 20px;
   margin-bottom: 30px;
+`;
+
+export const MobileBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/rsz_background.jpg') no-repeat top center / contain;
+  z-index: -10000000;
+
+  & > div {
+    background-image: linear-gradient(180deg, rgba(0, 18, 32, 0.1) 0%, rgba(0, 18, 32, 0.9) 100%);
+    position: absolute;
+    width: 100vw;
+    height: 104vh;
+  }
 `;

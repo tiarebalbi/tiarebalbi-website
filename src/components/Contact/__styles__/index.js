@@ -19,18 +19,28 @@ export const Wrapper = styled.div`
     color: rgba(255, 255, 255, 0.7);
     line-height: 80px;
     margin-bottom: 120px;
+
+    @media only screen and (max-width: ${media.desktopXS}) {
+      margin-bottom: 60px;
+    }
   }
 
-  & > div {
+  & > div.card {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 18px;
     color: #6d7783;
     background: #ffffff;
     min-height: 300px;
     width: 65%;
-    margin: auto;
     text-align: center;
     padding: 80px 50px;
+    margin: auto auto 60px;
+
+    @media only screen and (max-width: ${media.desktopXS}) {
+      width: 80%;
+      padding: 40px 25px;
+      margin: auto auto 30px;
+    }
 
     & > p {
       color: #222a41;

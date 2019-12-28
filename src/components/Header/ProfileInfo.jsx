@@ -5,9 +5,19 @@ import { location2 } from 'react-icons-kit/icomoon/location2';
 import { buildingO } from 'react-icons-kit/fa/buildingO';
 import { warning } from 'react-icons-kit/fa/warning';
 import { Col, Row } from 'react-flexbox-grid';
+import { media } from '../Common/media';
 
 const ColWrapper = styled(Col)`
   margin-top: 190px;
+  z-index: 200;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    position: absolute;
+    bottom: 20px;
+    max-width: 100vw !important;
+    right: 20px;
+    left: 20px;
+  }
 `;
 
 const Slogan = styled.h2`

@@ -7,6 +7,7 @@ import ErrorIcon from '@atlaskit/icon/glyph/error';
 import { colors } from '@atlaskit/theme';
 import Spinner from '@atlaskit/spinner';
 import { DotWrapper, RectangleWrapper, SquareWrapper, Wrapper } from './__styles__';
+import Footer from '../Footer';
 
 const Contact = ({ theme }) => {
   const { handleSubmit, register, errors, reset } = useForm();
@@ -37,7 +38,7 @@ const Contact = ({ theme }) => {
     <Wrapper id="contact">
       <h1>Contact</h1>
 
-      <div>
+      <div className="card">
         <p>Fell free to contact me and say hi!</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>
@@ -103,6 +104,7 @@ const Contact = ({ theme }) => {
           />
         </FlagGroup>
       )}
+      <Footer theme={theme} />
       <DotWrapper theme={theme} />
       <SquareWrapper theme={theme} />
       <RectangleWrapper />

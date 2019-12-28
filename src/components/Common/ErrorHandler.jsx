@@ -8,7 +8,6 @@ import { MenuBar } from '../../pages/__styles__';
 import Header from '../Header';
 import Button from './Button';
 import Contact from '../Contact';
-import Footer from '../Footer';
 import ContentErrorStateView from './ContentErrorStateView';
 import ServerDownIcon from '../../resources/components/ServerDownIcon';
 
@@ -42,7 +41,6 @@ const ErrorDetails = ({ error, theme }) => (
     </ContentErrorStateView>
 
     <Contact theme={theme} />
-    <Footer theme={theme} />
   </Grid>
 );
 

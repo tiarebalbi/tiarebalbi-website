@@ -16,7 +16,7 @@ const defaultTheme = {
 export const darkModeTheme = {
   ...defaultTheme,
   backgroundColor: primaryColor,
-  fontColor: 'rgba(255,255,255,0.70)',
+  fontColor: 'rgba(255,255,255,0.90)',
 };
 
 export const lightModeTheme = {
@@ -60,6 +60,20 @@ export const GlobalStyles = createGlobalStyle`
   
   h1,h2,h3,h4,h5,h6 {
     color: ${({ theme }) => theme.fontColor} !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .container {
+        width: 690px;
+        max-width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .container {
+        width: 920px;
+        max-width: 90%;
+    }
   }
   
   @keyframes swing-in-top-fwd {

@@ -4,7 +4,6 @@ import { Col, Grid } from 'react-flexbox-grid';
 import { MenuBar } from './__styles__';
 import Header from '../components/Header';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 import NotFoundIcon from '../resources/components/NotFoundIcon';
 import Button from '../components/Common/Button';
 import ContentErrorStateView from '../components/Common/ContentErrorStateView';
@@ -28,7 +27,6 @@ const NotFound = ({ theme }) => {
       </ContentErrorStateView>
 
       <Contact theme={theme} />
-      <Footer theme={theme} />
     </Grid>
   );
 };

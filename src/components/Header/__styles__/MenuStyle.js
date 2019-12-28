@@ -7,6 +7,7 @@ import CircleTwo from '../../../resources/components/CircleTwo';
 import Rectangle from '../../../resources/components/Rectangle';
 import Oval from '../../../resources/components/Oval';
 import { media } from '../../Common/media';
+import { Row } from 'react-flexbox-grid';
 
 export const NavWrapper = styled.ul`
   margin: 0;
@@ -57,6 +58,11 @@ export const TopDotWrapper = styled(Dots)`
   width: auto;
   z-index: 100;
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    top: 10%;
+    left: -110px;
+  }
 `;
 export const BottomDotWrapper = styled(Dots)`
   position: absolute;
@@ -66,7 +72,7 @@ export const BottomDotWrapper = styled(Dots)`
   z-index: 100;
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s both;
 
-  @media only screen and (max-width: ${media.tablet}) {
+  @media only screen and (max-width: ${media.desktopXS}) {
     right: -100px;
   }
 `;
@@ -83,15 +89,20 @@ export const SquareWrapper = styled(Square)`
     top: -452px;
     right: -1105px;
   }
+  @media only screen and (max-width: ${media.mobile}) {
+    top: -40%;
+    left: -1080px;
+    z-index: -10000000;
+  }
 `;
 
 export const RootWrapper = styled.div`
   padding-top: 17px !important;
-  z-index: 1000;
+  z-index: 100;
 `;
 
 export const ProfileImage = styled.div`
-  @media only screen and (max-width: ${media.tablet}) {
+  @media only screen and (max-width: ${media.desktopXS}) {
     --size: 280px;
     right: -30px;
   }
@@ -136,4 +147,13 @@ export const OvalWrapper = styled(Oval)`
   top: 90px;
   right: 10px;
   animation: rotate-scale-up 0.65s linear 2.2s both;
+`;
+
+export const MobileRowWrapper = styled(Row)`
+  background: #001220;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  margin-left: -17px !important;
+  margin-top: -17px;
+  padding: 7px 20px 5px;
 `;

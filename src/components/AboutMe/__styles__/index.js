@@ -15,6 +15,11 @@ export const Wrapper = styled.div`
   flex-direction: row;
   margin-bottom: 230px;
 
+  @media only screen and (max-width: ${media.desktopXS}) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   b {
     font-weight: bold;
   }
@@ -24,8 +29,9 @@ export const Wrapper = styled.div`
     margin-right: 80px;
 
     .image {
-      @media only screen and (max-width: ${media.tablet}) {
+      @media only screen and (max-width: ${media.desktopXS}) {
         --size: 320px;
+        margin-top: 35px;
       }
 
       --size: 380px;
@@ -49,7 +55,7 @@ export const Wrapper = styled.div`
   }
 
   .content-text {
-    @media only screen and (max-width: ${media.tablet}) {
+    @media only screen and (max-width: ${media.desktopXS}) {
       width: 100%;
     }
     width: 60%;

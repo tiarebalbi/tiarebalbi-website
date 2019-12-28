@@ -49,6 +49,9 @@ const Card = styled.div`
   align-items: center;
   flex-direction: column;
 
+  @media only screen and (max-width: ${media.desktopXS}) {
+    height: 350px;
+  }
   @media only screen and (max-width: ${media.tablet}) {
     height: 350px;
   }

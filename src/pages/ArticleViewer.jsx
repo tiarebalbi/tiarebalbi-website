@@ -7,9 +7,8 @@ import { Helmet } from 'react-helmet/es/Helmet';
 import useArticle from '../hooks/useArticle';
 import Header from '../components/Header';
 import { Grid } from 'react-flexbox-grid';
-import Footer from '../components/Footer';
 import Contact from '../components/Contact';
-import { Background, ContentTitle, MarkdownContent, MenuBar, ImageArticle } from './__styles__';
+import { Background, ContentTitle, ImageArticle, MarkdownContent, MenuBar } from './__styles__';
 import LoadingView from '../components/Common/LoadingView';
 import Articles from '../components/Articles';
 import Button from '../components/Common/Button';
@@ -33,7 +32,11 @@ const ArticleViewer = ({ theme }) => {
         <Background theme={theme} />
         <ContentTitle theme={theme}>
           <h1>{article?.definition?.title}</h1>
-          <p>{article?.definition?.slogan}</p>
+          <p>
+            {article?.definition?.slogan?.length > 191
+              ? article?.definition?.slogan.substring(0, 191) + '...'
+              : article?.definition?.slogan}
+          </p>
           <Button href="/articles" style={{ width: 110, marginTop: 25 }}>
             Go Back
           </Button>
@@ -64,7 +67,6 @@ const ArticleViewer = ({ theme }) => {
         />
       )}
       <Contact theme={theme} />
-      <Footer theme={theme} />
     </Grid>
   );
 };

@@ -7,7 +7,6 @@ import { Background, ContentTitle, MenuBar } from './__styles__';
 import Header from '../components/Header';
 import { Grid, Row } from 'react-flexbox-grid';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 import { ArticleCard } from '../components/Articles';
 import { BreadcrumbsItem, BreadcrumbsStateless } from '@atlaskit/breadcrumbs';
 
@@ -53,7 +52,6 @@ const Articles = ({ theme }) => {
       </WrapperContent>
 
       <Contact theme={theme} />
-      <Footer theme={theme} />
     </Grid>
   );
 };
