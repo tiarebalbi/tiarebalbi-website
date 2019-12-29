@@ -75,7 +75,7 @@ const ProfileInfo = () => (
       <Slogan>Hello</Slogan>
       <Title>I'm Tiarê</Title>
       <Paragraph>
-        Software Engineer that can be described as a series enthusiast of technology, fortuned to work with
+        Software Engineer that can be described as a serious enthusiast of technology, fortuned to work with
         one of my biggest passion, software development. Finding different ways to solve different problems.{' '}
       </Paragraph>
       <ExtraDetails>
