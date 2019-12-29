@@ -17,12 +17,12 @@ import {
 import { Col, Row } from 'react-flexbox-grid';
 import { NavLink, useLocation } from 'react-router-dom';
 import useWindowSize from '../../hooks/useWindowSize';
-import { mediaNumber } from '../Common/media';
 
 const Menu = ({ theme, photo }) => {
   const location = useLocation();
   const size = useWindowSize();
-  const isNotMobile = size.width > mediaNumber.mobile;
+  const isNotMobile = !size.isMobile;
+
   return (
     <RootWrapper>
       {isNotMobile && (
@@ -50,19 +50,22 @@ const Menu = ({ theme, photo }) => {
       )}
       {!isNotMobile && (
         <MobileRowWrapper>
-          <Col xs={12}>
-            <Logo width={40} height={38} theme={theme} />
+          <Col xs={4}>
+            <Logo width={40} height={38} theme="dark" />
+          </Col>
+          <Col xs={8}>
+            <a href="/articles">Articles</a>
           </Col>
         </MobileRowWrapper>
       )}
       <Row>
         <Col md={12}>
           <TopDotWrapper theme={theme} opacity={0.3} />
-          <SquareWrapper theme={theme} />
+          {isNotMobile && <SquareWrapper theme={theme} />}
           {photo && isNotMobile && <ProfileImage />}
           {isNotMobile && <BottomDotWrapper theme={theme} opacity={0.7} />}
           <CircleOneWrapper />
-          <CircleTwoWrapper />
+          {isNotMobile && <CircleTwoWrapper />}
           <RectangleWrapper />
           <OvalWrapper />
         </Col>

@@ -2,7 +2,7 @@ import React from 'react';
 import { LIGHT_COLOR } from '../../components/Theme';
 
 const Dots = props => {
-  const fillColor = LIGHT_COLOR;
+  const fillColor = props.theme === 'light' ? 'rgba(0,18,32,0.9)' : LIGHT_COLOR;
   const opacity = props.opacity ? props.opacity : 0.8;
 
   return (

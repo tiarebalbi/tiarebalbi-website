@@ -32,6 +32,20 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
   }
   
+  .rotate {
+    display: none !important;
+  }
+  
+  @media only screen and (orientation:landscape) and (max-width: 900px) and (max-height: 450px){
+    #root > div > div {
+      display: none; 
+    }
+    
+    .rotate {
+      display: flex !important;
+    }
+  }
+
   *,
   *::after,
   *::before {

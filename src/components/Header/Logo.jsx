@@ -22,7 +22,11 @@ const LogoIconWrapper = styled(LogoIcon)`
 `;
 
 const Logo = props => {
-  return <LogoIconWrapper {...props} />;
+  return (
+    <a href="/">
+      <LogoIconWrapper {...props} />
+    </a>
+  );
 };
 
 export default Logo;

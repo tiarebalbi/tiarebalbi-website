@@ -41,7 +41,7 @@
     "package": "node scripts/exportArticles.js",
     "sitemap": "node scripts/sitemap.js",
     "start": "yarn package && react-scripts start",
-    "build": "yarn package && yarn sitemap && react-scripts build",
+    "build": "yarn package && react-scripts build",
     "test": "yarn package && react-scripts test",
     "ci": "yarn test --watchAll=false"
   },

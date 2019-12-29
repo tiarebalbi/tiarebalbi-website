@@ -2,7 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Icon } from 'react-icons-kit';
 import { github, linkedinSquare, twitter } from 'react-icons-kit/fa';
-import { DARK_COLOR } from '../Theme';
+import { DARK_COLOR, SECONDARY_COLOR } from '../Theme';
+import { media } from '../Common/media';
 
 const Wrapper = styled.div`
   min-height: 20px;
@@ -13,10 +14,22 @@ const Wrapper = styled.div`
   margin-bottom: 20px;
   text-align: center;
 
+  & > p {
+    @media only screen and (max-width: ${media.mobile}) {
+      padding: 10px;
+      background: ${props => (props.theme === 'dark' ? SECONDARY_COLOR : '#fff')};
+      margin-left: -3px;
+    }
+  }
+
   & > div {
     width: 40%;
     text-align: center;
     margin: auto auto 20px;
+
+    @media only screen and (max-width: ${media.mobile}) {
+      width: 80%;
+    }
 
     & > a {
       margin-right: 20px;
@@ -36,11 +49,11 @@ const Wrapper = styled.div`
 `;
 
 const Footer = props => {
-  const color = props.theme === 'dark' ? '#FFF' : DARK_COLOR;
-  const colorBg = props.theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)';
+  const color = DARK_COLOR;
+  const colorBg = '#ccc';
 
   return (
-    <Wrapper>
+    <Wrapper theme={props.theme}>
       <div>
         <a
           style={{ background: colorBg }}

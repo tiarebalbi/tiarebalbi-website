@@ -9,8 +9,10 @@ import {
   OvalWrapper,
 } from './__styles__';
 import { SECONDARY_COLOR } from '../Theme';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const AboutMe = props => {
+  const size = useWindowSize();
   const fill = props.theme === 'light' ? SECONDARY_COLOR : '#fff';
   const opacity = props.theme === 'light' ? 0.8 : 1;
 
@@ -36,11 +38,11 @@ const AboutMe = props => {
         </div>
       </div>
       <TopDotWrapper theme={props.theme} />
-      <SquareWrapper theme={props.theme} />
-      <CircleOneWrapper color={fill} opacity={opacity} />
-      <CircleTwoWrapper color={fill} opacity={opacity} />
-      <RectangleWrapper />
-      <OvalWrapper />
+      <SquareWrapper isMobile={size.isMobile.toString()} theme={props.theme} />
+      {!size.isMobile && <CircleOneWrapper color={fill} opacity={opacity} />}
+      {!size.isMobile && <CircleTwoWrapper color={fill} opacity={opacity} />}
+      {!size.isMobile && <RectangleWrapper theme={props.theme} />}
+      {!size.isMobile && <OvalWrapper theme={props.theme} />}
     </Wrapper>
   );
 };

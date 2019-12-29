@@ -13,6 +13,12 @@ export const Wrapper = styled.div`
   flex-direction: column;
   margin-bottom: 120px;
 
+  @media only screen and (max-width: ${media.mobile}) {
+    margin-left: -26px;
+    width: 100vw;
+    padding-bottom: 30px;
+  }
+
   & > h1 {
     text-align: center;
     font-size: 60px;
@@ -86,6 +92,7 @@ export const Wrapper = styled.div`
         text-align: center;
         margin: auto;
         color: #fff;
+        border: none;
 
         &:disabled {
           cursor: wait;
@@ -110,6 +117,9 @@ export const DotWrapper = styled(Dots)`
   @media only screen and (max-width: ${media.desktopXS}) {
     left: 15px;
   }
+  @media only screen and (max-width: ${media.mobile}) {
+    left: -165px;
+  }
 `;
 
 export const RectangleWrapper = styled(Rectangle)`
@@ -132,5 +142,8 @@ export const SquareWrapper = styled(Square)`
   }
   @media only screen and (max-width: ${media.tablet}) {
     left: -785px;
+  }
+  @media only screen and (max-width: ${media.mobile}) {
+    left: -945px;
   }
 `;

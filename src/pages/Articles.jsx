@@ -9,10 +9,17 @@ import { Grid, Row } from 'react-flexbox-grid';
 import Contact from '../components/Contact';
 import { ArticleCard } from '../components/Articles';
 import { BreadcrumbsItem, BreadcrumbsStateless } from '@atlaskit/breadcrumbs';
+import { media } from '../components/Common/media';
+import useWindowSize from '../hooks/useWindowSize';
 
 const WrapperContent = styled.div`
   margin-bottom: 300px;
   width: 80%;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    width: 100%;
+    padding-top: 30px;
+  }
 
   & > div {
     margin-bottom: 20px;
@@ -21,6 +28,8 @@ const WrapperContent = styled.div`
 
 const Articles = ({ theme }) => {
   const [data, loading] = useArticles();
+  const size = useWindowSize();
+
   return (
     <Grid>
       <Helmet>
@@ -29,7 +38,7 @@ const Articles = ({ theme }) => {
       {loading && <LoadingView theme={theme} />}
       <Header theme={theme}>
         <MenuBar theme={theme} />
-        <Background theme={theme} />
+        <Background size={300} theme={theme} />
         <ContentTitle theme={theme}>
           <h1>Articles</h1>
           <p>
@@ -47,7 +56,9 @@ const Articles = ({ theme }) => {
 
         <Row>
           {data.articles.length > 0 &&
-            data.articles.map(article => <ArticleCard mini={false} key={article.slug} data={article} />)}
+            data.articles.map(article => (
+              <ArticleCard mini={size.isMobile} key={article.slug} data={article} />
+            ))}
         </Row>
       </WrapperContent>
 

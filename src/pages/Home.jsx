@@ -45,14 +45,14 @@ const Home = ({ theme }) => {
       {loading && <LoadingView theme={theme} />}
       <Grid>
         <ResponsiveParallaxLayer offset={parallaxPages.header} speed={0.2}>
-          <Header photo={true} theme={theme}>
+          <Header className="home" photo={true} theme={theme}>
             <ProfileInfo />
           </Header>
         </ResponsiveParallaxLayer>
         <ResponsiveParallaxLayer offset={parallaxPages.aboutMe} speed={0.8}>
           <AboutMe theme={theme} />
         </ResponsiveParallaxLayer>
-        <ResponsiveParallaxLayer offset={parallaxPages.expertise} speed={0.3}>
+        <ResponsiveParallaxLayer offset={parallaxPages.expertise} speed={0.9}>
           <Expertise theme={theme} />
         </ResponsiveParallaxLayer>
         <ResponsiveParallaxLayer offset={parallaxPages.articles} speed={0.8}>
@@ -63,7 +63,7 @@ const Home = ({ theme }) => {
         </ResponsiveParallaxLayer>
       </Grid>
       {!isNotMobile && (
-        <MobileBackground>
+        <MobileBackground theme={theme}>
           <div />
         </MobileBackground>
       )}

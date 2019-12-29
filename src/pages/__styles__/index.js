@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import { DARK_COLOR } from '../../components/Theme';
 import { Col } from 'react-flexbox-grid';
+import { media } from '../../components/Common/media';
 
 export const ResponsiveParallaxLayer = styled(ParallaxLayer)`
   width: inherit !important;
@@ -19,6 +20,7 @@ export const LoadingWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 1000000;
 
   & > svg {
     margin-bottom: 50px;
@@ -34,20 +36,31 @@ export const MenuBar = styled.div`
   width: 200vw;
   height: 85px;
   margin-left: -100vw;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
   animation: slide-in-right 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    width: 200vw;
+    height: 55px;
+    margin-left: -99vw;
+    z-index: 10;
+  }
 `;
 
 export const Background = styled.div`
   position: absolute;
   z-index: -120;
   background: ${props => (props.theme === 'dark' ? '#ffd700' : 'aliceblue')};
-  top: 80px;
+  top: 85px;
   left: 0;
   width: 200vw;
-  height: 320px;
+  height: ${props => (props.size ? `${props.size}px` : '320px')};
   margin-left: -100vw;
   animation: slide-in-right 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @media only screen and (max-width: ${media.mobile}) {
+    z-index: 100;
+    margin-left: -50vw;
+    top: 55px;
 `;
 
 export const ContentTitle = styled.div`
@@ -60,6 +73,12 @@ export const ContentTitle = styled.div`
   animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   color: ${DARK_COLOR} !important;
   margin-bottom: 10px;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    z-index: 120;
+    width: 92%;
+    margin-top: -15px;
+  }
 
   h1 {
     margin-bottom: 20px;
@@ -114,7 +133,10 @@ export const MobileBackground = styled.div`
   z-index: -10000000;
 
   & > div {
-    background-image: linear-gradient(180deg, rgba(0, 18, 32, 0.1) 0%, rgba(0, 18, 32, 0.9) 100%);
+    background-image: ${props =>
+      props.theme === 'light'
+        ? 'linear-gradient(180deg,rgba(255,255,255,.1) 0%,rgba(255,255,255,1) 60%)'
+        : 'linear-gradient(180deg, rgba(0, 18, 32, 0.1) 0%, rgba(0, 18, 32, 0.9) 100%)'};
     position: absolute;
     width: 100vw;
     height: 104vh;

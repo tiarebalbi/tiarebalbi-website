@@ -20,6 +20,15 @@ export const Wrapper = styled.div`
     padding-right: 20px;
   }
 
+  @media only screen and (max-width: ${media.mobile}) {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100vw;
+    height: 100vw;
+    margin-left: -30px;
+    flex-direction: column;
+  }
+
   b {
     font-weight: bold;
   }
@@ -32,6 +41,11 @@ export const Wrapper = styled.div`
       @media only screen and (max-width: ${media.desktopXS}) {
         --size: 320px;
         margin-top: 35px;
+      }
+      @media only screen and (max-width: ${media.mobile}) {
+        --size: 180px;
+        margin-top: 35px;
+        margin-bottom: 30px;
       }
 
       --size: 380px;
@@ -72,6 +86,10 @@ export const SquareWrapper = styled(Square)`
   left: -1050px;
   width: auto;
   z-index: -90;
+  @media only screen and (max-width: ${media.mobile}) {
+    top: -390px;
+    left: 210px;
+  }
 `;
 
 export const TopDotWrapper = styled(Dots)`
@@ -81,6 +99,11 @@ export const TopDotWrapper = styled(Dots)`
   width: auto;
   z-index: -1;
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    top: -70px;
+    left: 100px;
+  }
 `;
 
 export const CircleOneWrapper = styled(CircleOne)`

@@ -4,7 +4,7 @@ import Menu from './Menu';
 import { media } from '../Common/media';
 
 const Wrapper = styled.header`
-  min-height: 380px;
+  min-height: 180px;
   position: relative;
   z-index: 1000;
   display: flex;
@@ -18,14 +18,21 @@ const Wrapper = styled.header`
 
   @media only screen and (max-width: ${media.mobile}) {
     width: 101vw;
-    height: 90vh;
+    min-height: 200px;
     margin-left: -31px;
+    margin-bottom: 60px;
+
+    &.home {
+      width: 101vw;
+      height: 85vh;
+      margin-left: -31px;
+    }
   }
 `;
 
-const Header = ({ theme, children, photo }) => {
+const Header = ({ theme, children, photo, className }) => {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Menu photo={photo} theme={theme} />
       {children}
     </Wrapper>

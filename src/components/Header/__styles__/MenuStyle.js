@@ -36,7 +36,7 @@ export const NavItem = styled.li`
 
   a,
   button {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.3);
     font-family: 'Oxygen', sans-serif !important;
     border: none;
     font-size: 16px;
@@ -60,8 +60,8 @@ export const TopDotWrapper = styled(Dots)`
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
 
   @media only screen and (max-width: ${media.mobile}) {
-    top: 10%;
-    left: -110px;
+    top: 75px;
+    left: 280px;
   }
 `;
 export const BottomDotWrapper = styled(Dots)`
@@ -98,7 +98,7 @@ export const SquareWrapper = styled(Square)`
 
 export const RootWrapper = styled.div`
   padding-top: 17px !important;
-  z-index: 100;
+  z-index: 110;
 `;
 
 export const ProfileImage = styled.div`
@@ -156,4 +156,22 @@ export const MobileRowWrapper = styled(Row)`
   margin-left: -17px !important;
   margin-top: -17px;
   padding: 7px 20px 5px;
+
+  & > div.col-xs-8 {
+    text-align: right;
+    padding-top: 11px;
+
+    a {
+      text-align: right;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 20px;
+      border-radius: 30px;
+
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
 `;

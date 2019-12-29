@@ -5,7 +5,6 @@ const LogoIcon = props => {
   const fillColor = theme === 'light' ? '#001220' : '#fff';
   const width = props.width ? props.width : 50;
   const height = props.height ? props.height : 40;
-
   return (
     <svg width={width} height={height} viewBox="0 0 50 40" {...props}>
       <defs>

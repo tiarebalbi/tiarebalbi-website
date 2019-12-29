@@ -1,10 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { mediaNumber } from '../components/Common/media';
 
 const useWindowSize = () => {
   const getSize = useCallback(() => {
     return {
       width: window.innerWidth,
       height: window.innerHeight,
+      isMobile: window.innerWidth <= mediaNumber.mobile,
+      isTablet: window.innerWidth > mediaNumber.mobile && window.innerWidth <= mediaNumber.tablet,
     };
   }, []);
 

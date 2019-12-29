@@ -5,6 +5,8 @@ import { Col, Row } from 'react-flexbox-grid';
 import { DARK_COLOR, SECONDARY_COLOR } from '../Theme';
 import FullCircle from '../../resources/components/FullCircle';
 import Dots from '../../resources/components/Dots';
+import { media } from '../Common/media';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const Wrapper = styled.div`
   min-height: 200px;
@@ -13,6 +15,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 120px;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    width: 100vw;
+    margin-left: -26px;
+    padding: 190px 20px 20px;
+  }
 
   & > h1 {
     text-align: center;
@@ -26,6 +34,10 @@ const Wrapper = styled.div`
     text-align: center;
     width: 30%;
     margin: auto auto 50px;
+
+    @media only screen and (max-width: ${media.mobile}) {
+      width: 80%;
+    }
   }
 `;
 
@@ -79,6 +91,11 @@ const CircleWrapper = styled(FullCircle)`
   bottom: -270px;
   right: -270px;
   animation: slide-in-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    bottom: -70px;
+    right: -370px;
+  }
 `;
 const DotWrapper = styled(Dots)`
   position: absolute;
@@ -87,11 +104,15 @@ const DotWrapper = styled(Dots)`
   width: auto;
   z-index: -1;
   animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+  @media only screen and (max-width: ${media.mobile}) {
+    top: 390px;
+    right: -92px;
+  }
 `;
 
 export const ArticleCard = ({ data, mini = false }) => {
   return (
-    <ColWrapper mini={mini.toString()} md={4}>
+    <ColWrapper mini={mini.toString()} xs={12} md={6} lg={4}>
       <div style={{ background: `url(${data.image}) no-repeat top center`, backgroundSize: 'cover' }}>
         <div className="details">
           <span>{data.category}</span>
@@ -107,11 +128,21 @@ export const ArticleCard = ({ data, mini = false }) => {
 };
 
 const Articles = ({ theme, loading, data, title, mini = false, style }) => {
+  const size = useWindowSize();
+
+  const mobile = size.isMobile;
+  const isMini = mini || mobile;
+
+  const showBigTitle = !mini || mobile;
+
+  const fillColor =
+    size.isMobile && theme === 'light' ? '#e5e5e5' : theme === 'dark' ? SECONDARY_COLOR : DARK_COLOR;
+
   return (
     <Wrapper style={style}>
-      {!mini && <h1>{title || 'Articles'}</h1>}
-      {mini && <h2 style={{ marginBottom: 20 }}>{title || 'Articles'}</h2>}
-      {!mini && (
+      {showBigTitle && <h1>{title || 'Articles'}</h1>}
+      {!showBigTitle && <h2 style={{ marginBottom: 20 }}>{title || 'Articles'}</h2>}
+      {showBigTitle && (
         <p>
           In this section, I will include things that I have been studying or problems that I had to fix. The
           main goal is to share what I have learned.
@@ -125,9 +156,9 @@ const Articles = ({ theme, loading, data, title, mini = false, style }) => {
         )}
         {!loading &&
           data?.length > 0 &&
-          data?.map(article => <ArticleCard mini={mini} key={article.slug} data={article} />)}
+          data?.map(article => <ArticleCard mini={isMini} key={article.slug} data={article} />)}
       </Row>
-      <CircleWrapper color={theme === 'dark' ? SECONDARY_COLOR : DARK_COLOR} />
+      <CircleWrapper color={fillColor} />
       <DotWrapper theme={theme} />
     </Wrapper>
   );

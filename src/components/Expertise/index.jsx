@@ -16,6 +16,12 @@ const Wrapper = styled.div`
   justify-items: center;
   align-items: center;
 
+  @media only screen and (max-width: ${media.mobile}) {
+    width: 100vw;
+    min-height: 100vh;
+    margin-left: -26px;
+  }
+
   & > h1 {
     text-align: center;
     font-size: 60px;
@@ -27,6 +33,10 @@ const Wrapper = styled.div`
     text-align: center;
     width: 30%;
     margin-bottom: 50px;
+    @media only screen and (max-width: ${media.mobile}) {
+      width: 80%;
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -54,6 +64,15 @@ const Card = styled.div`
   }
   @media only screen and (max-width: ${media.tablet}) {
     height: 350px;
+  }
+
+  @media only screen and (max-width: ${media.mobile}) {
+    height: 300px;
+    margin-bottom: 20px;
+
+    &.space {
+      margin-top: 0 !important;
+    }
   }
 
   &.space {
@@ -87,7 +106,7 @@ const Expertise = () => (
       life.{' '}
     </p>
     <RowWrapper>
-      <Col xs={4}>
+      <Col xs={12} md={4}>
         <Card className="space">
           <Icon01 />
           <h1>Software Development</h1>
@@ -97,7 +116,7 @@ const Expertise = () => (
           </p>
         </Card>
       </Col>
-      <Col xs={4}>
+      <Col xs={12} md={4}>
         <Card>
           <Icon02 />
           <h1>Design Experience</h1>
@@ -107,7 +126,7 @@ const Expertise = () => (
           </p>
         </Card>
       </Col>
-      <Col xs={4}>
+      <Col xs={12} md={4}>
         <Card className="space">
           <Icon03 />
           <h1>Mobile</h1>
