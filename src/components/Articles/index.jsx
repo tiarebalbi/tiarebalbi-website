@@ -1,0 +1,167 @@
+import * as React from 'react';
+import Spinner from '@atlaskit/spinner';
+import styled from 'styled-components';
+import { Col, Row } from 'react-flexbox-grid';
+import { DARK_COLOR, SECONDARY_COLOR } from '../Theme';
+import FullCircle from '../../resources/components/FullCircle';
+import Dots from '../../resources/components/Dots';
+import { media } from '../Common/media';
+import useWindowSize from '../../hooks/useWindowSize';
+
+const Wrapper = styled.div`
+  min-height: 200px;
+  position: relative;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120px;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    width: 100vw;
+    margin-left: -26px;
+    padding: 190px 20px 20px;
+  }
+
+  & > h1 {
+    text-align: center;
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 80px;
+    margin-bottom: 12px;
+  }
+
+  & > p {
+    text-align: center;
+    width: 30%;
+    margin: auto auto 50px;
+
+    @media only screen and (max-width: ${media.mobile}) {
+      width: 80%;
+    }
+  }
+`;
+
+const ColWrapper = styled(Col)`
+  & > div {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 18px;
+    color: #6d7783;
+    margin-bottom: 50px;
+    height: ${props => (props.mini === 'true' ? '210px' : '512px')};
+    background-size: cover;
+    width: 100%;
+    position: relative;
+
+    & > .details {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 80%;
+      min-height: 50px;
+      padding: 20px;
+      background: #fff;
+      text-align: right;
+
+      & > span {
+        font-size: 10px;
+        color: #3873a6;
+        text-transform: uppercase;
+      }
+
+      & > h1 {
+        font-size: 16px;
+        font-weight: bold;
+        color: ${DARK_COLOR} !important;
+        margin-bottom: 20px;
+        margin-top: 10px !important;
+      }
+      & > p {
+        font-size: 14px;
+        font-weight: bold;
+        color: #5b5c5d !important;
+        margin-bottom: 20px;
+      }
+    }
+  }
+`;
+
+const CircleWrapper = styled(FullCircle)`
+  z-index: -2;
+  position: absolute;
+  bottom: -270px;
+  right: -270px;
+  animation: slide-in-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+
+  @media only screen and (max-width: ${media.mobile}) {
+    bottom: -70px;
+    right: -370px;
+  }
+`;
+const DotWrapper = styled(Dots)`
+  position: absolute;
+  bottom: -162px;
+  right: -157px;
+  width: auto;
+  z-index: -1;
+  animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+  @media only screen and (max-width: ${media.mobile}) {
+    top: 390px;
+    right: -92px;
+  }
+`;
+
+export const ArticleCard = ({ data, mini = false }) => {
+  return (
+    <ColWrapper mini={mini.toString()} xs={12} md={6} lg={4}>
+      <div style={{ background: `url(${data.image}) no-repeat top center`, backgroundSize: 'cover' }}>
+        <div className="details">
+          <span>{data.category}</span>
+          <h1>{data.title}</h1>
+          {!mini && <p>{data.slogan}</p>}
+          <a href={`/article/${data.slug}`} aria-label={data.title}>
+            Read more
+          </a>
+        </div>
+      </div>
+    </ColWrapper>
+  );
+};
+
+const Articles = ({ theme, loading, data, title, mini = false, style }) => {
+  const size = useWindowSize();
+
+  const mobile = size.isMobile;
+  const isMini = mini || mobile;
+
+  const showBigTitle = !mini || mobile;
+
+  const fillColor =
+    size.isMobile && theme === 'light' ? '#e5e5e5' : theme === 'dark' ? SECONDARY_COLOR : DARK_COLOR;
+
+  return (
+    <Wrapper style={style}>
+      {showBigTitle && <h1>{title || 'Articles'}</h1>}
+      {!showBigTitle && <h2 style={{ marginBottom: 20 }}>{title || 'Articles'}</h2>}
+      {showBigTitle && (
+        <p>
+          In this section, I will include things that I have been studying or problems that I had to fix. The
+          main goal is to share what I have learned.
+        </p>
+      )}
+      <Row className="cards">
+        {loading && (
+          <Col xs={12} style={{ textAlign: 'center' }}>
+            <Spinner invertColor={theme === 'dark'} size="large" />
+          </Col>
+        )}
+        {!loading &&
+          data?.length > 0 &&
+          data?.map(article => <ArticleCard mini={isMini} key={article.slug} data={article} />)}
+      </Row>
+      <CircleWrapper color={fillColor} />
+      <DotWrapper theme={theme} />
+    </Wrapper>
+  );
+};
+
+export default Articles;

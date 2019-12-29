@@ -1,29 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'lazysizes/lazysizes';
-import Loadable from 'react-loadable';
-import Routes from './routes';
-import { HelmetProvider } from 'react-helmet-async';
-import { Router } from 'react-router';
-import { history } from './helpers/history';
-import * as serviceWorker from './helpers/serviceWorker';
+import * as React from 'react';
+import { render } from 'react-dom';
+import * as serviceWorker from './serviceWorker';
+import '@atlaskit/css-reset/dist/bundle.css';
 
-const app = (
-  <HelmetProvider>
-    <Router history={history}>
-      <Routes />
-    </Router>
-  </HelmetProvider>
-);
+import App from './containers/App';
 
-function render() {
-  return ReactDOM.render(app, document.querySelector('#root'));
-}
+const rootElement = document.getElementById('root');
+render(<App />, rootElement);
 
-Loadable.preloadReady()
-  .then(render)
-  .catch(err => {
-    console.error(err);
-  });
 
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register();
