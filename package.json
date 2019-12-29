@@ -1,8 +1,14 @@
 {
-  "name": "tiarebalbi-website",
-  "version": "2.0.1",
+  "name": "@tiarebalbi/tiarebalbi-website",
+  "version": "2.0.0",
   "homepage": "https://tiarebalbi.com",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "build"
+  ],
   "dependencies": {
     "@atlaskit/breadcrumbs": "^9.2.4",
     "@atlaskit/css-reset": "^5.0.9",
