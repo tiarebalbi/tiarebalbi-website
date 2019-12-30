@@ -3,7 +3,7 @@
 - Architectural Fitness Function
 - Weekly Update
 - https://images.unsplash.com/photo-1526634027863-aacf61c59cae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80
-- The beginning, in this post, I will describe the idea of fitness functions and how this I will use it to categorize the content of this site.
+- The beginning, in this post, I will describe the idea of fitness functions and how it will be used to categorize the content of this site.
 
 ---
 
