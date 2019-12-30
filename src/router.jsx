@@ -1,9 +1,27 @@
 import * as React from 'react';
+import Loadable from 'react-loadable';
 import { Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Articles from './pages/Articles';
-import ArticleViewer from './pages/ArticleViewer';
-import NotFound from './pages/NotFound';
+import LoadingView from './components/Common/LoadingView';
+
+const Home = Loadable({
+  loader: () => import('./pages/Home'),
+  loading: LoadingView,
+});
+
+const Articles = Loadable({
+  loader: () => import('./pages/Articles'),
+  loading: LoadingView,
+});
+
+const ArticleViewer = Loadable({
+  loader: () => import('./pages/ArticleViewer'),
+  loading: LoadingView,
+});
+
+const NotFound = Loadable({
+  loader: () => import('./pages/NotFound'),
+  loading: LoadingView,
+});
 
 export default ({ theme }) => (
   <Switch>

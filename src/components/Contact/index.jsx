@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import EditorSuccessIcon from '@atlaskit/icon/glyph/editor/success';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
-import { colors } from '@atlaskit/theme';
 import Spinner from '@atlaskit/spinner';
 import { DotWrapper, RectangleWrapper, SquareWrapper, Wrapper } from './__styles__';
 import Footer from '../Footer';
@@ -41,8 +40,9 @@ const Contact = ({ theme }) => {
       <div className="card">
         <p>Fell free to contact me and say hi!</p>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label>
+          <label htmlFor="name">
             <input
+              id="name"
               placeholder="Your name"
               type="text"
               ref={register({
@@ -51,8 +51,9 @@ const Contact = ({ theme }) => {
               name="name"
             />
           </label>
-          <label>
+          <label htmlFor="email">
             <input
+              id="email"
               placeholder="Your e-mail"
               type="email"
               name="email"
@@ -65,8 +66,9 @@ const Contact = ({ theme }) => {
               })}
             />
           </label>
-          <label>
+          <label htmlFor="message">
             <textarea
+              id="message"
               ref={register({
                 required: 'The message is required',
               })}
@@ -85,7 +87,7 @@ const Contact = ({ theme }) => {
           {Object.entries(errors).map(element => (
             <Flag
               appearance="error"
-              icon={<ErrorIcon label="Error" secondaryColor={colors.R400} />}
+              icon={<ErrorIcon label="Error" secondaryColor="#DE350B" />}
               id="error"
               key="error"
               title={element[1].message}
@@ -97,7 +99,7 @@ const Contact = ({ theme }) => {
         <FlagGroup>
           <Flag
             appearance="success"
-            icon={<EditorSuccessIcon label="success" secondaryColor={colors.G50} />}
+            icon={<EditorSuccessIcon label="success" secondaryColor="#E3FCEF" />}
             id="success"
             key="success"
             title="Thanks! I will get in contact with you soon!"
