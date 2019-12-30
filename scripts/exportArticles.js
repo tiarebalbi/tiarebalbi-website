@@ -107,7 +107,7 @@ function getSlug(file) {
 
 async function getContent(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
-  const regex = /!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/g;
+  const regex = /!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>".*")?\)/g;
   let m;
 
   while ((m = regex.exec(content)) !== null) {
