@@ -59,7 +59,7 @@ fs.readdir(folder, function(err, files) {
   files.forEach(async function(file) {
     const slug = getSlug(file);
     const filePath = getFilePath(file);
-    const content = getContent(filePath);
+    const content = await getContent(filePath);
     const image = await getImage(content, slug);
     const title = getTitle(content);
     const category = getCategory(content);
@@ -100,11 +100,34 @@ function getSlug(file) {
   return file
     .replace('.md', '')
     .replace(/\d+/, '')
-    .replace('_', '');
+    .replace('_', '')
+    .toLowerCase();
 }
 
-function getContent(filePath) {
-  return fs.readFileSync(filePath, 'utf8');
+async function getContent(filePath) {
+  let content = fs.readFileSync(filePath, 'utf8');
+  const regex = /!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/g;
+  let m;
+
+  while ((m = regex.exec(content)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex++;
+    }
+
+    if (m.length > 1) {
+      const url = m[1];
+      const name = path.basename(url);
+      const newFilePath = `${imagesDir}/${name}`.toLowerCase();
+
+      console.log(`Found match, group ${url} ${name}`);
+      downloadImage(url, newFilePath, name);
+
+      content = content.replace(url, `${pathPublicImages}/${name}`.toLowerCase());
+    }
+  }
+
+  return content;
 }
 
 function getFilePath(file) {
@@ -123,23 +146,18 @@ function getSlogan(content) {
   return content.split('\n')[5].replace(LINE_START, '');
 }
 
+
 async function getImage(content, slug) {
   const imageUrl = content.split('\n')[4].replace(LINE_START, '');
   const format = path.extname(imageUrl);
 
   const imageName = `${slug}-profile${format}`;
-  const newFilePath = `${imagesDir}/${imageName}`;
+  const newFilePath = `${imagesDir}/${imageName}`.toLowerCase();
 
   // Run the module.
-  Jimp.read(imageUrl, (err, img) => {
-    if (err) throw err;
-    img
-      .resize(1200, Jimp.AUTO) // resize
-      .quality(60) // set JPEG quality
-      .write(newFilePath); // save
-  }).then(() => console.log('File completed', imageName));
+  downloadImage(imageUrl, newFilePath, imageName);
 
-  return `${pathPublicImages}/${imageName}`;
+  return `${pathPublicImages}/${imageName}`.toLowerCase();
 }
 
 function getMarkdown(content, slug) {
@@ -160,4 +178,14 @@ function getMarkdown(content, slug) {
   fs.writeFileSync(mdName, newContent);
 
   return `/md/${fileName}`;
+}
+
+function downloadImage(imageUrl, newFilePath, imageName) {
+  Jimp.read(imageUrl, (err, img) => {
+    if (err) throw err;
+    img
+      .resize(1200, Jimp.AUTO) // resize
+      .quality(60) // set JPEG quality
+      .write(newFilePath); // save
+  }).then(() => console.log('File completed', imageName));
 }

@@ -19,7 +19,7 @@ Today I found this project, which I believe to be the first step forward to this
 
 **Cloudstate's** reference implementation is leveraging [Knative](https://cloud.google.com/knative/), [gRPC](https://grpc.io/), [Akka Cluster](https://doc.akka.io/docs/akka/current/index-cluster.html), and [GraalVM](https://www.graalvm.org/) running on [Kubernetes](https://kubernetes.io/), allowing applications to not only scale efficiently but to manage distributed state reliably at scale while maintaining its global or local level of data consistency, opening up for a whole range of new addressable use-cases.
 
-![Sample](https://media.licdn.com/dms/image/C5612AQHkLLpqT0Skvw/article-inline_image-shrink_1500_2232/0?e=1582761600&v=beta&t=ayGS4vZkFVzaT6fs_lulufiFSGhU6Z1J6E3DG44Uxpc)
+![Sample](/images/d/0?e=1582761600&v=beta&t=aygs4vzkfvzat6fs_lulufifsghu6z1j6e3dg44uxpc)
 
 Managing a distributed state isn't just about pushing data from A to B in a reliable fashion. It's about selecting a model that reflects the real-world use of the data, and its convergence on usable consistency, not artificially enforced consistency. Being able to have data span clusters, data centers, availability zones, and continents, and maintain a useful coherent state is something that the combination of Kubernetes and Akka excel at. Additionally, repetitive work that is better executed in the stateful cluster, or needs to maintain long-running state can be embedded via command channels.
 
