@@ -121,7 +121,7 @@ const Expertise = () => (
           <Icon02 />
           <h1>Design Experience</h1>
           <p>
-            A good friend of mine once told me, “Your customers won't care about how good and power your
+            A good friend of mine once told me, “Your customers won't care about how good and powerful your
             software is if the final product is not useful”, usability matter.
           </p>
         </Card>
