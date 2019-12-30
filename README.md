@@ -1,11 +1,7 @@
 # Tiarê Balbi Bonamini - Landing Page
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8ca10db0-9c46-42e2-a1f2-54198f4fdd08/deploy-status)](https://app.netlify.com/sites/tiarebalbi/deploys)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=alert_status)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=code_smells)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tiarebalbi_tiarebalbi-website&metric=security_rating)](https://sonarcloud.io/dashboard?id=tiarebalbi_tiarebalbi-website)
+[![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
 
 Proud Software Engineer based in Dublin, Ireland. 
 Working with software development since 2006 had the chance to work 
