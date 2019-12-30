@@ -1,11 +1,12 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import styled, { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ErrorHandler from '../components/Common/ErrorHandler';
+import { Helmet } from 'react-helmet/es/Helmet';
 import { DARK_COLOR, darkModeTheme, GlobalStyles, lightModeTheme } from '../components/Theme';
 import { useDarkMode } from '../hooks/useDarkMode';
 import Routes from '../router';
-import { Helmet } from 'react-helmet/es/Helmet';
+import LoadingView from '../components/Common/LoadingView';
 
 const RootWrapper = styled.div`
   display: flex;
@@ -23,6 +24,11 @@ const RotateDevice = styled.div`
   height: 100vh;
   overflow: hidden;
 `;
+
+const ErrorHandler = Loadable({
+  loader: () => import('../components/Common/ErrorHandler'),
+  loading: LoadingView,
+});
 
 const App = () => {
   const [theme] = useDarkMode();

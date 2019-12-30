@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { colors } from '@atlaskit/theme';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import { Col, Grid } from 'react-flexbox-grid';
@@ -20,7 +19,7 @@ const ErrorDetails = ({ error, theme }) => (
       <FlagGroup>
         <Flag
           appearance="error"
-          icon={<ErrorIcon label="Error" secondaryColor={colors.R400} />}
+          icon={<ErrorIcon label="Error" secondaryColor="#DE350B" />}
           id="error"
           key="error"
           title="Ops! Something went wrong..."
