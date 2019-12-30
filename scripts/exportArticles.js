@@ -3,6 +3,7 @@ const fs = require('fs');
 const Jimp = require('jimp');
 const chalk = require('chalk');
 const log = console.log;
+const crypto = require('crypto');
 
 /**
  * Script to extract details of a markdown to prepare file to be used as the source of an article.
@@ -118,12 +119,17 @@ async function getContent(filePath) {
     if (m.length > 1) {
       const url = m[1];
       const name = path.basename(url);
-      const newFilePath = `${imagesDir}/${name}`.toLowerCase();
+      const hash = crypto
+        .createHash('md5')
+        .update(name)
+        .digest('hex');
+
+      const newFilePath = `${imagesDir}/${hash}`.toLowerCase();
 
       console.log(`Found match, group ${url} ${name}`);
       downloadImage(url, newFilePath, name);
 
-      content = content.replace(url, `${pathPublicImages}/${name}`.toLowerCase());
+      content = content.replace(url, `${pathPublicImages}/${hash}`.toLowerCase());
     }
   }
 
@@ -146,18 +152,21 @@ function getSlogan(content) {
   return content.split('\n')[5].replace(LINE_START, '');
 }
 
-
 async function getImage(content, slug) {
   const imageUrl = content.split('\n')[4].replace(LINE_START, '');
   const format = path.extname(imageUrl);
 
   const imageName = `${slug}-profile${format}`;
-  const newFilePath = `${imagesDir}/${imageName}`.toLowerCase();
+  const hash = crypto
+    .createHash('md5')
+    .update(imageName)
+    .digest('hex');
+  const newFilePath = `${imagesDir}/${hash}`.toLowerCase();
 
   // Run the module.
   downloadImage(imageUrl, newFilePath, imageName);
 
-  return `${pathPublicImages}/${imageName}`.toLowerCase();
+  return `${pathPublicImages}/${hash}`.toLowerCase();
 }
 
 function getMarkdown(content, slug) {

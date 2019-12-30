@@ -6,20 +6,20 @@ Fitness Functions are used in a Genetic algorithm to assess how close a design s
 
 One of the main aspects of the fitness function is to protect the architectural characteristics required by a system. The specific architectural requirements diverge significantly across systems and organizations, based on business drivers, technical capabilities, and a host of other factors. Some software requires heightened security; others require significant throughput or low latency, whereas some might need to be more resilient to failure. These considerations form the "-ilities" (or system qualities) that architects care about. Conceptually, an architectural fitness function embodies a protection mechanism for the "-ilities" of a given system.
 
-![Building Evolutionary Architectures](/images/d/screen-shot-2019-12-30-at-8-04-38-pm.png)
+![Building Evolutionary Architectures](/images/d/9f21f989402306adfa0fb6dc0b60d8bd)
 
-| Some of the **"-ilities"**:                              |
-|------------------|----------------------|----------------|
-| accessibility    | credibility          | modifiability  |
-| accountability   | dependability        | modularity     |
-| accuracy         | deployability        | portability    |
-| adaptability     | discoverability      | recoverability |
-| administrability | distributability     | relevance      |
-| affordability    | durability           | resilience     |
-| auditability     | effectiveness        | robustness     |
-| availability     | efficiency           | scalability    |
-| compatibility    | failure transparency | testability    |
-| configurability  | flexibility          | usability      |
+| Some of the **"-ilities"**: |
+| --------------------------- |
+| accessibility               | credibility | modifiability |
+| accountability              | dependability | modularity |
+| accuracy                    | deployability | portability |
+| adaptability                | discoverability | recoverability |
+| administrability            | distributability | relevance |
+| affordability               | durability | resilience |
+| auditability                | effectiveness | robustness |
+| availability                | efficiency | scalability |
+| compatibility               | failure transparency | testability |
+| configurability             | flexibility | usability |
 
 See more [here](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
 
@@ -27,8 +27,8 @@ I strongly recommend everyone to read this book. The fitness function is just th
 
 From next week I will start with **resilience**, where I will dig in on techniques to increase the resilience of your software and how to monitor it.
 
-
 **Resources:**
+
 - https://en.wikipedia.org/wiki/Evolutionary_computation
 - https://www.thoughtworks.com/books/building-evolutionary-architectures
 - https://martinfowler.com/articles/evo-arch-forward.html
