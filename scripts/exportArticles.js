@@ -3,6 +3,7 @@ const fs = require('fs');
 const Jimp = require('jimp');
 const chalk = require('chalk');
 const log = console.log;
+const crypto = require('crypto');
 
 /**
  * Script to extract details of a markdown to prepare file to be used as the source of an article.
@@ -59,7 +60,7 @@ fs.readdir(folder, function(err, files) {
   files.forEach(async function(file) {
     const slug = getSlug(file);
     const filePath = getFilePath(file);
-    const content = getContent(filePath);
+    const content = await getContent(filePath);
     const image = await getImage(content, slug);
     const title = getTitle(content);
     const category = getCategory(content);
@@ -100,11 +101,39 @@ function getSlug(file) {
   return file
     .replace('.md', '')
     .replace(/\d+/, '')
-    .replace('_', '');
+    .replace('_', '')
+    .toLowerCase();
 }
 
-function getContent(filePath) {
-  return fs.readFileSync(filePath, 'utf8');
+async function getContent(filePath) {
+  let content = fs.readFileSync(filePath, 'utf8');
+  const regex = /!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>".*")?\)/g;
+  let m;
+
+  while ((m = regex.exec(content)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex++;
+    }
+
+    if (m.length > 1) {
+      const url = m[1];
+      const name = path.basename(url);
+      const hash = crypto
+        .createHash('md5')
+        .update(name)
+        .digest('hex');
+
+      const newFilePath = `${imagesDir}/${hash}`.toLowerCase();
+
+      console.log(`Found match, group ${url} ${name}`);
+      downloadImage(url, newFilePath, name);
+
+      content = content.replace(url, `${pathPublicImages}/${hash}`.toLowerCase());
+    }
+  }
+
+  return content;
 }
 
 function getFilePath(file) {
@@ -128,18 +157,16 @@ async function getImage(content, slug) {
   const format = path.extname(imageUrl);
 
   const imageName = `${slug}-profile${format}`;
-  const newFilePath = `${imagesDir}/${imageName}`;
+  const hash = crypto
+    .createHash('md5')
+    .update(imageName)
+    .digest('hex');
+  const newFilePath = `${imagesDir}/${hash}`.toLowerCase();
 
   // Run the module.
-  Jimp.read(imageUrl, (err, img) => {
-    if (err) throw err;
-    img
-      .resize(1200, Jimp.AUTO) // resize
-      .quality(60) // set JPEG quality
-      .write(newFilePath); // save
-  }).then(() => console.log('File completed', imageName));
+  downloadImage(imageUrl, newFilePath, imageName);
 
-  return `${pathPublicImages}/${imageName}`;
+  return `${pathPublicImages}/${hash}`.toLowerCase();
 }
 
 function getMarkdown(content, slug) {
@@ -160,4 +187,14 @@ function getMarkdown(content, slug) {
   fs.writeFileSync(mdName, newContent);
 
   return `/md/${fileName}`;
+}
+
+function downloadImage(imageUrl, newFilePath, imageName) {
+  Jimp.read(imageUrl, (err, img) => {
+    if (err) throw err;
+    img
+      .resize(1200, Jimp.AUTO) // resize
+      .quality(60) // set JPEG quality
+      .write(newFilePath); // save
+  }).then(() => console.log('File completed', imageName));
 }
