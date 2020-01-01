@@ -17,7 +17,7 @@ Let's start from the beginning, from the fitness function used in this post, **r
 
 The Circuit Breaker is an implementation via a finite state machine with three normal states: **CLOSED**, **OPEN** and **HALF_OPEN**, and two particular states, DISABLED and FORCED_OPEN.
 
-Circuit Breaker is not that hard to understand, I pretty sure you have seemed this before, let's think about the power adapter of your house if the circuit is close your light will be ON as the energy is going to through the cables, but once we change the state, opening the circuit, we break the energy connection so that meals the will be OFF because the energy is non-longer going though.
+Circuit Breaker is not that hard to understand, I pretty sure you have seemed this before, let's think about the power adapter of your house if the circuit is close your light will be ON as the energy is going to through the cables, but once we change the state, opening the circuit, we break the energy connection, so that means the will be OFF because the energy is non-longer going through the circuit.
 
 ![Circuit](https://kaiserscience.files.wordpress.com/2015/10/lit-bulb-circuit.gif)
 
@@ -29,6 +29,8 @@ Few things to noticed in this example:
 
 - Failure Rate Threshold: This configuration allows you to set the failure rate in percentage of when to change the state from CLOSED to OPEN (In this example, 40%).
 - Minimum Number Of Calls: This configuration determines the minimum number of calls required by the algorithm to start to calculate the failure rate (In this example, one request)
+
+List of variables for the configuration of your circuit breaker [available here](https://resilience4j.readme.io/docs/circuitbreaker).
 
 ```kotlin
 // Config

@@ -96,6 +96,11 @@ export const MarkdownContent = styled(Col)`
     width: 100%;
   }
 
+  a {
+    color: ${props => (props.theme === 'dark' ? '#ffd700' : '#126B1D')};
+    font-weight: bold;
+  }
+
   blockquote {
     border-left: 3px solid ${props => (props.theme === 'dark' ? '#ccc' : '#333')};
     color: ${props => (props.theme === 'dark' ? '#fff' : DARK_COLOR)};

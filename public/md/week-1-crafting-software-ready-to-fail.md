@@ -1,24 +1,27 @@
-Let's start from the beginning, from the fitness function used in this post, reliability, what's software reliability?
-**Software Reliability** is the probability of failure-free software operation for a specified period in a specified environment. The idea of reliability comes from Computing Networking,  which explains as a way to notify whether the "sender" was able to deliver data to a recipient successfully or not. Applying this idea to fundaments of software architecture brings us a broader concept, which covers four different areas, maturity, availability, fault tolerance, and recoverability that I will be covering in this post. To exemplify and for me to learn something new, I will use a library called Resilience4j.
+Let's start from the beginning, from the fitness function used in this post, **reliability**, **what's software reliability**?
+
+**Software Reliability** is the probability of failure-free software operation for a specified period in a specified environment. The idea of reliability comes from Computing Networking, which explains as a way to notify whether the "sender" was able to deliver data to a recipient successfully or not. Applying this idea to fundaments of software architecture brings us a broader concept, which covers four different areas, maturity, availability, fault tolerance, and recoverability that I will be covering in this post. To exemplify and for me to learn something new, I will use a library called Resilience4j.
 
 **Resilience4j** is a lightweight fault tolerance library inspired by Netflix Hystrix but designed for Java 8 and functional programming, which provides higher-order functions to enhance any functional interface, lambda expression, or method reference with a Circuit Breaker, Rate Limiter, Retry or Bulkhead.
 
 ## CircuitBreaker
-The Circuit Breaker is an implementation via a finite state machine with three normal states: CLOSED, OPEN and HALF_OPEN, and two particular states, DISABLED and FORCED_OPEN.
 
-Circuit Breaker is not that hard to understand, I pretty sure you have seemed this before, let's think about the power adapter of your house if the circuit is close your light will be ON as the energy is going to through the cables, but once we change the state, opening the circuit, we break the energy connection so that meals the will be OFF because the energy is non-longer going though.
+The Circuit Breaker is an implementation via a finite state machine with three normal states: **CLOSED**, **OPEN** and **HALF_OPEN**, and two particular states, DISABLED and FORCED_OPEN.
+
+Circuit Breaker is not that hard to understand, I pretty sure you have seemed this before, let's think about the power adapter of your house if the circuit is close your light will be ON as the energy is going to through the cables, but once we change the state, opening the circuit, we break the energy connection, so that means the will be OFF because the energy is non-longer going through the circuit.
 
 ![Circuit](/images/d/9ace7a46923b9d1dca5a2c59270355a4.gif)
 
 This behavior is the same for software development ( with extra configuration ), but you may be asking yourself how you would use this during the development of software? Would you prefer to keep failing an HTTP request since you already know the server is off? But not just that, what about if you want to introduce a fallback plan? If the server is off, I would like to store the details in a database, queue mechanism, or log file to process the request later. These are the kind of things once you introduce a circuit breaker to your code you will be able to do.
 
-![Circuit 2](/images/d/a3557c1f83a00f8603a56cbb7529853f.gif)
-
-To exemplify this pattern, I created a simple example that consists of an API client calling a URL multiple times,  to demo the circuit breaker, I added a fake error to the API client code to fail the request after some time.
+To exemplify this pattern, I created a simple example that consists of an API client calling a URL multiple times, to demo the circuit breaker, I added a fake error to the API client code to fail the request after some time.
 
 Few things to noticed in this example:
+
 - Failure Rate Threshold: This configuration allows you to set the failure rate in percentage of when to change the state from CLOSED to OPEN (In this example, 40%).
 - Minimum Number Of Calls: This configuration determines the minimum number of calls required by the algorithm to start to calculate the failure rate (In this example, one request)
+
+Full list of properties/configuration available [here](https://resilience4j.readme.io/docs/circuitbreaker).
 
 ```kotlin
 // Config
@@ -30,7 +33,7 @@ val overwrittenConfig = CircuitBreakerConfig
     .minimumNumberOfCalls(1)
     .build()
 
-// Default Circuit Breaker Registry 
+// Default Circuit Breaker Registry
 val circuitBreakerRegistry = CircuitBreakerRegistry.of(overwrittenConfig)
 
 // Init
@@ -72,8 +75,10 @@ In the output, you can see the requests one and two succeeding with no problem, 
 
 The code above is just a simple example of what you can do. Resilience4j offers support for a high range of frameworks. To not keep this post too big, I will break it up, and next week I will go over Bulkhead. In the meanwhile, let me know what do you think about this post.
 
-**Source code is available here:** 
+**Source code is available here:**
+
 - https://github.com/tiarebalbi/resilience4j-demo
 
 **Resources:**
+
 - https://github.com/resilience4j/resilience4j
