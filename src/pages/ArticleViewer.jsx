@@ -66,7 +66,7 @@ const ArticleViewer = ({ theme }) => {
       {article?.related?.length >= 3 && (
         <Articles
           style={{ marginBottom: 300 }}
-          title="Related Articles"
+          title="Previous Posts"
           mini={true}
           theme={theme}
           data={article.related}
