@@ -1,3 +1,5 @@
+/*global hljs*/
+
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Lozenge from '@atlaskit/lozenge';
@@ -16,6 +18,10 @@ import Button from '../components/Common/Button';
 const ArticleViewer = ({ theme }) => {
   const { slug } = useParams();
   const [article, loading] = useArticle(slug);
+
+  document.querySelectorAll('code').forEach(block => {
+    hljs.highlightBlock(block);
+  });
 
   return (
     <Grid>
@@ -55,11 +61,12 @@ const ArticleViewer = ({ theme }) => {
           </Lozenge>
         )}
         <ReactMarkdown source={article?.content} />
+        <div id="commento" />
       </MarkdownContent>
-      {article?.related?.length >= 3 && (
+      {article?.related?.length >= 2 && (
         <Articles
           style={{ marginBottom: 300 }}
-          title="Related Articles"
+          title="Previous Posts"
           mini={true}
           theme={theme}
           data={article.related}

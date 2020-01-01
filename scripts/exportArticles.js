@@ -4,6 +4,7 @@ const Jimp = require('jimp');
 const chalk = require('chalk');
 const log = console.log;
 const crypto = require('crypto');
+const request = require('request');
 
 /**
  * Script to extract details of a markdown to prepare file to be used as the source of an article.
@@ -119,17 +120,25 @@ async function getContent(filePath) {
     if (m.length > 1) {
       const url = m[1];
       const name = path.basename(url);
+      const format = path.extname(url);
       const hash = crypto
         .createHash('md5')
         .update(name)
         .digest('hex');
 
-      const newFilePath = `${imagesDir}/${hash}`.toLowerCase();
+      console.log(`Found match, group ${url} ${name} ${format}`);
+      let newFilePath = `${imagesDir}/${hash}`.toLowerCase();
+      let destinationName = `${pathPublicImages}/${hash}`.toLowerCase();
 
-      console.log(`Found match, group ${url} ${name}`);
-      downloadImage(url, newFilePath, name);
+      if (format === '.gif') {
+        newFilePath = `${newFilePath}.gif`;
+        destinationName = `${destinationName}.gif`;
+        await request(url).pipe(fs.createWriteStream(newFilePath));
+      } else {
+        downloadImage(url, newFilePath, name);
+      }
 
-      content = content.replace(url, `${pathPublicImages}/${hash}`.toLowerCase());
+      content = content.replace(url, destinationName);
     }
   }
 

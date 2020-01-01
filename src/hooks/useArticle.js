@@ -18,10 +18,7 @@ const useArticle = slug => {
         const content = await response.text();
 
         const definition = data.articles.find(item => item.slug === slug);
-        const related = data.articles
-          .filter(item => item.slug !== slug)
-          .filter(item => item.category !== definition.category)
-          .splice(0, 3);
+        const related = data.articles.filter(item => item.slug !== slug).splice(0, 3);
 
         if (definition === undefined) {
         }
