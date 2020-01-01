@@ -63,7 +63,7 @@ const ArticleViewer = ({ theme }) => {
         <ReactMarkdown source={article?.content} />
         <div id="commento" />
       </MarkdownContent>
-      {article?.related?.length >= 3 && (
+      {article?.related?.length >= 2 && (
         <Articles
           style={{ marginBottom: 300 }}
           title="Previous Posts"
