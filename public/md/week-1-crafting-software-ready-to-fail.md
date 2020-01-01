@@ -21,7 +21,7 @@ Few things to noticed in this example:
 - Failure Rate Threshold: This configuration allows you to set the failure rate in percentage of when to change the state from CLOSED to OPEN (In this example, 40%).
 - Minimum Number Of Calls: This configuration determines the minimum number of calls required by the algorithm to start to calculate the failure rate (In this example, one request)
 
-Full list of properties/configuration available [here](https://resilience4j.readme.io/docs/circuitbreaker).
+List of variables for the configuration of your circuit breaker [available here](https://resilience4j.readme.io/docs/circuitbreaker).
 
 ```kotlin
 // Config
