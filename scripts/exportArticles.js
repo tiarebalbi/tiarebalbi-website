@@ -5,6 +5,7 @@ const chalk = require('chalk');
 const log = console.log;
 const crypto = require('crypto');
 const request = require('request');
+const builder = require('xmlbuilder');
 
 /**
  * Script to extract details of a markdown to prepare file to be used as the source of an article.
@@ -33,12 +34,14 @@ const articlesFolder = '../src/resources/articles';
 const imageBuildFolder = `../public${pathPublicImages}`;
 const markdownBuildFolder = `../public/md`;
 const outputFileName = `../public/articles.json`;
+const sitemapLocation = `../public/sitemap.xml`;
 const LINE_START = '- ';
 
 const folder = path.join(__dirname, articlesFolder);
 const imagesDir = path.join(__dirname, imageBuildFolder);
 const markdownDir = path.join(__dirname, markdownBuildFolder);
 const outputFile = path.join(__dirname, outputFileName);
+const sitemapFile = path.join(__dirname, sitemapLocation);
 
 const articles = [];
 
@@ -57,7 +60,7 @@ fs.readdir(folder, function(err, files) {
     return console.log('Unable to scan directory: ' + err);
   }
 
-  //listing all files using forEach
+  // Listing all files using forEach
   files.forEach(async function(file) {
     const slug = getSlug(file);
     const filePath = getFilePath(file);
@@ -86,6 +89,8 @@ fs.readdir(folder, function(err, files) {
     log(chalk.bold('Total of Lines'), chalk.white.bgBlue(content.split('\n').length));
     log('Def:', definition);
     log(`------------`);
+    // Create sitemap
+    createSitemap(articles);
 
     fs.writeFileSync(
       outputFile,
@@ -95,6 +100,8 @@ fs.readdir(folder, function(err, files) {
       }),
     );
   });
+
+
 });
 
 // Functions
@@ -206,4 +213,41 @@ function downloadImage(imageUrl, newFilePath, imageName) {
       .quality(60) // set JPEG quality
       .write(newFilePath); // save
   }).then(() => console.log('File completed', imageName));
+}
+
+function createSitemap(articles, domain = 'https://tiarebalbi.com') {
+  const xml = builder
+    .create('urlset', { version: '1.0', encoding: 'UTF-8', standalone: true })
+    .att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+    .att('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+    .att(
+      'xsi:schemaLocation',
+      'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd',
+    );
+
+  const staticMapping = [domain, `${domain}/articles`];
+
+  staticMapping.forEach(url => {
+    createElement(xml, url, 1);
+  });
+
+  articles.forEach(article => {
+    createElement(xml, `${domain}/article/${article.slug}`, 0.5);
+  });
+
+  fs.writeFileSync(sitemapFile, xml.end({ pretty: true }));
+}
+
+function createElement(xml, url, priority = 1) {
+  return xml
+    .ele('url')
+      .ele('loc', {}, url)
+      .up()
+      .ele('lastmod', {}, new Date().toISOString().substring(0, 10))
+      .up()
+      .ele('changefreq', {}, 'daily')
+      .up()
+      .ele('priority', {}, priority)
+      .up()
+    .up();
 }
