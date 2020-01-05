@@ -19,9 +19,9 @@ jobs:
       - run: yarn build
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Deploy on Zeit - Prod
-        uses: actions/zeit-now@master
-        env:
-          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+      - uses: amondnet/now-deployment@v1
         with:
-          args: --prod
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          zeit-token: ${{ secrets.ZEIT_TOKEN }}
+          zeit-team-id: tiare
+          now-args: '--prod'
