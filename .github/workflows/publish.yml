@@ -19,9 +19,3 @@ jobs:
       - run: yarn build
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - uses: amondnet/now-deployment@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          zeit-token: ${{ secrets.ZEIT_TOKEN }}
-          zeit-team-id: tiare
-          now-args: '--prod'
