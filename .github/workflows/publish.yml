@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: "12.x"
       - run: yarn
-      - run: yarn ci
+      - run: yarn build
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
