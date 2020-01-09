@@ -9,14 +9,14 @@ To implement the bulkhead pattern, we need to make sure that all our services wo
 ![Bulkhead resources](/images/d/878761a7d761a94888d4ff5810d491a5)
 
 #### What problems are we fixing?
-Propagation of Failure, because solutions are contained and do not share resources (storage, synchronous service-to-service calls, etc.), their associated failures are contained and do not propagate.
-Noisy Neighbors: If appropriately implemented, network, storage, and compute segmentation ensure that abnormally large resource utilization by a service does not affect other services outside of the bulkhead (fault isolation zone).
-Unusual Demand: The bulkhead protects other resources from services experiencing unpredicted or unexpected demand. Other resources do not suffer from TCP port saturation, resulting in database deterioration, etc.
+- Propagation of Failure, because solutions are contained and do not share resources (storage, synchronous service-to-service calls, etc.), their associated failures are contained and do not propagate.
+- Noisy Neighbors: If appropriately implemented, network, storage, and compute segmentation ensure that abnormally large resource utilization by a service does not affect other services outside of the bulkhead (fault isolation zone).
+- Unusual Demand: The bulkhead protects other resources from services experiencing unpredicted or unexpected demand. Other resources do not suffer from TCP port saturation, resulting in database deterioration, etc.
 
 #### When should I use this pattern? 
-Scale a service independent of other services;
-Fault isolation duo to a variety of risks or availability requirements;
-Isolate geographies for increased speed/reduced latency such that distant solutions do not share or communicate and thereby slow response times;
+- Scale a service independent of other services;
+- Fault isolation duo to a variety of risks or availability requirements;
+- Isolate geographies for increased speed/reduced latency such that distant solutions do not share or communicate and thereby slow response times;
 
 ## Resilience4j Bulkhead
 Resilience4j provides two implementations of a bulkhead pattern that is used to limit the number of concurrent execution:
@@ -39,7 +39,7 @@ To exemplify this concept, I will be using the idea of a bank where the operatio
 - Each operation can take up to 3 seconds to process
 - The bank can process only one transaction at a time.
 
-To implement the requirement above, I will use the Spring Boot framework, where I will have one controller and one service, the controller will receive the request via API request, and the service will handle the logic for the bank transactions. 
+To implement the requirement above, I will use the Spring Boot framework, where I will have one controller and one service, the controller to receive the request, and the service to process the logic for the bank transactions. 
 
 Let's start from the configuration, Resilience4j provide us a flexible way to configure the allocation resource per "service" (our bulk name) where you can set the number of concurrent calls and max wait time (the time a thread should be blocked for when attempting to enter a saturated bulkhead).
 
@@ -87,15 +87,15 @@ class BankService {
 ```
 
 
-Now with all configurations in place, I will send one request to get cash, and at the time I will try to make a deposit:
+Now with all configurations in place, I will try to process two transactions at the same time, one to get cash and another to make a deposit.
 
 ![Example](/images/d/567b765e85ab1124e650f8f42ad7bcef.gif)
 
-As you can see in the image above, we had an exception in the attempt to process the second request in parallel. 
+As you can see in the image above, we had an exception in the attempt to process the second request because the application received the second request before we finish the first one avoid us to make a mistake in the way to calculate the current balance of the user. 
 
 This is an excellent example of how you can limit the behavior of your application per section/area without affecting the rest of your software.
 
-Things you should ask yourself when implementing your software, is this acceptable to fail? If not, in the next post, I want to go over the idea of Retry.
+So far, we reviewed the idea of CircuitBreaker, which provides us an API to describe our fallback plan, and now we are examining the concept of the bulkhead, which allows us to isolate parts of our application. In the next post, I want to learn more about retries and see how this can help us to make our application more reliable.
 
 **Source code is available here:**
 
