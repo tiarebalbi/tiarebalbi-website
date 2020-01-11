@@ -43,7 +43,7 @@ const Paragraph = styled.p`
   line-height: 16px;
   margin-bottom: 25px;
   text-align: justify;
-  animation: slit-in-vertical 0.65s ease-out 1s both;
+  animation: slit-in-vertical 0.65s ease-out 0.1s both;
 `;
 
 const ExtraDetails = styled.ul`
@@ -51,7 +51,7 @@ const ExtraDetails = styled.ul`
   padding: 0;
 
   li {
-    animation: slit-in-vertical 0.85s ease-out 1.5s both;
+    animation: slit-in-vertical 0.85s ease-out 0.5s both;
     list-style: none;
     padding: 0;
     line-height: 23px;

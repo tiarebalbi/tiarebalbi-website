@@ -98,7 +98,7 @@ export const TopDotWrapper = styled(Dots)`
   left: -157px;
   width: auto;
   z-index: -1;
-  animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+  animation: flip-in-ver-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
 
   @media only screen and (max-width: ${media.mobile}) {
     top: -70px;
@@ -110,26 +110,26 @@ export const CircleOneWrapper = styled(CircleOne)`
   position: absolute;
   top: -60px;
   left: 30px;
-  animation: rotate-scale-up 0.65s linear 1s both;
+  animation: rotate-scale-up 0.65s linear 0.3s both;
 `;
 
 export const CircleTwoWrapper = styled(CircleTwo)`
   position: absolute;
   top: 10px;
   left: -60px;
-  animation: rotate-scale-up 0.65s linear 1.4s both;
+  animation: rotate-scale-up 0.65s linear 0.4s both;
 `;
 
 export const RectangleWrapper = styled(Rectangle)`
   position: absolute;
   top: 190px;
   left: 0;
-  animation: rotate-scale-up 0.65s linear 1.8s both;
+  animation: rotate-scale-up 0.65s linear 0.8s both;
 `;
 
 export const OvalWrapper = styled(Oval)`
   position: absolute;
   bottom: -120px;
   left: 290px;
-  animation: rotate-scale-up 0.65s linear 2.2s both;
+  animation: rotate-scale-up 0.65s linear 1.2s both;
 `;

@@ -1,26 +1,22 @@
 import * as React from 'react';
-import Loadable from 'react-loadable';
+import loadable from '@loadable/component';
 import { Route, Switch } from 'react-router-dom';
 import LoadingView from './components/Common/LoadingView';
 
-const Home = Loadable({
-  loader: () => import('./pages/Home'),
-  loading: LoadingView,
+const Home = loadable(() => import('./pages/Home'), {
+  fallback: LoadingView,
 });
 
-const Articles = Loadable({
-  loader: () => import('./pages/Articles'),
-  loading: LoadingView,
+const Articles = loadable(() => import('./pages/Articles'), {
+  fallback: LoadingView,
 });
 
-const ArticleViewer = Loadable({
-  loader: () => import('./pages/ArticleViewer'),
-  loading: LoadingView,
+const ArticleViewer = loadable(() => import('./pages/ArticleViewer'), {
+  fallback: LoadingView,
 });
 
-const NotFound = Loadable({
-  loader: () => import('./pages/NotFound'),
-  loading: LoadingView,
+const NotFound = loadable(() => import('./pages/NotFound'), {
+  fallback: LoadingView,
 });
 
 export default ({ theme }) => (
