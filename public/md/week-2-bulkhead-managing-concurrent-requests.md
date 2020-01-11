@@ -1,4 +1,4 @@
-This week I will be covering the Bulkhead implementation of the Resilience4j. Let's start reviewing why I should use and how does it work.
+This week I will be covering the Bulkhead implementation of the Resilience4j. Let’s start reviewing why it should be used and how it works.
 
 A bulkhead is a fault tolerance pattern that allows you to allocate a limit volume of resources to a specific part of your code, eliminating the ability of one component failure to take down adjacent healthy components.
 
@@ -17,7 +17,7 @@ To implement the bulkhead pattern, we need to make sure that all our services wo
 #### When should I use this pattern?
 
 - Scale a service independent of other services;
-- Fault isolation duo to a variety of risks or availability requirements;
+- Fault isolation due to a variety of risks or availability requirements;
 - Isolate geographies for increased speed/reduced latency such that distant solutions do not share or communicate and thereby slow response times;
 
 ## Resilience4j Bulkhead
@@ -30,7 +30,7 @@ A way to lock resources so that it is guaranteed that while a piece of code is e
 
 ### FixedThreadPoolBulkhead
 
-FixedThreadPoolBulkhead is an implementation based in a thread pool, where each request will be submitted to a service that goes to the bulkhead thread pool, which can process your request if the is thread pool is free or queue if your capacity is below the limit, but If the queue is full and the thread is busy, the request will be rejected.
+FixedThreadPoolBulkhead is an implementation based in a thread pool, where each request will be submitted to a service that goes to the bulkhead thread pool, which will process the request if the thread pool is free or the queue capabity is below the limit. If the queue is full and the current thread is busy, the request will be rejected.
 
 ## Example
 

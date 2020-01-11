@@ -1,5 +1,5 @@
 import React from 'react';
-import Loadable from 'react-loadable';
+import loadable from '@loadable/component';
 import styled, { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet/es/Helmet';
@@ -25,9 +25,8 @@ const RotateDevice = styled.div`
   overflow: hidden;
 `;
 
-const ErrorHandler = Loadable({
-  loader: () => import('../components/Common/ErrorHandler'),
-  loading: LoadingView,
+const ErrorHandler = loadable(() => import('../components/Common/ErrorHandler'), {
+  fallback: LoadingView,
 });
 
 const App = () => {

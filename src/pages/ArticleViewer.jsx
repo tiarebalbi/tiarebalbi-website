@@ -1,6 +1,5 @@
-/*global hljs*/
-
 import * as React from 'react';
+import hljs from 'highlight.js/lib/index';
 import ReactMarkdown from 'react-markdown';
 import Lozenge from '@atlaskit/lozenge';
 import { BreadcrumbsItem, BreadcrumbsStateless } from '@atlaskit/breadcrumbs';
@@ -18,7 +17,7 @@ import Button from '../components/Common/Button';
 const ArticleViewer = ({ theme }) => {
   const { slug } = useParams();
   const [article, loading] = useArticle(slug);
-
+  // const hljs = loadable.lib(() => import('highlight.js/lib/index'));
   document.querySelectorAll('code').forEach(block => {
     hljs.highlightBlock(block);
   });
@@ -32,7 +31,6 @@ const ArticleViewer = ({ theme }) => {
       {loading && <LoadingView theme={theme} />}
 
       {(article.content && article?.content?.indexOf('<!DOCTYPE html>')) >= 0 && <Redirect to="/not-found" />}
-
       <Header theme={theme}>
         <MenuBar theme={theme} />
         <Background theme={theme} />

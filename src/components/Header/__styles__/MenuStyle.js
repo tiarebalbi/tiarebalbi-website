@@ -108,7 +108,7 @@ export const ProfileImage = styled.div`
   }
 
   --size: 320px;
-  animation: roll-in-blurred-right 0.65s cubic-bezier(0.23, 1, 0.32, 1) 1.3s both;
+  animation: roll-in-blurred-right 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
   box-shadow: 40px 2px 80px 0 rgba(0, 0, 0, 0.5);
   position: absolute;
   background: url('/images/profile-1.jpg') no-repeat top center;
@@ -125,28 +125,28 @@ export const CircleOneWrapper = styled(CircleOne)`
   position: absolute;
   top: 370px;
   right: 20px;
-  animation: rotate-scale-up 0.65s linear 1s both;
+  animation: rotate-scale-up 0.65s linear 0.3s both;
 `;
 
 export const CircleTwoWrapper = styled(CircleTwo)`
   position: absolute;
   top: 190px;
   right: 220px;
-  animation: rotate-scale-up 0.65s linear 1.4s both;
+  animation: rotate-scale-up 0.65s linear 0.4s both;
 `;
 
 export const RectangleWrapper = styled(Rectangle)`
   position: absolute;
   top: 190px;
   right: 0;
-  animation: rotate-scale-up 0.65s linear 1.8s both;
+  animation: rotate-scale-up 0.65s linear 0.8s both;
 `;
 
 export const OvalWrapper = styled(Oval)`
   position: absolute;
   top: 90px;
   right: 10px;
-  animation: rotate-scale-up 0.65s linear 2.2s both;
+  animation: rotate-scale-up 0.65s linear 0.8s both;
 `;
 
 export const MobileRowWrapper = styled(Row)`
