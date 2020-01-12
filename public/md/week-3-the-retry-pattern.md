@@ -8,7 +8,7 @@ Here is a diagrammatic representation of the retry pattern:
 
 As you can see in the flow, we start by trying to connect to the service. If the service is available, we execute the relevant function, and if everything is OK, we return. If the service is not available or throws some specific exception, we put it under the retry logic. We retry for the configured number of times at a set interval, and if the execution still doesn't succeed, we abort the execution.
 
-With this idea in mind, let's see how the Resilience4j library works.  Start from the configuration, the retry implementation provides us two ways to configure our registry, a default policy that will be used by all service or a specific setting per service that will override the properties defined in the default policy.
+With this idea in mind, let's see how the Resilience4j library works. Start from the configuration, the retry implementation provides us two ways to configure our registry, a default policy that will be used by all service or a specific setting per service that will override the properties defined in the default policy.
 
 Using the builder interface, you can configure:
 
@@ -42,6 +42,7 @@ resilience4j.retry:
       ignoreExceptions:
         - com.tiarebalbi.resilience.retry.BankTransactionException
 ```
+
 In this configuration, our default policy will have attempt the retry operation only two times with a delay of 300 milliseconds between each request. However, for the bankService, I'm setting three attempts with 3 seconds between each request with an extra configuration, the ignoreExceptions, which will skip the retry operation if this exception occurs.
 
 Now to enable this configuration in our code, we need to add the annotation **@Retry**. Notice that when adding the annotation to a method or class, you have the option to define a fallback method that will be executed in case the retry does not "fix" the problem.
@@ -84,13 +85,13 @@ class BankService {
     }
 }
 ```
+
 Now let's do a test, remembering that the initial balance of the user is 1.000€. In the gif below, you will see the following operations:
 
 - Withdraw an amount higher than my current balance. Needs to be rejected.
 - In parallel:
-    - Deposit of 400€
-    - Withdraw of 1.400€
-
+  - Deposit of 400€
+  - Withdraw of 1.400€
 
 ![Demo](/images/d/e86bceb1daab8af0590b0ab8bad4c62e.gif)
 
@@ -98,31 +99,32 @@ Here's the list of events that our retry service was able to collect (I won't ge
 
 ```json
 {
-   "retryEvents":[
-      {
-         "retryName":"bankService",
-         "type":"IGNORED_ERROR",
-         "creationTime":"2020-01-12T08:29:11.368Z[Europe/Dublin]",
-         "errorMessage":"com.tiarebalbi.resilience.retry.BankTransactionException: No balance for this transaction",
-         "numberOfAttempts":0
-      },
-      {
-         "retryName":"bankService",
-         "type":"RETRY",
-         "creationTime":"2020-01-12T08:29:14.801Z[Europe/Dublin]",
-         "errorMessage":"io.github.resilience4j.bulkhead.BulkheadFullException: Bulkhead 'bankService' is full and does not permit further calls",
-         "numberOfAttempts":1
-      },
-      {
-         "retryName":"bankService",
-         "type":"SUCCESS",
-         "creationTime":"2020-01-12T08:29:19.313Z[Europe/Dublin]",
-         "errorMessage":"io.github.resilience4j.bulkhead.BulkheadFullException: Bulkhead 'bankService' is full and does not permit further calls",
-         "numberOfAttempts":1
-      }
-   ]
+  "retryEvents": [
+    {
+      "retryName": "bankService",
+      "type": "IGNORED_ERROR",
+      "creationTime": "2020-01-12T08:29:11.368Z[Europe/Dublin]",
+      "errorMessage": "com.tiarebalbi.resilience.retry.BankTransactionException: No balance for this transaction",
+      "numberOfAttempts": 0
+    },
+    {
+      "retryName": "bankService",
+      "type": "RETRY",
+      "creationTime": "2020-01-12T08:29:14.801Z[Europe/Dublin]",
+      "errorMessage": "io.github.resilience4j.bulkhead.BulkheadFullException: Bulkhead 'bankService' is full and does not permit further calls",
+      "numberOfAttempts": 1
+    },
+    {
+      "retryName": "bankService",
+      "type": "SUCCESS",
+      "creationTime": "2020-01-12T08:29:19.313Z[Europe/Dublin]",
+      "errorMessage": "io.github.resilience4j.bulkhead.BulkheadFullException: Bulkhead 'bankService' is full and does not permit further calls",
+      "numberOfAttempts": 1
+    }
+  ]
 }
 ```
+
 In the list of events, you can see that the first request was automatically ignored as the exception is listed in our property "ignoredExceptions" and the following requested we had to retry the operation once as the deposit was in progress.
 
 The retry operation won't fix all your problems, but it will provide you different ways to plan how your method should work, make your software much safer.
