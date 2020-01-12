@@ -24,14 +24,20 @@ const ArticleViewer = ({ theme }) => {
 
   return (
     <Grid>
-      <Helmet>
-        <title>{article?.definition?.title}</title>
-        <meta name="description" content={article?.definition?.slogan} />
-      </Helmet>
       {loading && <LoadingView theme={theme} />}
 
       {(article.content && article?.content?.indexOf('<!DOCTYPE html>')) >= 0 && <Redirect to="/not-found" />}
       <Header theme={theme}>
+        <Helmet>
+          <title>{article?.definition?.title}</title>
+          <meta name="description" content={article?.definition?.slogan} />
+          <meta property="og:title" content={article?.definition?.title} />
+          <meta property="og:type" content="article" />
+          <meta property="og:description" content={article?.definition?.slogan} />
+          <meta property="og:url" content={`https://tiarebalbi.com/article/${slug}`} />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:image" content={article?.definition?.image} />
+        </Helmet>
         <MenuBar theme={theme} />
         <Background theme={theme} />
         <ContentTitle theme={theme}>
