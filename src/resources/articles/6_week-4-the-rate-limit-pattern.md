@@ -179,4 +179,4 @@ Now, It is on you to decide what you want, as you can see this provides you a lo
 
 The integration with the **RateLimit** is not complicated; the most important part here is for you to understand what your restrictions are and how do you want to handle it, which brings us back to to the idea of [Fitness Functions](https://tiarebalbi.com/article/architectural-fitness-function), which one has priority over the other, [scalability](https://en.wikipedia.org/wiki/Scalability), [resilience](<https://en.wikipedia.org/wiki/Resilience_(network)>) or [safety](https://en.wikipedia.org/wiki/Safety)?
 
-Make your priority clean and go **build your software**!
+Make your priority clear and go **build your software**!
