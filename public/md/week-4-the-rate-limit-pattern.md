@@ -14,8 +14,9 @@ In a business context, the rate-limiting can be used as a profit-and-cost-negati
 Now let's review the Resilience4j. To exemplify this pattern, I am going to use an API to fetch the stock details of specific companies.
 
 In this implementation, we have 3 configurations available:
+
 - timeoutDuration: The time each request waits for permission;
-- limitRefreshPeriod:  The period used to limit the volume of requests, for example, if I want to limit 100 requests for every 2 seconds the value of this property is 2s;
+- limitRefreshPeriod: The period used to limit the volume of requests, for example, if I want to limit 100 requests for every 2 seconds the value of this property is 2s;
 - limitForPeriod: Number of requests available during one limit refresh period.
 
 For our example, we want to restrict 100 requests per second into our API, adding a timeout duration of 50ms.
@@ -52,10 +53,12 @@ class StockRestController(private val stockData: List<Stock>) {
 ```
 
 ### Demo
+
 To test this example, I am going to use a library called [loadtest](https://www.npmjs.com/package/loadtest) that will help me to excessed the limits defined.
 
 #### Case 1
-- Summary:  No delay between each request
+
+- Summary: No delay between each request
 - Number of requests: 1000
 - Concurrent requests: 40
 - Time duration: 0ms
@@ -91,7 +94,7 @@ In this case, you can see a short response time, but with a high number volume o
 
 #### Case 2
 
-- Summary:  Adding a delay between requesting the permission
+- Summary: Adding a delay between requesting the permission
 - Number of requests: 1000
 - Concurrent requests: 40
 - Time duration: 50ms
@@ -165,6 +168,6 @@ In this case, we have a low number of requests rejected, but with high throughpu
 
 Now, It is on you to decide what you want, as you can see this provides you a long list of options for you to plan your resources.
 
-The integration with the **RateLimit** is not complicated; the most important part here is for you to understand what your restrictions are and how do you want to handle it, which brings us back to to the idea of [Fitness Functions](https://tiarebalbi.com/article/architectural-fitness-function), which one has priority over the other, [scalability](https://en.wikipedia.org/wiki/Scalability), [resilience](https://en.wikipedia.org/wiki/Resilience_(network)) or [safety](https://en.wikipedia.org/wiki/Safety)? 
+The integration with the **RateLimit** is not complicated; the most important part here is for you to understand what your restrictions are and how do you want to handle it, which brings us back to to the idea of [Fitness Functions](https://tiarebalbi.com/article/architectural-fitness-function), which one has priority over the other, [scalability](https://en.wikipedia.org/wiki/Scalability), [resilience](<https://en.wikipedia.org/wiki/Resilience_(network)>) or [safety](https://en.wikipedia.org/wiki/Safety)?
 
 Make your priority clean and go **build your software**!
