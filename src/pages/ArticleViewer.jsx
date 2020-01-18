@@ -17,7 +17,6 @@ import Button from '../components/Common/Button';
 const ArticleViewer = ({ theme }) => {
   const { slug } = useParams();
   const [article, loading] = useArticle(slug);
-  // const hljs = loadable.lib(() => import('highlight.js/lib/index'));
   document.querySelectorAll('code').forEach(block => {
     hljs.highlightBlock(block);
   });
@@ -64,7 +63,7 @@ const ArticleViewer = ({ theme }) => {
             {article?.definition?.category}
           </Lozenge>
         )}
-        <ReactMarkdown source={article?.content} />
+        <ReactMarkdown sourcePos={true} linkTarget="_blank" source={article?.content} />
         <div id="commento" />
       </MarkdownContent>
       {article?.related?.length >= 2 && (
