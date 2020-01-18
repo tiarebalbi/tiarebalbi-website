@@ -51,7 +51,8 @@
     "start": "yarn package && react-scripts start",
     "build": "yarn package && react-scripts build",
     "test": "yarn package && react-scripts test",
-    "ci": "yarn test --watchAll=false"
+    "ci": "yarn test --watchAll=false",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": "react-app"
