@@ -122,10 +122,10 @@ export const MarkdownContent = styled(Col)`
 
 export const ImageArticle = styled.div`
   width: inherit;
-  background: url(${props => props.image}) no-repeat top center / cover;
   height: 200px;
   margin-top: 20px;
   margin-bottom: 30px;
+  background: url(${props => props.image}) no-repeat 50% 50% / cover;
 `;
 
 export const MobileBackground = styled.div`

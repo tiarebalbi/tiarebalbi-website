@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import useLoading from './useLoading';
 
 const useArticles = (limit = 0) => {
-  const ENDPOINT = '/articles.json';
   const [data, setData] = useState({
     error: undefined,
     articles: [],
@@ -15,6 +14,7 @@ const useArticles = (limit = 0) => {
       setLoading(true);
 
       try {
+        const ENDPOINT = '/articles.json?cacheId=' + new Date().getTime();
         const response = await fetch(ENDPOINT);
         const content = await response.json();
         const articles = limit > 0 ? content.articles.slice(0, limit) : content.articles;

@@ -25,7 +25,7 @@ For more details [check this page](https://resilience4j.readme.io/docs/retry)
 
 Now it's time for us to put our hands on. I want to continue from the example that [I created last week](https://tiarebalbi.com/article/week-2-bulkhead-managing-concurrent-requests) where we were handling two bank transactions, one to get cash and another one to deposit an amount into our account. What we noticed in the previous example was that if I had two transactions happening at the same time, the second one was going to fail. Today I want to fix this problem.
 
-To fix this problem, I want to add a retry operation that will repeat the operation three times, but between each of them, I want to add a delay of 10 seconds, so let's see how the configuration is going to looks like:
+To fix this problem, I want to add a retry operation that will repeat the operation three times, but between each of them, I want to add a delay of 3 seconds, so let's see how the configuration is going to looks like:
 
 ```yaml
 resilience4j.retry:
@@ -127,7 +127,7 @@ Here's the list of events that our retry service was able to collect (I won't ge
 
 In the list of events, you can see that the first request was automatically ignored as the exception is listed in our property "ignoredExceptions" and the following requested we had to retry the operation once as the deposit was in progress.
 
-The retry operation won't fix all your problems, but it will provide you different ways to plan how your method should work, make your software much safer.
+The retry operation won't fix all your problems, but it will help you to provide different ways to plan how your method should work in case of failure, making your software much safer.
 
 Next week I want to cover RateLimit. How can we limit the number of requests in a shared API?
 
