@@ -21,6 +21,11 @@ const ArticleViewer = ({ theme }) => {
     hljs.highlightBlock(block);
   });
 
+  window.__OG_TITLE__ = article?.definition?.title;
+  window.__OG_DESCRIPTION__ = article?.definition?.slogan;
+  window.__OG_IMAGE__ = `https://tiarebalbi.com${article?.definition?.image}`;
+  window.__OG_URL__ = `https://tiarebalbi.com/article/${slug}`;
+
   return (
     <Grid>
       {loading && <LoadingView theme={theme} />}
@@ -30,12 +35,6 @@ const ArticleViewer = ({ theme }) => {
         <Helmet>
           <title>{article?.definition?.title}</title>
           <meta name="description" content={article?.definition?.slogan} />
-          <meta property="og:title" content={article?.definition?.title} />
-          <meta property="og:type" content="article" />
-          <meta property="og:description" content={article?.definition?.slogan} />
-          <meta property="og:url" content={`https://tiarebalbi.com/article/${slug}`} />
-          <meta property="og:locale" content="en_US" />
-          <meta property="og:image" content={article?.definition?.image} />
         </Helmet>
         <MenuBar theme={theme} />
         <Background theme={theme} />
