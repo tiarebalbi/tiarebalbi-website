@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://tiarebalbi.com</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/articles</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/article/week-4-the-rate-limit-pattern</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/article/week-3-the-retry-pattern</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/article/week-2-bulkhead-managing-concurrent-requests</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/article/architectural-fitness-function</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/article/the-future-of-serverless-computing</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tiarebalbi.com/article/week-1-circuitbreaker-with-resilience4j</loc>
-    <lastmod>2020-01-19</lastmod>
+    <lastmod>2020-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
