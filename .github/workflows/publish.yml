@@ -8,6 +8,23 @@ on:
     - cron: 0 3 * * 2
 
 jobs:
+  performance:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Running Page Speed Insights (Mobile)
+        uses: jakepartusch/psi-action@v1
+        id: psi-mobile
+        with:
+          url: "https://tiarebalbi.com"
+          threshold: 50
+          strategy: mobile
+      - name: Running Page Speed Insights (Desktop)
+        uses: jakepartusch/psi-action@v1
+        id: psi-desktop
+        with:
+          url: "https://tiarebalbi.com"
+          threshold: 70
+          strategy: desktop
   build-publish:
     runs-on: ubuntu-latest
     steps:
@@ -19,10 +36,8 @@ jobs:
       - run: yarn build
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Running Page Speed Insights
-        uses: jakepartusch/psi-action@v1
-        id: psi
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
         with:
-          url: "https://tiarebalbi.com"
-          threshold: 70
-          strategy: mobile
+          name: build
+          path: build
