@@ -1,5 +1,6 @@
 # Tiarê Balbi Bonamini - Landing Page
 
+![Publish](https://github.com/tiarebalbi/tiarebalbi-website/workflows/Publish/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8ca10db0-9c46-42e2-a1f2-54198f4fdd08/deploy-status)](https://app.netlify.com/sites/tiarebalbi/deploys)
 [![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
 
