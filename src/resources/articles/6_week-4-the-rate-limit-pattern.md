@@ -1,6 +1,6 @@
 # Definition
 
-- Week 4: The RateLimit pattern
+- The RateLimit pattern
 - Reliability
 - https://images.unsplash.com/photo-1516844113229-18646a422956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3449&q=80
 - By implementing rate limiting, developers are able to install a spigot which can be relaxed to allow for greater flow, or tightened to reduce the flow within the system.

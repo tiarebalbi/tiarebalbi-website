@@ -1,6 +1,6 @@
 # Definition
 
-- Week 03: The retry pattern
+- The retry pattern
 - Reliability
 - https://images.unsplash.com/photo-1527266237111-a4989d028b4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80
 - Improving the stability of the software by enabling a service consumer to handle anticipated, temporary failures of the service by retrying to invoke the same service operation.

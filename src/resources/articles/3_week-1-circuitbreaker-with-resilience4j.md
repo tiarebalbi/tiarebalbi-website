@@ -1,6 +1,6 @@
 # Definition
 
-- Week 01: CircuitBreaker with Resilience4j
+- CircuitBreaker with Resilience4j
 - Reliability
 - https://images.unsplash.com/photo-1446769357257-5aa1b1bfcd65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80
 - Eventually, it will happen. Instead of developing software to be bulletproof, let's build software that knows what to do in case of failure.

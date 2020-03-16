@@ -207,7 +207,7 @@ function getMarkdown(content, slug) {
 
 function downloadImage(imageUrl, newFilePath, imageName) {
   Jimp.read(imageUrl, (err, img) => {
-    if (err) throw err;
+    if (err) throw new Error(`File: ${imageUrl}: ${err.message}`);
     img
       .resize(1200, Jimp.AUTO) // resize
       .quality(60) // set JPEG quality
@@ -241,13 +241,13 @@ function createSitemap(articles, domain = 'https://tiarebalbi.com') {
 function createElement(xml, url, priority = 1) {
   return xml
     .ele('url')
-      .ele('loc', {}, url)
-      .up()
-      .ele('lastmod', {}, new Date().toISOString().substring(0, 10))
-      .up()
-      .ele('changefreq', {}, 'daily')
-      .up()
-      .ele('priority', {}, priority)
-      .up()
+    .ele('loc', {}, url)
+    .up()
+    .ele('lastmod', {}, new Date().toISOString().substring(0, 10))
+    .up()
+    .ele('changefreq', {}, 'daily')
+    .up()
+    .ele('priority', {}, priority)
+    .up()
     .up();
 }
