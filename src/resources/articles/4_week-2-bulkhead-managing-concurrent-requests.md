@@ -1,6 +1,6 @@
 # Definition
 
-- Week 02: Bulkhead, managing concurrent requests
+- Bulkhead, managing concurrent requests
 - Reliability
 - https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80
 - In a cargo ship, the bulkhead is a wall built between different cargo sections, which makes sure that a fire or flood in one part is restricted to that section.

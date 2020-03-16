@@ -2,7 +2,7 @@
 
 - The Future of Serverless Computing
 - Cloud Computing
-- https://media.licdn.com/dms/image/C5612AQHei0iAwH-3GA/article-cover_image-shrink_720_1280/0?e=1582761600&v=beta&t=ABRQlO1T6pS6TpMoqBhgCtXwl7tIBj72R6pfyUUlPMg
+- https://i.imgur.com/v1IW5O6.jpg
 - The idea of serverless always called my attention, one single function doing one simple thing in a short living state. In reality, serverless is more than just functions, it is a way to build software that can grow from day one with low cost (no events, no costs).
 
 ---
@@ -28,7 +28,7 @@ Today I found this project, which I believe to be the first step forward to this
 
 **Cloudstate's** reference implementation is leveraging [Knative](https://cloud.google.com/knative/), [gRPC](https://grpc.io/), [Akka Cluster](https://doc.akka.io/docs/akka/current/index-cluster.html), and [GraalVM](https://www.graalvm.org/) running on [Kubernetes](https://kubernetes.io/), allowing applications to not only scale efficiently but to manage distributed state reliably at scale while maintaining its global or local level of data consistency, opening up for a whole range of new addressable use-cases.
 
-![Sample](https://media.licdn.com/dms/image/C5612AQHkLLpqT0Skvw/article-inline_image-shrink_1500_2232/0?e=1582761600&v=beta&t=ayGS4vZkFVzaT6fs_lulufiFSGhU6Z1J6E3DG44Uxpc)
+![Sample](https://i.imgur.com/IcEaRXx.png)
 
 Managing a distributed state isn't just about pushing data from A to B in a reliable fashion. It's about selecting a model that reflects the real-world use of the data, and its convergence on usable consistency, not artificially enforced consistency. Being able to have data span clusters, data centers, availability zones, and continents, and maintain a useful coherent state is something that the combination of Kubernetes and Akka excel at. Additionally, repetitive work that is better executed in the stateful cluster, or needs to maintain long-running state can be embedded via command channels.
 
