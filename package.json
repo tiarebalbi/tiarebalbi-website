@@ -49,11 +49,11 @@
   "scripts": {
     "package": "node scripts/exportArticles.js",
     "sitemap": "node scripts/sitemap.js",
-    "start": "yarn package && react-scripts start",
-    "build": "yarn package && react-scripts build",
-    "test": "yarn package && react-scripts test",
+    "start": "npm run package && react-scripts start",
+    "build": "npm run package && react-scripts build",
+    "test": "npm run package && react-scripts test",
     "dev": "BROWSER=none react-scripts start",
-    "ci": "yarn test --watchAll=false"
+    "ci": "npm test --watchAll=false"
   },
   "eslintConfig": {
     "extends": "react-app"
