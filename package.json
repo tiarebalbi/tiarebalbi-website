@@ -50,7 +50,7 @@
     "package": "node scripts/exportArticles.js",
     "sitemap": "node scripts/sitemap.js",
     "start": "npm run package && react-scripts start",
-    "build": "npm run package && react-scripts build",
+    "build": "npm run package && react-scripts build -p",
     "test": "npm run package && react-scripts test",
     "dev": "BROWSER=none react-scripts start",
     "ci": "npm test --watchAll=false"
@@ -80,5 +80,8 @@
     "hooks": {
       "pre-commit": "yarn package && lint-staged"
     }
+  },
+  "devDependencies": {
+    "terser-brunch": "^4.0.0"
   }
 }
