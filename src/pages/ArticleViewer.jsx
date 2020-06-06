@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Lozenge from '@atlaskit/lozenge';
 import { BreadcrumbsItem, BreadcrumbsStateless } from '@atlaskit/breadcrumbs';
 import { Redirect, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet/es/Helmet';
+import { Helmet } from 'react-helmet';
 import useArticle from '../hooks/useArticle';
 import Header from '../components/Header';
 import { Grid } from 'react-flexbox-grid';
@@ -20,6 +20,9 @@ const ArticleViewer = ({ theme }) => {
   document.querySelectorAll('code').forEach(block => {
     hljs.highlightBlock(block);
   });
+
+  window.document.title = article?.definition?.title;
+  window.document.description = article?.definition?.slogan;
 
   window.__OG_TITLE__ = article?.definition?.title;
   window.__OG_DESCRIPTION__ = article?.definition?.slogan;
