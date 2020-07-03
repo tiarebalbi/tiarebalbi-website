@@ -16,7 +16,7 @@ jobs:
         id: psi-mobile
         with:
           url: "https://tiarebalbi.com"
-          threshold: 50
+          threshold: 30
           strategy: mobile
       - name: Running Page Speed Insights (Desktop)
         uses: jakepartusch/psi-action@v1
@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - name: Super-Linter
+        uses: github/super-linter@v3.2.0
       - run: yarn
       - run: yarn build
         env:
