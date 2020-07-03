@@ -11,13 +11,6 @@ jobs:
   performance:
     runs-on: [ubuntu-latest]
     steps:
-      - name: Running Page Speed Insights (Mobile)
-        uses: jakepartusch/psi-action@v1
-        id: psi-mobile
-        with:
-          url: "https://tiarebalbi.com"
-          threshold: 30
-          strategy: mobile
       - name: Running Page Speed Insights (Desktop)
         uses: jakepartusch/psi-action@v1
         id: psi-desktop
