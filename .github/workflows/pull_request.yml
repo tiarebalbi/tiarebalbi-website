@@ -24,6 +24,8 @@ jobs:
         path: |
           **/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v1.3
     - name: yarn install and test
       run: |
         yarn
