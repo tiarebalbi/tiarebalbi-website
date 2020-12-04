@@ -27,7 +27,7 @@
     "chalk": "^3.0.0",
     "crypto": "^1.0.1",
     "emotion": "^10.0.27",
-    "highlight.js": "^9.17.1",
+    "highlight.js": "^10.4.1",
     "husky": "^4.0.6",
     "jimp": "^0.9.3",
     "lint-staged": "^9.5.0",
