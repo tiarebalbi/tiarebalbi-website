@@ -3,8 +3,11 @@ import '../styles/flexboxgrid.css';
 
 import React from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
+
 
 import GoogleAnalytics from '../components/GoogleAnalytics';
+import seo from '../lib/seo';
 import { useTitle } from '../lib/title';
 
 function AppLoader({ Component, pageProps }) {
@@ -18,6 +21,9 @@ function AppLoader({ Component, pageProps }) {
           content='width=device-width, initial-scale=1, user-scalable=yes'
         />
       </Head>
+      <NextSeo
+        {...seo}
+      />
       <GoogleAnalytics />
       <Component {...pageProps} />
     </>
