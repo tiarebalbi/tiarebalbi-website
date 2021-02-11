@@ -9,6 +9,7 @@ import seo from '../lib/seo';
 import { useTitle } from '../lib/title';
 
 import PageHeader from '../components/PageHeader';
+import Footer from '../components/Footer';
 
 function AppLoader({ Component, pageProps }) {
   return (
@@ -26,6 +27,7 @@ function AppLoader({ Component, pageProps }) {
       />
       <PageHeader />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

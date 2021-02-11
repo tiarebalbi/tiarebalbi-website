@@ -4,7 +4,7 @@ import { useTitle } from '../lib/title';
 
 export default function Home() {
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <Head>
         <title>{useTitle('Home Page')}</title>
       </Head>

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Logo = () => {
   const fillColor = '#fff';
-  const width = 50;
-  const height = 40;
+  const width = 60;
+  const height = 50;
   return (
     <svg width={width} height={height} viewBox='0 0 50 40'>
       <defs>

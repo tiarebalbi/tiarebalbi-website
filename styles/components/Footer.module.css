@@ -1,0 +1,13 @@
+.footerStyle {
+    color: rgba(255, 255, 255, .5);
+}
+.footerStyle a {
+    color: rgba(255, 255, 255, .5);
+    border-bottom: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 5px;
+}
+.footerStyle a:hover {
+    color: var(--lightText);
+    border-bottom: 1px solid var(--lightText);
+}
