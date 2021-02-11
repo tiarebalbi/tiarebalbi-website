@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: 
+Disallow:
 Disallow: /cgi-bin/
-Sitemap: https://tiarebalbi.com/sitemap.xml

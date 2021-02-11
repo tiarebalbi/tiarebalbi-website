@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    rebase-strategy: "auto"
+    schedule:
+      interval: "daily"
+    reviewers:
+      - "tiarebalbi"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    rebase-strategy: "auto"
+    schedule:
+      interval: "daily"
