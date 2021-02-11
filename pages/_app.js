@@ -5,10 +5,10 @@ import React from 'react';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 
-
-import GoogleAnalytics from '../components/GoogleAnalytics';
 import seo from '../lib/seo';
 import { useTitle } from '../lib/title';
+
+import PageHeader from '../components/PageHeader';
 
 function AppLoader({ Component, pageProps }) {
   return (
@@ -24,7 +24,7 @@ function AppLoader({ Component, pageProps }) {
       <NextSeo
         {...seo}
       />
-      <GoogleAnalytics />
+      <PageHeader />
       <Component {...pageProps} />
     </>
   );

@@ -72,9 +72,18 @@
 
 :root {
     --primary: #001220;
-    --secondary: #172734;
+    --primary500: #00233D;
+    --primary400: #002E52;
+    --primary300: #003A66;
+    --primary200: #00457A;
+    --primary100: #00518F;
+
+    --darkBackground: var(--primary);
+    --lightBackground: #f2f5f8;
+
+    --secondary: #057AF0;
     --alternative: #f3c623;
-    --background: #f2f5f8;
+    --background: var(--darkBackground);
     --white: #ffffff;
 
     --darkText: #2d3748;
@@ -97,7 +106,7 @@
     --paddingSpace: 20px;
     --marginSpace: 20px;
 
-    background: var(--primary);
+    background: var(--background);
 }
 
 ::selection {
@@ -113,5 +122,10 @@ body {
     font-size: var(--fontSize);
     background: var(--background);
     background-size: cover;
-    color: var(--grey400);
+    color: var(--lightText);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
 }

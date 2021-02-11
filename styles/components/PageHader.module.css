@@ -1,0 +1,19 @@
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menu a {
+    padding: 10px 20px;
+    color: var(--lightText);
+    background: var(--primary400);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: background-color 0.1s linear;
+}
+.menu a:hover {
+    color: var(--lightText);
+    background: var(--primary300);
+}
