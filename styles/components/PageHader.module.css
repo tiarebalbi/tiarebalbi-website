@@ -4,6 +4,28 @@
     justify-content: flex-end;
 }
 
+@media (max-width: 568px) {
+    .menu {
+        display: none;
+    }
+
+    .mobileMenu a {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 568px) {
+    .mobileMenu {
+        display: none !important;
+    }
+}
+
+.mobileMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .rowStyle {
     height: 95px;
 }

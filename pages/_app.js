@@ -11,6 +11,8 @@ import { useTitle } from '../lib/title';
 import PageHeader from '../components/PageHeader';
 import Footer from '../components/Footer';
 
+import styles from '../styles/AppLoader.module.css';
+
 function AppLoader({ Component, pageProps }) {
   return (
     <>
@@ -25,9 +27,23 @@ function AppLoader({ Component, pageProps }) {
       <NextSeo
         {...seo}
       />
-      <PageHeader />
-      <Component {...pageProps} />
-      <Footer />
+      <main className={styles.containerHolder}>
+        <div className={styles.content}>
+          <PageHeader />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
+        <div className={`${styles.gridLines} container`}>
+          <div className={`${styles.rowStyle} row`}>
+            <div className={`${styles.internalLine} col-2`} />
+            <div className={`${styles.internalLine} col-2`} />
+            <div className={`${styles.internalLine} col-2`} />
+            <div className={`${styles.internalLine} col-2`} />
+            <div className={`${styles.internalLine} col-2`} />
+            <div className={`${styles.internalLine} col-2`} />
+          </div>
+        </div>
+      </main>
     </>
   );
 }

@@ -70,6 +70,13 @@
     font-display: swap;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+h1,h2,h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+}
+
 :root {
     --primary: #001220;
     --primary500: #00233D;
@@ -88,6 +95,8 @@
 
     --darkText: #2d3748;
     --lightText: #f5f4f4;
+    --oddText: rgba(255, 255, 255, .5);
+    --oddText500: rgba(255, 255, 255, .7);
 
     --grey600: #212529;
     --grey500: #343a40;
@@ -123,6 +132,7 @@ body {
     background: var(--background);
     background-size: cover;
     color: var(--lightText);
+    letter-spacing: 1px;
 }
 
 a {

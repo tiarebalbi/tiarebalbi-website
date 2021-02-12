@@ -1,8 +1,8 @@
 .footerStyle {
-    color: rgba(255, 255, 255, .5);
+    color: var(--oddText);
 }
 .footerStyle a {
-    color: rgba(255, 255, 255, .5);
+    color: var(--oddText);
     border-bottom: 1px solid var(--primary);
     border-radius: 10px;
     padding: 5px;
