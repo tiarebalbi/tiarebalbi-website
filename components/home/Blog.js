@@ -11,7 +11,7 @@ const Blog = ({ posts }) => (
       <h2>From my Blog</h2>
     </div>
     {posts && posts.map(post => (
-      <div className={`col-12 col-sm-6 col-md-4 ${styles.post}`}>
+      <div key={post.node?._meta?.uid} className={`col-12 col-sm-6 col-md-4 ${styles.post}`}>
         <div>
           <Image
             src={post.node.media?.url}
