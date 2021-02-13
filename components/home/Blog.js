@@ -15,7 +15,7 @@ const Blog = () => (
         <Image src="https://images.unsplash.com/photo-1612356938318-2547ac2c7f2b?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" layout="fill" />
       </div>
       <h3>The ultimate guide to product marketing 2019</h3>
-      <a>
+      <a href="/link-3">
         <BsArrowRightShort />
         <span>Read More</span>
       </a>
@@ -25,7 +25,7 @@ const Blog = () => (
         <Image src="https://images.unsplash.com/photo-1612356938318-2547ac2c7f2b?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" layout="fill" />
       </div>
       <h3>The ultimate guide to product marketing 2019</h3>
-      <a>
+      <a href="/link-2">
         <BsArrowRightShort />
         <span>Read More</span>
       </a>
@@ -35,7 +35,7 @@ const Blog = () => (
         <Image src="https://images.unsplash.com/photo-1593642634443-44adaa06623a?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" layout="fill" />
       </div>
       <h3>The ultimate guide to product marketing 2019</h3>
-      <a>
+      <a href="/link-1">
         <BsArrowRightShort />
         <span>Read More</span>
       </a>
