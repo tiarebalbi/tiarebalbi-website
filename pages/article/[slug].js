@@ -6,6 +6,7 @@ import PageTitle from '../../components/PageTitle';
 import { client } from '../../lib/graphql';
 
 import styles from '../../styles/pages/Article.module.css';
+import { NextSeo } from 'next-seo';
 
 export async function getServerSideProps({ params }) {
   const response = await client.query({
@@ -17,6 +18,9 @@ export async function getServerSideProps({ params }) {
         content
         media
         created_date
+        _meta{
+          uid
+        }
       }
     }
     `,
@@ -42,6 +46,30 @@ export default function Article({ post }) {
         title={post?.title[0]?.text}
         slogan={post?.slogan[0]?.text}
         date={post?.created_date} />
+      <NextSeo
+        openGraph={{
+          type: 'article',
+          url: `https://tiarebalbi.com/article/${post?._meta?.uid}`,
+          title: post?.title[0]?.text,
+          description: post?.slogan[0]?.text,
+          article: {
+            publishedTime: post?.created_date,
+            modifiedTime: post?.created_date,
+            section: 'Blog',
+            authors: [
+              '@tiarebalbi',
+            ],
+          },
+          images: [
+            {
+              url: post.media.url,
+              width: 800,
+              height: 600,
+              alt: post?.title[0]?.text,
+            },
+          ],
+        }}
+      />
       <div className='container'>
         <div className='ro mb-5'>
           {post.media.url && (
