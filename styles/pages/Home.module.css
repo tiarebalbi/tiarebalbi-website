@@ -8,16 +8,14 @@
 .items li {
     font-size: 14px;
     margin-bottom: 10px;
-}
-
-.items a {
     color: var(--oddText500);
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.items a > svg {
+
+.items li > svg {
     margin-right: 10px;
     font-size: 16px;
 }

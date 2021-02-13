@@ -9,13 +9,13 @@ import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri';
 const Banner = () => (
   <div className={`row d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
     <div className={styles.socials}>
-      <a target="_blank" rel="noreferrer" href="https://github.com/tiarebalbi">
+      <a target='_blank' rel='noreferrer' href='https://github.com/tiarebalbi'>
         <RiGithubFill />
       </a>
-      <a target="_blank" rel="noreferrer" href="https://twitter.com/tiarebalbi">
+      <a target='_blank' rel='noreferrer' href='https://twitter.com/tiarebalbi'>
         <RiTwitterFill />
       </a>
-      <a target="_blank" rel="noreferrer" href="https://ie.linkedin.com/in/tiarebalbi">
+      <a target='_blank' rel='noreferrer' href='https://ie.linkedin.com/in/tiarebalbi'>
         <RiLinkedinFill />
       </a>
     </div>
@@ -32,22 +32,16 @@ const Banner = () => (
       </p>
       <ul className={styles.items}>
         <li>
-          <a>
-            <BiMailSend />
-            <span>me@tiarebalbi.com</span>
-          </a>
+          <BiMailSend />
+          <span>me@tiarebalbi.com</span>
         </li>
         <li>
-          <a>
-            <BiCurrentLocation />
-            <span>Dublin, Ireland</span>
-          </a>
+          <BiCurrentLocation />
+          <span>Dublin, Ireland</span>
         </li>
         <li>
-          <a>
-            <BiBuilding />
-            <span>Software Engineer @ Workday</span>
-          </a>
+          <BiBuilding />
+          <span>Software Engineer @ Workday</span>
         </li>
       </ul>
       <p className={styles.disclaimer}>
