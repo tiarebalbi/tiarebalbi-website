@@ -77,11 +77,13 @@ h1, h2, h3 {
     font-weight: normal;
     margin-top: 0;
     color: var(--lightText);
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
     h1, h2, h3 {
         margin-top: 0;
+        margin-bottom: 10px;
     }
 }
 
@@ -118,6 +120,7 @@ h3 {
     --lightText: #f5f4f4;
     --oddText: rgba(255, 255, 255, .5);
     --oddText500: rgba(255, 255, 255, .7);
+    --oddText300: rgba(255, 255, 255, .3);
 
     --grey600: #212529;
     --grey500: #343a40;

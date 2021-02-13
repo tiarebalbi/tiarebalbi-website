@@ -8,7 +8,10 @@ const BlogCard = ({ uid, title, url }) => (
     <div>
       <Image
         src={url}
-        layout='fill' />
+        layout="fill"
+        objectFit="cover"
+        objectPosition="50% 50%"
+        quality={100} />
     </div>
     <h3>{title}</h3>
     <a href={`/article/${uid}`} aria-label={title}>
