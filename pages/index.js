@@ -7,11 +7,11 @@ import { useTitle } from '../lib/title';
 import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await client.query({
     query: gql`
     {
-      allBlog_posts(tags: "blog", sortBy: created_date_DESC, last: 3) {
+      allBlog_posts(tags: "blog", sortBy: created_date_DESC, first: 3) {
         edges {
           node {
             title
@@ -31,7 +31,6 @@ export async function getStaticProps() {
     props: {
       posts: response?.data?.allBlog_posts?.edges,
     },
-    revalidate: 30,
   };
 }
 

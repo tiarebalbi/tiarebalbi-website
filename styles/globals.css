@@ -154,6 +154,7 @@ body {
     background-size: cover;
     color: var(--oddText500);
     letter-spacing: 1px;
+    scroll-behavior: smooth;
 }
 
 a {

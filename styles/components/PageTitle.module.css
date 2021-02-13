@@ -1,0 +1,20 @@
+.pageTitle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+}
+
+.slogan {
+    text-align: center;
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .slogan {
+        width: 100%;
+    }
+}

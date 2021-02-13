@@ -58,7 +58,49 @@
     margin-right: 5px;
 }
 
-.menu a:hover {
-    color: var(--lightText);
+.menu a:hover, .selected {
+    color: var(--lightText) !important;
     border-bottom: 1px solid var(--lightText);
+}
+
+.menuNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background: var(--primary);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    transition: all .3s ease .15s
+}
+
+.menuNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menuNav li {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.menuNav a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.menuNav a > svg {
+    margin-right: 20px;
+}
+
+.closeMobileMenu {
+    position: absolute;
+    font-size: 24px;
+    top: 32px;
+    right: -5px;
 }
