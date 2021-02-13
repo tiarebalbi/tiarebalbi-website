@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import Banner from '../components/home/Banner';
-import Projects from '../components/home/Projects';
+import Blog from '../components/home/Blog';
 import { useTitle } from '../lib/title';
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <section className='container'>
         <Banner />
-        
+        <Blog />
       </section>
     </div>
   );
