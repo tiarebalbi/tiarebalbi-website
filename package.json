@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@apollo/client": "^3.3.9",
@@ -19,5 +20,8 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0"
+  },
+  "devDependencies": {
+    "next-sitemap": "^1.5.2"
   }
 }

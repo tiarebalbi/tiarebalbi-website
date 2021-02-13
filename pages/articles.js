@@ -6,6 +6,7 @@ import { client } from '../lib/graphql';
 import { useTitle } from '../lib/title';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
+import { NextSeo } from 'next-seo';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -43,6 +44,14 @@ export default function Articles({ posts }) {
       </Head>
       <section className='container'>
         <PageTitle title='Blog' slogan={slogan} />
+        <NextSeo
+          openGraph={{
+            type: 'website',
+            url: `https://tiarebalbi.com/articles`,
+            title: 'Blog',
+            description: slogan,
+          }}
+        />
         <div className='row'>
           {posts && posts.map(post => (
             <BlogCard

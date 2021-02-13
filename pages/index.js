@@ -6,6 +6,8 @@ import Blog from '../components/home/Blog';
 import { useTitle } from '../lib/title';
 import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
+import { NextSeo } from 'next-seo';
+import { defaultPageDescription } from '../lib/seo';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -41,6 +43,14 @@ export default function Home(props) {
         <title>{useTitle('Home Page')}</title>
       </Head>
       <section className='container'>
+        <NextSeo
+          openGraph={{
+            type: 'website',
+            url: `https://tiarebalbi.com`,
+            title: 'Home Page',
+            description: defaultPageDescription,
+          }}
+        />
         <Banner />
         <Blog posts={props.posts} />
       </section>
