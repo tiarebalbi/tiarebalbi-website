@@ -9,15 +9,17 @@ class RootDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang='en'>
         <Head>
-          <link rel="icon" href="/favicon.png" />
-          <meta name="description" content="Software Engineer that can be described as a serious enthusiast of technology, fortuned to work with one of my biggest passion, software development. Finding different ways to solve different problems." />
-          <meta name="keywords" content="software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini" />
+          <link rel='icon' href='/favicon.png' />
+          <meta name='description'
+                content='I am a software engineer who can be described as a serious enthusiast of technology, fortunate to work with one of my biggest passions: software development. Finding different ways to solve different problems.' />
+          <meta name='keywords'
+                content='software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini' />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+        <Main />
+        <NextScript />
         </body>
       </Html>
     );

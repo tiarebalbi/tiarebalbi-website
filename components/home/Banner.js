@@ -22,13 +22,12 @@ const Banner = () => (
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
       <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
       <p className={styles.slogan}>
-        Software Engineer that can be described as a serious enthusiast of technology, fortuned to work with one
-        of my biggest passion, software development. Finding different ways to solve different problems.
+        I am a software engineer who can be described as a serious enthusiast of technology, fortunate to work with one
+        of my biggest passions: software development. Finding different ways to solve different problems.
       </p>
       <p className={styles.slogan}>
         Based in Dublin, Ireland, I have been working with software development since 2006, working with an extensive
-        range of solutions for small to large companies from designing the software until
-        getting it out the door.
+        range of small to large solutions, from designing the software until getting it out the door.
       </p>
       <ul className={styles.items}>
         <li>

@@ -4,8 +4,38 @@ import Head from 'next/head';
 import Banner from '../components/home/Banner';
 import Blog from '../components/home/Blog';
 import { useTitle } from '../lib/title';
+import { client } from '../lib/graphql';
+import { gql } from '@apollo/client';
 
-export default function Home() {
+export async function getStaticProps() {
+  const response = await client.query({
+    query: gql`
+    {
+      allBlog_posts(tags: "blog", sortBy: created_date_DESC, last: 3) {
+        edges {
+          node {
+            title
+            created_date
+            media
+            _meta{
+              uid
+            }
+          }
+        }
+      }
+    }
+    `,
+  });
+
+  return {
+    props: {
+      posts: response?.data?.allBlog_posts?.edges,
+    },
+    revalidate: 30,
+  };
+}
+
+export default function Home(props) {
   return (
     <div className='container-fluid'>
       <Head>
@@ -13,7 +43,7 @@ export default function Home() {
       </Head>
       <section className='container'>
         <Banner />
-        <Blog />
+        <Blog posts={props.posts} />
       </section>
     </div>
   );

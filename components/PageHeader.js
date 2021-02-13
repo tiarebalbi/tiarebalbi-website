@@ -22,8 +22,6 @@ const PageHeader = () => (
           </Link>
         </div>
         <div className={`col-8 ${styles.menu}`}>
-          <a><span>Work</span></a>
-          <a><span>Experience</span></a>
           <a><span>Blog</span></a>
           <a>
             <BiEnvelope />
