@@ -37,11 +37,18 @@
 }
 
 .menu a {
-    margin: 10px;
     border-bottom: 1px solid var(--primary);
     display: flex;
     align-items: center;
     letter-spacing: 1px;
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 10px 10px 20px;
+    transition: color .2s ease-out;
+    text-transform: uppercase;
+    padding: 10px;
+    position: relative;
 }
 .menu a.selected {
     border-bottom: 1px solid var(--lightText);
@@ -49,17 +56,6 @@
 
 .menu a svg {
     margin-right: 5px;
-}
-
-.menu a {
-    color: rgba(255, 255, 255, .5);
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 20px;
-    transition: color .2s ease-out;
-    text-transform: uppercase;
-    padding: 10px;
-    position: relative;
 }
 
 .menu a:hover {
