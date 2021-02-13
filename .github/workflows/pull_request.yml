@@ -1,11 +1,9 @@
-  
-name: Running Test
+name: CI / Tests
 
 on: [pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -13,7 +11,10 @@ jobs:
         node-version: ["12.x"]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    - uses: actions/labeler@main
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
     - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
       with:
@@ -24,9 +25,7 @@ jobs:
         path: |
           **/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.3
-    - name: yarn install and test
+    - name: npm install and test
       run: |
-        yarn
-        yarn ci
+        npm install
+        npm run build

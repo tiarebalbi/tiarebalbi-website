@@ -1,0 +1,2 @@
+"devops:github":
+  - any: ['.github/**/*', '.github']
