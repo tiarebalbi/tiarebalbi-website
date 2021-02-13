@@ -22,14 +22,14 @@ const PageHeader = () => (
           </Link>
         </div>
         <div className={`col-8 ${styles.menu}`}>
-          <a><span>Blog</span></a>
-          <a>
+          <a href="/articles" aria-label="All blog posts"><span>Blog</span></a>
+          <a href="mailto:me@tiarebalbi.com?subject=GetInTouchV3" aria-label="Getting in Touch">
             <BiEnvelope />
             <span>Get in Touch</span>
           </a>
         </div>
         <div className={`col-8 ${styles.mobileMenu}`}>
-          <a>
+          <a aria-label="Menu" href="#">
             <RiMenuLine />
           </a>
         </div>
