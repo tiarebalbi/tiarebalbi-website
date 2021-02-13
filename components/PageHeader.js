@@ -18,7 +18,7 @@ const PageHeader = () => {
   return (
     <>
       <GoogleAnalytics />
-      <header className='container-fluid mb-5'>
+      <header className={`container-fluid ${styles.spaceHeader}`}>
         <div className={`${styles.rowStyle} row`}>
           <div className={`col-4 ${styles.logoStyle}`}>
             <Link href='/'>

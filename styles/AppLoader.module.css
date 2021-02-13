@@ -25,11 +25,11 @@
 }
 
 .internalLine:first-child {
-    border-left: 1px solid rgba(26, 40, 56, 0.5);
-    border-right: 1px solid rgba(26, 40, 56, 0.5);
+    border-left: 1px solid var(--lineColor);
+    border-right: 1px solid var(--lineColor);
 }
 
 .internalLine {
-    border-right: 1px solid rgba(26, 40, 56, 0.5);
+    border-right: 1px solid var(--lineColor);
     height: 100%;
 }

@@ -47,8 +47,16 @@ export default function Home(props) {
           openGraph={{
             type: 'website',
             url: `https://tiarebalbi.com`,
-            title: 'Home Page',
+            title: 'Tiarê Balbi Bonamini - Home Page',
             description: defaultPageDescription,
+            images: [
+              {
+                url: 'https://tiarebalbi/images/profile-1.jpg',
+                width: 800,
+                height: 600,
+                alt: 'Tiarê Balbi Bonamini',
+              },
+            ],
           }}
         />
         <Banner />

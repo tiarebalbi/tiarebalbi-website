@@ -7,7 +7,7 @@ import Dots from '../assets/Dots';
 import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri';
 
 const Banner = () => (
-  <div className={`row d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
+  <div className={`row mt-5 d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
     <div className={styles.socials}>
       <a target='_blank' rel='noreferrer' href='https://github.com/tiarebalbi'>
         <RiGithubFill />

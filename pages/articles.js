@@ -50,6 +50,14 @@ export default function Articles({ posts }) {
             url: `https://tiarebalbi.com/articles`,
             title: 'Blog',
             description: slogan,
+            images: [
+              {
+                url: 'https://tiarebalbi/images/about-me.jpg',
+                width: 800,
+                height: 600,
+                alt: 'Tiarê Balbi Bonamini',
+              },
+            ],
           }}
         />
         <div className='row'>

@@ -4,6 +4,10 @@
     justify-content: flex-end;
 }
 
+.spaceHeader {
+    margin-bottom: 3rem;
+}
+
 @media (max-width: 568px) {
     .menu {
         display: none;
@@ -11,6 +15,10 @@
 
     .mobileMenu a {
         font-size: 24px;
+    }
+
+    .spaceHeader {
+        margin-bottom: 1rem;
     }
 }
 
