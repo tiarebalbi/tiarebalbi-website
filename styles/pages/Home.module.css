@@ -25,6 +25,7 @@
 .title {
     font-size: 50px;
 }
+
 @media (max-width: 768px) {
     .title {
         margin-top: 0;
@@ -40,6 +41,7 @@
     text-transform: uppercase;
     color: var(--oddText);
 }
+
 .disclaimer svg {
     margin-right: 10px;
 }
@@ -49,6 +51,7 @@
     position: relative;
     z-index: 10;
 }
+
 .bottomRight {
     position: absolute;
     bottom: -40px;
@@ -61,4 +64,22 @@
 
 .rowHeader {
     margin-bottom: 80px;
+    position: relative;
+}
+
+.socials {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -80px;
+    font-size: 20px;
+}
+
+.socials a {
+    padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .socials {
+        display: none;
+    }
 }

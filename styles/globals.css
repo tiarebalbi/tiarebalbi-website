@@ -72,9 +72,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-h1,h2,h3 {
+h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-weight: normal;
+    margin-top: 0;
+    color: var(--lightText);
+}
+
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        margin-top: 0;
+    }
+}
+
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 35px;
+
 }
 
 :root {
@@ -131,7 +149,7 @@ body {
     font-size: var(--fontSize);
     background: var(--background);
     background-size: cover;
-    color: var(--lightText);
+    color: var(--oddText500);
     letter-spacing: 1px;
 }
 
