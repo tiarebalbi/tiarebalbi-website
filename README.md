@@ -16,7 +16,7 @@ new technologies always thinking about the next disruption and how to get there.
 
 In the project directory, you can run:
 
-### `npm install start`
+### `npm install`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
