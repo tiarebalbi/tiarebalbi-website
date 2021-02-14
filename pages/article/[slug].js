@@ -40,7 +40,7 @@ export async function getServerSideProps({ params }) {
   const similarPosts = await client.query({
     query: gql`
     {
-      allBlog_posts(similar: {documentId: "${response?.data?.blog_post?._meta.id}", max:3}, sortBy: created_date_DESC) {
+      allBlog_posts(similar: {documentId: "${response?.data?.blog_post?._meta.id}", max:3}, sortBy: created_date_DESC, first:3) {
         edges {
           node {
             title
