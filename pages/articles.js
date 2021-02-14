@@ -52,7 +52,7 @@ export default function Articles({ posts }) {
             description: slogan,
             images: [
               {
-                url: 'https://tiarebalbi/images/about-me.jpg',
+                url: 'https://tiarebalbi.com/images/about-me.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Tiarê Balbi Bonamini',

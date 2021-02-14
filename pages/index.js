@@ -51,7 +51,7 @@ export default function Home(props) {
             description: defaultPageDescription,
             images: [
               {
-                url: 'https://tiarebalbi/images/profile-1.jpg',
+                url: 'https://tiarebalbi.com/images/profile-1.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Tiarê Balbi Bonamini',

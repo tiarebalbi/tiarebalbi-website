@@ -2,6 +2,9 @@
   "name": "@tiarebalbi/tiarebalbi-website",
   "version": "3.0.0",
   "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
