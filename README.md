@@ -1,6 +1,6 @@
 # Tiarê Balbi Bonamini - Landing Page
 
-![Publish](https://github.com/tiarebalbi/tiarebalbi-website/workflows/Publish/badge.svg)
+![CI / Tests](https://github.com/tiarebalbi/tiarebalbi-website/workflows/CI%20/%20Tests/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
 
 Proud Software Engineer based in Dublin, Ireland. 
