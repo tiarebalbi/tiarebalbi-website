@@ -3,14 +3,9 @@
 ![CI / Tests](https://github.com/tiarebalbi/tiarebalbi-website/workflows/CI%20/%20Tests/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
 
-Proud Software Engineer based in Dublin, Ireland. 
-Working with software development since 2006 had the chance to work 
-with an extensive range of solutions for small and large companies, 
-from design until getting the product to the final step of production.
-Have you heard about the continues learning, I see myself as one of 
-those, if you ask what I am doing in my free time, 
-I will probably answer that I'm studying something new. Currently, focusing my time in research/study 
-new technologies always thinking about the next disruption and how to get there.
+I am a software engineer who can be described as a serious enthusiast of technology, fortunate to work with one of my biggest passions: software development. Finding different ways to solve different problems.
+
+Based in Dublin, Ireland, I have been working with software development since 2006, working with an extensive range of small to large solutions, from designing the software until getting it out the door.
 
 ## Getting Start
 
