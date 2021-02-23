@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Open+Sans&display=swap");
 
 .paragraph {
-    font-family: 'Nunito', sans-serif;
-    text-justify: distribute;
-    color: var(--lightText);
+  font-family: "Nunito", sans-serif;
+  text-justify: distribute;
+  color: var(--lightText);
 }
 
 .image {
-    font-family: 'Nunito', sans-serif;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  font-family: "Nunito", sans-serif;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .preformatted {
-    font-family: 'Nunito', sans-serif;
-    background: #333;
-    padding: 10px;
+  font-family: "Nunito", sans-serif;
+  background: #333;
+  padding: 10px;
 }
 
 .listItem {
-    font-family: 'Nunito', sans-serif;
-    color: var(--lightText);
-    align-items: center;
-    justify-content: flex-start;
-    display: flex;
+  font-family: "Nunito", sans-serif;
+  color: var(--lightText);
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
 }
 
 .listItem > svg {
-    margin-right: 5px;
-    font-size: 16px;
+  margin-right: 5px;
+  font-size: 16px;
 }
