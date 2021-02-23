@@ -1,26 +1,26 @@
 .post {
-    min-height: 300px;
-    margin-bottom: 40px;
+  min-height: 300px;
+  margin-bottom: 40px;
 }
 .post > div {
-    position: relative;
-    height: 270px;
-    margin-bottom: 20px;
+  position: relative;
+  height: 270px;
+  margin-bottom: 20px;
 }
 
 .post a {
-    color: var(--oddText);
-    cursor: pointer;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  color: var(--oddText);
+  cursor: pointer;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .post a:hover {
-    color: var(--lightText);
+  color: var(--lightText);
 }
 
 .post a > svg {
-    margin-right: 10px;
+  margin-right: 10px;
 }
