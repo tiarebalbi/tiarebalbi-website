@@ -2,6 +2,7 @@
 
 ![CI / Tests](https://github.com/tiarebalbi/tiarebalbi-website/workflows/CI%20/%20Tests/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
+[![DeepSource](https://deepsource.io/gh/tiarebalbi/tiarebalbi-website.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/tiarebalbi/tiarebalbi-website/?ref=repository-badge)
 
 I am a software engineer who can be described as a serious enthusiast of technology, fortunate to work with one of my biggest passions: software development. Finding different ways to solve different problems.
 
