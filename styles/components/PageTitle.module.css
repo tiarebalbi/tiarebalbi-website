@@ -1,34 +1,34 @@
 .pageTitle {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .calendarLine {
-    margin-bottom: 10px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: var(--oddText300);
+  margin-bottom: 10px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--oddText300);
 }
 
 .calendarLine > svg {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .slogan {
-    text-align: center;
-    width: 50%;
+  text-align: center;
+  width: 50%;
 }
 
 @media (max-width: 768px) {
-    .slogan {
-        width: 90%;
-    }
+  .slogan {
+    width: 90%;
+  }
 }

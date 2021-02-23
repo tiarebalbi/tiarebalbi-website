@@ -1,32 +1,32 @@
 .footerStyle {
-    color: var(--oddText);
+  color: var(--oddText);
 }
 .footerStyle a {
-    color: var(--oddText);
-    border-bottom: 1px solid var(--primary);
-    border-radius: 10px;
-    padding: 5px;
+  color: var(--oddText);
+  border-bottom: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 5px;
 }
 .footerStyle a:hover {
-    color: var(--lightText);
-    border-bottom: 1px solid var(--lightText);
+  color: var(--lightText);
+  border-bottom: 1px solid var(--lightText);
 }
 
 .footerMobileSupport {
-    text-align: center;
+  text-align: center;
 }
 
 .social {
-    display: none !important;
+  display: none !important;
 }
 
 @media (max-width: 768px) {
-    .social {
-        font-size: 24px;
-        display: flex !important;
-    }
+  .social {
+    font-size: 24px;
+    display: flex !important;
+  }
 
-    .social > a {
-        margin-right: 20px;
-    }
+  .social > a {
+    margin-right: 20px;
+  }
 }
