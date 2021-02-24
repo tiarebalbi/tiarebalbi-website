@@ -17,7 +17,7 @@ const GoogleAnalytics = () => (
                 gtag("config", "G-8G0QDFHYFC");`,
         }}
       />
-  
+
       <script
         async
         dangerouslySetInnerHTML={{
