@@ -27,6 +27,7 @@
     "sharethis-reactjs": "^1.6.0"
   },
   "devDependencies": {
-    "next-sitemap": "^1.5.10"
+    "next-sitemap": "^1.5.10",
+    "prettier": "^2.2.1"
   }
 }
