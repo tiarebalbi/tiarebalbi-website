@@ -32,15 +32,11 @@ const PageHeader = () => {
               aria-label="All blog posts"
               className={pathname === '/articles' ? styles.selected : ''}
               href="/articles">
-              <span>
-Blog
-</span>
+              <span>Blog</span>
             </a>
             <a aria-label="Getting in Touch" href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
               <BiEnvelope />
-              <span>
-Get in Touch
-</span>
+              <span>Get in Touch</span>
             </a>
           </div>
           <div className={`col-8 ${styles.mobileMenu}`}>
@@ -61,25 +57,19 @@ Get in Touch
               <li>
                 <a href="/">
                   <BiRightArrow />
-                  <span>
-Home
-</span>
+                  <span>Home</span>
                 </a>
               </li>
               <li>
                 <a href="/articles">
                   <BiRightArrow />
-                  <span>
-Blog
-</span>
+                  <span>Blog</span>
                 </a>
               </li>
               <li>
                 <a href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
                   <BiRightArrow />
-                  <span>
-Get in Touch
-</span>
+                  <span>Get in Touch</span>
                 </a>
               </li>
             </ul>

@@ -40,9 +40,7 @@ export default function Home(props) {
   return (
     <div className="container-fluid">
       <Head>
-        <title>
-{useTitle('Home Page')}
-</title>
+        <title>{useTitle('Home Page')}</title>
       </Head>
       <section className="container">
         <NextSeo

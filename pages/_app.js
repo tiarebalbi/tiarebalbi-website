@@ -17,9 +17,7 @@ function AppLoader({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>
-{useTitle('Home Page')}
-</title>
+        <title>{useTitle('Home Page')}</title>
         <link href="/manifest.json" rel="manifest" />
         <meta content="width=device-width, initial-scale=1, user-scalable=yes" name="viewport" />
       </Head>

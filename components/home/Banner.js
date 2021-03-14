@@ -20,9 +20,7 @@ const Banner = () => (
       </a>
     </div>
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
-      <h1 className={styles.title}>
-Hey there, I'm Tiarê
-</h1>
+      <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
       <p className={styles.slogan}>
         I am a software engineer who can be described as a serious enthusiast of technology,
         fortunate to work with one of my biggest passions: software development. Finding different
@@ -36,21 +34,15 @@ Hey there, I'm Tiarê
       <ul className={styles.items}>
         <li>
           <BiMailSend />
-          <span>
-me@tiarebalbi.com
-</span>
+          <span>me@tiarebalbi.com</span>
         </li>
         <li>
           <BiCurrentLocation />
-          <span>
-Dublin, Ireland
-</span>
+          <span>Dublin, Ireland</span>
         </li>
         <li>
           <BiBuilding />
-          <span>
-Software Engineer @ Workday
-</span>
+          <span>Software Engineer @ Workday</span>
         </li>
       </ul>
       <p className={styles.disclaimer}>

@@ -8,17 +8,11 @@ const BlogCard = ({ uid, title, date, url }) => (
     <div>
       <Image layout="fill" objectFit="cover" objectPosition="50% 50%" quality={100} src={url} />
     </div>
-    <h3 className={styles.titleCard}>
-{title}
-</h3>
-    {date && <p className={styles.dateCard}>
-{date}
-</p>}
+    <h3 className={styles.titleCard}>{title}</h3>
+    {date && <p className={styles.dateCard}>{date}</p>}
     <a aria-label={title} href={`/article/${uid}`}>
       <BsArrowRightShort />
-      <span>
-Read More
-</span>
+      <span>Read More</span>
     </a>
   </div>
 );

@@ -22,9 +22,7 @@ const Footer = () => (
           href="mailto:me@tiarebalbi.com?subject=Site"
           rel="nofollow noopener noreferrer"
           target="_blank">
-          © 
-{' '}
-{new Date().getFullYear()} Tiarê Balbi Bonamini,
+          © {new Date().getFullYear()} Tiarê Balbi Bonamini,
         </a>
         All Rights Reserved
       </div>
