@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import { BiEnvelope, BiRightArrow } from "react-icons/bi";
-import { RiMenuLine } from "react-icons/ri";
-import { CgClose } from "react-icons/cg";
+import { BiEnvelope, BiRightArrow } from 'react-icons/bi';
+import { RiMenuLine } from 'react-icons/ri';
+import { CgClose } from 'react-icons/cg';
 
-import GoogleAnalytics from "./GoogleAnalytics";
-import Logo from "./assets/Logo";
+import GoogleAnalytics from './GoogleAnalytics';
+import Logo from './assets/Logo';
 
-import styles from "../styles/components/PageHader.module.css";
+import styles from '../styles/components/PageHader.module.css';
 
 const PageHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -30,15 +30,11 @@ const PageHeader = () => {
           <div className={`col-8 ${styles.menu}`}>
             <a
               href="/articles"
-              className={pathname === "/articles" ? styles.selected : ""}
-              aria-label="All blog posts"
-            >
+              className={pathname === '/articles' ? styles.selected : ''}
+              aria-label="All blog posts">
               <span>Blog</span>
             </a>
-            <a
-              href="mailto:me@tiarebalbi.com?subject=GetInTouchV3"
-              aria-label="Getting in Touch"
-            >
+            <a href="mailto:me@tiarebalbi.com?subject=GetInTouchV3" aria-label="Getting in Touch">
               <BiEnvelope />
               <span>Get in Touch</span>
             </a>
@@ -54,8 +50,7 @@ const PageHeader = () => {
             <a
               onClick={() => setShowMenu(!showMenu)}
               className={styles.closeMobileMenu}
-              aria-label="Menu"
-            >
+              aria-label="Menu">
               <CgClose />
             </a>
             <ul>

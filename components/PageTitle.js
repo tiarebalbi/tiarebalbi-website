@@ -1,7 +1,7 @@
-import React from "react";
-import { BiCalendar } from "react-icons/bi";
+import React from 'react';
+import { BiCalendar } from 'react-icons/bi';
 
-import styles from "../styles/components/PageTitle.module.css";
+import styles from '../styles/components/PageTitle.module.css';
 
 const PageTitle = ({ title, slogan, date }) => (
   <section id="page-title" className={`${styles.pageTitle} mb-5`}>

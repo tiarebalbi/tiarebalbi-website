@@ -1,15 +1,13 @@
-import React from "react";
-import styles from "../../styles/pages/Home.module.css";
-import { BiBuilding, BiCurrentLocation, BiMailSend } from "react-icons/bi";
-import { ImWarning } from "react-icons/im";
-import Image from "next/image";
-import Dots from "../assets/Dots";
-import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from "react-icons/ri";
+import React from 'react';
+import styles from '../../styles/pages/Home.module.css';
+import { BiBuilding, BiCurrentLocation, BiMailSend } from 'react-icons/bi';
+import { ImWarning } from 'react-icons/im';
+import Image from 'next/image';
+import Dots from '../assets/Dots';
+import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri';
 
 const Banner = () => (
-  <div
-    className={`row mt-5 d-flex align-items-center justify-content-around ${styles.rowHeader}`}
-  >
+  <div className={`row mt-5 d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
     <div className={styles.socials}>
       <a target="_blank" rel="noreferrer" href="https://github.com/tiarebalbi">
         <RiGithubFill />
@@ -17,25 +15,21 @@ const Banner = () => (
       <a target="_blank" rel="noreferrer" href="https://twitter.com/tiarebalbi">
         <RiTwitterFill />
       </a>
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://ie.linkedin.com/in/tiarebalbi"
-      >
+      <a target="_blank" rel="noreferrer" href="https://ie.linkedin.com/in/tiarebalbi">
         <RiLinkedinFill />
       </a>
     </div>
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
       <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
       <p className={styles.slogan}>
-        I am a software engineer who can be described as a serious enthusiast of
-        technology, fortunate to work with one of my biggest passions: software
-        development. Finding different ways to solve different problems.
+        I am a software engineer who can be described as a serious enthusiast of technology,
+        fortunate to work with one of my biggest passions: software development. Finding different
+        ways to solve different problems.
       </p>
       <p className={styles.slogan}>
-        Based in Dublin, Ireland, I have been working with software development
-        since 2006, working with an extensive range of small to large solutions,
-        from designing the software until getting it out the door.
+        Based in Dublin, Ireland, I have been working with software development since 2006, working
+        with an extensive range of small to large solutions, from designing the software until
+        getting it out the door.
       </p>
       <ul className={styles.items}>
         <li>

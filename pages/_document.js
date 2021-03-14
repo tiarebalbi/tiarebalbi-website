@@ -1,7 +1,7 @@
-import React from "react";
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import React from 'react';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { defaultPageDescription } from "../lib/seo";
+import { defaultPageDescription } from '../lib/seo';
 
 class RootDocument extends Document {
   static async getInitialProps(ctx) {
