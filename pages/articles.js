@@ -1,9 +1,7 @@
 import React from 'react';
-import Head from 'next/head';
 import { gql } from '@apollo/client';
 
 import { client } from '../lib/graphql';
-import { useTitle } from '../lib/title';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
 import { NextSeo } from 'next-seo';
@@ -38,6 +36,15 @@ export async function getServerSideProps() {
 export default function Articles({ posts }) {
   const slogan =
     'I don’t just design and develop. Sometimes I also write down words. Here I share my insights and findings from my daily study.';
+  const populatePost = (post) => (
+    <BlogCard
+      date={post.node?.created_date}
+      key={post.node?._meta?.uid}
+      title={post.node.title[0].text}
+      uid={post.node?._meta?.uid}
+      url={post.node.media?.url}
+    />
+  );
   return (
     <div className="container-fluid">
       <section className="container">
@@ -58,18 +65,7 @@ export default function Articles({ posts }) {
             ]
           }}
         />
-        <div className="row">
-          {posts &&
-            posts.map((post) => (
-              <BlogCard
-                date={post.node.created_date}
-                key={post.node?._meta?.uid}
-                title={post.node.title[0].text}
-                uid={post.node?._meta?.uid}
-                url={post.node.media?.url}
-              />
-            ))}
-        </div>
+        <div className="row">{posts && posts.map(populatePost)}</div>
       </section>
     </div>
   );
