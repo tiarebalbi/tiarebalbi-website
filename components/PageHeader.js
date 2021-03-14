@@ -22,7 +22,7 @@ const PageHeader = () => {
         <div className={`${styles.rowStyle} row`}>
           <div className={`col-4 ${styles.logoStyle}`}>
             <Link href="/">
-              <a>
+              <a aria-label="Home Page">
                 <Logo />
               </a>
             </Link>
