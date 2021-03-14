@@ -5,9 +5,7 @@ import BlogCard from '../BlogCard';
 const Blog = ({ posts }) => (
   <section className="row mb-5" id="blog">
     <div className="col-12 mb-5 mt-5">
-      <h2>
-From my Blog
-</h2>
+      <h2>From my Blog</h2>
     </div>
     {posts &&
       posts.map((post) => (

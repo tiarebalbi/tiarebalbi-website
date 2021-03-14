@@ -41,9 +41,7 @@ export default function Articles({ posts }) {
   return (
     <div className="container-fluid">
       <Head>
-        <title>
-{useTitle('Articles')}
-</title>
+        <title>{useTitle('Articles')}</title>
       </Head>
       <section className="container">
         <PageTitle slogan={slogan} title="Blog" />
