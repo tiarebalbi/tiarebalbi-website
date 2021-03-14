@@ -40,9 +40,6 @@ export default function Articles({ posts }) {
     'I don’t just design and develop. Sometimes I also write down words. Here I share my insights and findings from my daily study.';
   return (
     <div className="container-fluid">
-      <Head>
-        <title>{useTitle('Articles')}</title>
-      </Head>
       <section className="container">
         <PageTitle slogan={slogan} title="Blog" />
         <NextSeo
