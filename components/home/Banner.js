@@ -10,21 +10,21 @@ const Banner = () => (
   <div className={`row mt-5 d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
     <div className={styles.socials}>
       <a
-        aria-label="GitHub - tiarebalbi"
+        aria-label="Checkout my latest projects on GitHub"
         href="https://github.com/tiarebalbi"
         rel="noreferrer"
         target="_blank">
         <RiGithubFill />
       </a>
       <a
-        aria-label="Twitter - tiarebalbi"
+        aria-label="Checkout my latest updates on twitter"
         href="https://twitter.com/tiarebalbi"
         rel="noreferrer"
         target="_blank">
         <RiTwitterFill />
       </a>
       <a
-        aria-label="LinkedIn - tiarebalbi"
+        aria-label="Read more all my posts publised on LinkedIn"
         href="https://ie.linkedin.com/in/tiarebalbi"
         rel="noreferrer"
         target="_blank">
