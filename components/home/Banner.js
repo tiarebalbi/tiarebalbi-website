@@ -24,7 +24,7 @@ const Banner = () => (
         <RiTwitterFill />
       </a>
       <a
-        aria-label="Read more all my posts publised on LinkedIn"
+        aria-label="Read more all my posts published on LinkedIn"
         href="https://ie.linkedin.com/in/tiarebalbi"
         rel="noreferrer"
         target="_blank">
