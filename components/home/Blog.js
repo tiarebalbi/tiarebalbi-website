@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import BlogCard from "../BlogCard";
+import BlogCard from '../BlogCard';
 
 const Blog = ({ posts }) => (
   <section id="blog" className="row mb-5">
@@ -12,6 +12,7 @@ const Blog = ({ posts }) => (
         <BlogCard
           key={post.node?._meta?.uid}
           title={post.node.title[0].text}
+          date={post.node.created_date}
           url={post.node.media?.url}
           uid={post.node?._meta?.uid}
         />
