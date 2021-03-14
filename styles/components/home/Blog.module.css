@@ -24,3 +24,13 @@
 .post a > svg {
   margin-right: 10px;
 }
+
+.titleCard {
+  margin: 0;
+}
+
+.dateCard {
+  margin-bottom: 20px;
+  color: var(--oddText300);
+  font-size: 12px;
+}

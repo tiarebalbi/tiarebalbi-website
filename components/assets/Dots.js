@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const Dots = (props) => {
-  const fillColor = "rgba(255,255,255,0.3)";
+  const fillColor = 'rgba(255,255,255,0.3)';
 
   return (
     <svg width={238} height={238} className={props.c}>

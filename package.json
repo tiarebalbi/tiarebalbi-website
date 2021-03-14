@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "format": "prettier --write . "
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",

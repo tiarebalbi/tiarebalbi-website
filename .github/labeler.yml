@@ -1,2 +1,2 @@
-"devops:github":
+'devops:github':
   - any: ['.github/**/*', '.github']

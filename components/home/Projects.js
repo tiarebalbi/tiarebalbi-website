@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import styles from "../../styles/components/home/Projects.module.css";
+import styles from '../../styles/components/home/Projects.module.css';
 
 const Projects = () => (
   <section id="projects">
