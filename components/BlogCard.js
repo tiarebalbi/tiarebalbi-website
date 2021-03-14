@@ -4,15 +4,21 @@ import Image from 'next/image';
 import { BsArrowRightShort } from 'react-icons/bs';
 
 const BlogCard = ({ uid, title, date, url }) => (
-  <div key={uid} className={`col-12 col-sm-6 col-md-4 ${styles.post}`}>
+  <div className={`col-12 col-sm-6 col-md-4 ${styles.post}`} key={uid}>
     <div>
-      <Image src={url} layout="fill" objectFit="cover" objectPosition="50% 50%" quality={100} />
+      <Image layout="fill" objectFit="cover" objectPosition="50% 50%" quality={100} src={url} />
     </div>
-    <h3 className={styles.titleCard}>{title}</h3>
-    {date && <p className={styles.dateCard}>{date}</p>}
-    <a href={`/article/${uid}`} aria-label={title}>
+    <h3 className={styles.titleCard}>
+{title}
+</h3>
+    {date && <p className={styles.dateCard}>
+{date}
+</p>}
+    <a aria-label={title} href={`/article/${uid}`}>
       <BsArrowRightShort />
-      <span>Read More</span>
+      <span>
+Read More
+</span>
     </a>
   </div>
 );

@@ -41,10 +41,12 @@ export default function Articles({ posts }) {
   return (
     <div className="container-fluid">
       <Head>
-        <title>{useTitle('Articles')}</title>
+        <title>
+{useTitle('Articles')}
+</title>
       </Head>
       <section className="container">
-        <PageTitle title="Blog" slogan={slogan} />
+        <PageTitle slogan={slogan} title="Blog" />
         <NextSeo
           openGraph={{
             type: 'website',
@@ -65,11 +67,11 @@ export default function Articles({ posts }) {
           {posts &&
             posts.map((post) => (
               <BlogCard
+                date={post.node.created_date}
                 key={post.node?._meta?.uid}
                 title={post.node.title[0].text}
-                date={post.node.created_date}
-                url={post.node.media?.url}
                 uid={post.node?._meta?.uid}
+                url={post.node.media?.url}
               />
             ))}
         </div>
