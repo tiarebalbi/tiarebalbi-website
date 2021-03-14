@@ -2,8 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 const GoogleAnalytics = () => (
-  <>
-    <Head>
+  <Head>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G0QDFHYFC" />
       <script
         async
@@ -26,7 +25,6 @@ const GoogleAnalytics = () => (
         }}
       />
     </Head>
-  </>
 );
 
 export default GoogleAnalytics;

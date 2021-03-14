@@ -9,18 +9,20 @@ import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri';
 const Banner = () => (
   <div className={`row mt-5 d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
     <div className={styles.socials}>
-      <a target="_blank" rel="noreferrer" href="https://github.com/tiarebalbi">
+      <a href="https://github.com/tiarebalbi" rel="noreferrer" target="_blank">
         <RiGithubFill />
       </a>
-      <a target="_blank" rel="noreferrer" href="https://twitter.com/tiarebalbi">
+      <a href="https://twitter.com/tiarebalbi" rel="noreferrer" target="_blank">
         <RiTwitterFill />
       </a>
-      <a target="_blank" rel="noreferrer" href="https://ie.linkedin.com/in/tiarebalbi">
+      <a href="https://ie.linkedin.com/in/tiarebalbi" rel="noreferrer" target="_blank">
         <RiLinkedinFill />
       </a>
     </div>
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
-      <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
+      <h1 className={styles.title}>
+Hey there, I'm Tiarê
+</h1>
       <p className={styles.slogan}>
         I am a software engineer who can be described as a serious enthusiast of technology,
         fortunate to work with one of my biggest passions: software development. Finding different
@@ -34,15 +36,21 @@ const Banner = () => (
       <ul className={styles.items}>
         <li>
           <BiMailSend />
-          <span>me@tiarebalbi.com</span>
+          <span>
+me@tiarebalbi.com
+</span>
         </li>
         <li>
           <BiCurrentLocation />
-          <span>Dublin, Ireland</span>
+          <span>
+Dublin, Ireland
+</span>
         </li>
         <li>
           <BiBuilding />
-          <span>Software Engineer @ Workday</span>
+          <span>
+Software Engineer @ Workday
+</span>
         </li>
       </ul>
       <p className={styles.disclaimer}>
@@ -52,11 +60,11 @@ const Banner = () => (
     </div>
     <div className="col-sm-12 col-md-6 d-flex align-items-end justify-content-end">
       <Image
-        className={styles.profile}
-        src="/images/profile-1.jpg"
         alt="Tiare Balbi"
-        width={400}
+        className={styles.profile}
         height={400}
+        src="/images/profile-1.jpg"
+        width={400}
       />
       <Dots c={styles.bottomRight} />
     </div>

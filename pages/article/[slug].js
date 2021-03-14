@@ -69,9 +69,9 @@ export default function Article({ post, similar }) {
   return (
     <section id="article">
       <PageTitle
-        title={post?.title[0]?.text}
-        slogan={post?.slogan[0]?.text}
         date={post?.created_date}
+        slogan={post?.slogan[0]?.text}
+        title={post?.title[0]?.text}
       />
       <NextSeo
         openGraph={{
@@ -100,11 +100,11 @@ export default function Article({ post, similar }) {
           {post.media.url && (
             <div className={styles.imageRow}>
               <Image
-                src={post.media.url}
                 layout="fill"
-                objectPosition="center"
                 objectFit="cover"
+                objectPosition="center"
                 quality={100}
+                src={post.media.url}
               />
             </div>
           )}
@@ -112,7 +112,7 @@ export default function Article({ post, similar }) {
         <div className="row">
           <div className="col-12">
             {post.content &&
-              post.content.map((content, index) => <Content key={index} details={content} />)}
+              post.content.map((content, index) => <Content details={content} key={index} />)}
           </div>
         </div>
         <div className="row mb-5">
@@ -149,8 +149,8 @@ export default function Article({ post, similar }) {
               <BlogCard
                 key={post.node?._meta?.uid}
                 title={post.node.title[0].text}
-                url={post.node.media?.url}
                 uid={post.node?._meta?.uid}
+                url={post.node.media?.url}
               />
             ))}
         </div>

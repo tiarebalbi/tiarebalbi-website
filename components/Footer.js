@@ -6,23 +6,25 @@ import { RiGithubFill, RiLinkedinFill, RiTwitterFill } from 'react-icons/ri';
 const Footer = () => (
   <footer className="mb-5 mt-5 container-fluid">
     <div className={`mt-5 mb-3 d-flex align-items-center justify-content-center ${styles.social}`}>
-      <a target="_blank" rel="noreferrer" href="https://github.com/tiarebalbi">
+      <a href="https://github.com/tiarebalbi" rel="noreferrer" target="_blank">
         <RiGithubFill />
       </a>
-      <a target="_blank" rel="noreferrer" href="https://twitter.com/tiarebalbi">
+      <a href="https://twitter.com/tiarebalbi" rel="noreferrer" target="_blank">
         <RiTwitterFill />
       </a>
-      <a target="_blank" rel="noreferrer" href="https://ie.linkedin.com/in/tiarebalbi">
+      <a href="https://ie.linkedin.com/in/tiarebalbi" rel="noreferrer" target="_blank">
         <RiLinkedinFill />
       </a>
     </div>
     <div className={`row ${styles.footerStyle}`}>
       <div className={`col-12 ${styles.footerMobileSupport}`}>
         <a
+          href="mailto:me@tiarebalbi.com?subject=Site"
           rel="nofollow noopener noreferrer"
-          target="_blank"
-          href="mailto:me@tiarebalbi.com?subject=Site">
-          © {new Date().getFullYear()} Tiarê Balbi Bonamini,
+          target="_blank">
+          © 
+{' '}
+{new Date().getFullYear()} Tiarê Balbi Bonamini,
         </a>
         All Rights Reserved
       </div>
