@@ -38,17 +38,16 @@ export async function getServerSideProps() {
 
 export default function Home(props) {
   return (
-    <div className="container-fluid">
+    <main className="container-fluid">
       <Head>
         <title>{useTitle('Home Page')}</title>
+        <meta content={defaultPageDescription} name="description" />
       </Head>
       <section className="container">
         <NextSeo
           openGraph={{
             type: 'website',
             url: `https://tiarebalbi.com`,
-            title: 'Tiarê Balbi Bonamini - Home Page',
-            description: defaultPageDescription,
             images: [
               {
                 url: 'https://tiarebalbi.com/images/profile-1.jpg',
@@ -62,6 +61,6 @@ export default function Home(props) {
         <Banner />
         <Blog posts={props.posts} />
       </section>
-    </div>
+    </main>
   );
 }
