@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
+
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
 import { InlineShareButtons } from 'sharethis-reactjs';
@@ -7,6 +9,7 @@ import { InlineShareButtons } from 'sharethis-reactjs';
 import PageTitle from '../../components/PageTitle';
 import Content from '../../components/assets/Content';
 import { client } from '../../lib/graphql';
+import { useTitle } from '../../lib/title';
 
 import styles from '../../styles/pages/Article.module.css';
 import BlogCard from '../../components/BlogCard';
@@ -66,13 +69,16 @@ export async function getServerSideProps({ params }) {
 }
 
 export default function Article({ post, similar }) {
+  const title = post?.title[0]?.text;
+  const description = post?.slogan[0]?.text;
+
   return (
     <section id="article">
-      <PageTitle
-        date={post?.created_date}
-        slogan={post?.slogan[0]?.text}
-        title={post?.title[0]?.text}
-      />
+      <Head>
+        <title>{useTitle(title)}</title>
+        <meta content={description} name="description" />
+      </Head>
+      <PageTitle date={post?.created_date} slogan={description} title={title} />
       <NextSeo
         openGraph={{
           type: 'article',

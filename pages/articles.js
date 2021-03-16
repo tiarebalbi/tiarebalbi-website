@@ -1,10 +1,12 @@
 import React from 'react';
+import Head from 'next/head';
 import { gql } from '@apollo/client';
 
 import { client } from '../lib/graphql';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
 import { NextSeo } from 'next-seo';
+import { useTitle } from '../lib/title';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -48,6 +50,10 @@ export default function Articles({ posts }) {
   return (
     <div className="container-fluid">
       <section className="container">
+        <Head>
+          <title>{useTitle('Blog')}</title>
+          <meta content={slogan} name="description" />
+        </Head>
         <PageTitle slogan={slogan} title="Blog" />
         <NextSeo
           openGraph={{
