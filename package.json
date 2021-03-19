@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "generate-changelog": "^1.8.0",
-    "next-sitemap": "^1.5.18",
+    "next-sitemap": "^1.6.3",
     "prettier": "^2.2.1"
   }
 }
