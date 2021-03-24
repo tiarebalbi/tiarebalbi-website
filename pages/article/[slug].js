@@ -77,7 +77,7 @@ export default function Article({ post, similar, modifiedTime }) {
   const image = post?.media?.url;
 
   const result = metadata(title, description, url, image);
-  const nameProps = nameProps(title, description);
+  const namePropsResult = nameProps(title, description);
 
   return (
     <section id="article">
@@ -87,7 +87,7 @@ export default function Article({ post, similar, modifiedTime }) {
           <meta property={key} key={key} content={result[key]} />
         ))}
         {Object.keys(nameProps).map((key) => (
-          <meta name={key} key={key} content={nameProps[key]} />
+          <meta name={key} key={key} content={namePropsResult[key]} />
         ))}
         <meta property="article:modified_time" content={modifiedTime} />
         {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar))} />}
