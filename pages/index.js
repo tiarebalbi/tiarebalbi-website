@@ -8,6 +8,7 @@ import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
 import metadata, { jsonLdProps } from '../metadata/home';
 import { jsonLdScriptProps } from 'react-schemaorg';
+import { defaultPageDescription } from '../lib/seo';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -44,6 +45,7 @@ export default function Home(props) {
         {Object.keys(metadata).map((key) => (
           <meta property={key} key={key} content={metadata[key]} />
         ))}
+        <meta name="description" content={defaultPageDescription} />
         <meta property="article:modified_time" content={props.modifiedTime} />
         <script {...jsonLdScriptProps(jsonLdProps())} />
       </Head>

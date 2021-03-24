@@ -48,7 +48,6 @@ export const jsonLdProps = () => ({
 });
 
 const headerProps = {
-  description: defaultPageDescription,
   keywords:
     'software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
   'article:publisher': 'https://github.com/tiarebalbi',

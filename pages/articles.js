@@ -57,6 +57,7 @@ export default function Articles({ posts, modifiedTime }) {
           {Object.keys(metadata).map((key) => (
             <meta property={key} key={key} content={metadata[key]} />
           ))}
+          <meta name="description" content={slogan} />
           <meta property="article:modified_time" content={modifiedTime} />
           <script {...jsonLdScriptProps(jsonLdProps())} />
         </Head>
