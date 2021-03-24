@@ -10,18 +10,9 @@ export const personSchema = {
     'https://twitter.com/tiarebalbi',
     'https://www.linkedin.com/in/tiarebalbi/?originalSubdomain=ie'
   ],
-  logo: {
-    '@type': 'ImageObject',
-    '@id': 'https://tiarebalbi.com/#logo',
-    inLanguage: 'en-US',
-    url: 'https://tiarebalbi.com/images/icons/icon-72x72.png',
-    width: 72,
-    height: 72,
-    caption: 'Tiarê Balbi'
-  },
   image: { '@id': 'https://tiarebalbi.com/#logo' },
-  workLocation: { address: 'Dublin, Ireland' },
-  homeLocation: { address: 'São Paulo, Brazil' },
+  workLocation: 'Dublin, Ireland',
+  homeLocation: 'São Paulo, Brazil',
   nationality: { address: 'São Paulo, Brazil' }
 };
 
