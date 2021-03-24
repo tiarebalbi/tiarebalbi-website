@@ -45,7 +45,7 @@ export default function Home(props) {
           <meta property={key} key={key} content={metadata[key]} />
         ))}
         <meta property="article:modified_time" content={props.modifiedTime} />
-        <script {...jsonLdScriptProps(jsonLdProps)} />
+        <script {...jsonLdScriptProps(jsonLdProps())} />
       </Head>
       <section className="container">
         <Banner />

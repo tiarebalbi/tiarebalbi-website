@@ -1,7 +1,7 @@
 import { defaultPageDescription } from '../lib/seo';
 import { useTitle } from '../lib/title';
 
-export const jsonLdProps = {
+export const jsonLdProps = () => ({
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -9,6 +9,7 @@ export const jsonLdProps = {
       '@id': 'https://tiarebalbi.com/#person',
       name: 'Tiarê Balbi',
       alternateName: 'Tiarê Balbi Bonamini',
+      jobTitle: 'Software Engineer',
       url: 'https://tiarebalbi.com/',
       sameAs: [
         'https://github.com/tiarebalbi',
@@ -24,7 +25,10 @@ export const jsonLdProps = {
         height: 72,
         caption: 'Tiarê Balbi'
       },
-      image: { '@id': 'https://tiarebalbi.com/#logo' }
+      image: { '@id': 'https://tiarebalbi.com/#logo' },
+      workLocation: { address: 'Dublin, Ireland' },
+      homeLocation: { address: 'São Paulo, Brazil' },
+      nationality: { address: 'São Paulo, Brazil' }
     },
     {
       '@type': 'WebSite',
@@ -82,7 +86,7 @@ export const jsonLdProps = {
       ]
     }
   ]
-};
+});
 
 export default {
   description: defaultPageDescription,
