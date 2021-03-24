@@ -58,7 +58,7 @@ export default function Articles({ posts, modifiedTime }) {
             <meta property={key} key={key} content={metadata[key]} />
           ))}
           {Object.keys(nameProps).map((key) => (
-            <meta property={key} key={key} content={metadata[key]} />
+            <meta property={key} key={key} content={nameProps[key]} />
           ))}
           <meta name="description" content={slogan} />
           <meta property="article:modified_time" content={modifiedTime} />

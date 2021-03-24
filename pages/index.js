@@ -47,7 +47,7 @@ export default function Home(props) {
         ))}
 
         {Object.keys(nameProps).map((key) => (
-          <meta name={key} key={key} content={metadata[key]} />
+          <meta name={key} key={key} content={nameProps[key]} />
         ))}
         <meta property="article:modified_time" content={props.modifiedTime} />
         <script {...jsonLdScriptProps(jsonLdProps())} />
