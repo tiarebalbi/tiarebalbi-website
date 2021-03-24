@@ -6,8 +6,8 @@ import Blog from '../components/home/Blog';
 import { useTitle } from '../lib/title';
 import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
-import { NextSeo } from 'next-seo';
-import { defaultPageDescription } from '../lib/seo';
+import metadata, { jsonLdProps } from '../metadata/home';
+import { jsonLdScriptProps } from 'react-schemaorg';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -28,10 +28,10 @@ export async function getServerSideProps() {
       }
     `
   });
-
   return {
     props: {
-      posts: response?.data?.allBlog_posts?.edges
+      posts: response?.data?.allBlog_posts?.edges,
+      modifiedTime: new Date().toISOString()
     }
   };
 }
@@ -40,24 +40,14 @@ export default function Home(props) {
   return (
     <main className="container-fluid">
       <Head>
-        <title>{useTitle('Home Page')}</title>
-        <meta content={defaultPageDescription} name="description" />
+        <title>{useTitle('Software Engineer')}</title>
+        {Object.keys(metadata).map((key) => (
+          <meta property={key} key={key} content={metadata[key]} />
+        ))}
+        <meta property="article:modified_time" content={props.modifiedTime} />
+        <script {...jsonLdScriptProps(jsonLdProps)} />
       </Head>
       <section className="container">
-        <NextSeo
-          openGraph={{
-            type: 'website',
-            url: `https://tiarebalbi.com`,
-            images: [
-              {
-                url: 'https://tiarebalbi.com/images/profile-1.jpg',
-                width: 800,
-                height: 600,
-                alt: 'Tiarê Balbi Bonamini'
-              }
-            ]
-          }}
-        />
         <Banner />
         <Blog posts={props.posts} />
       </section>

@@ -3,10 +3,6 @@ import '../styles/flexboxgrid.css';
 
 import React from 'react';
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
-
-import seo from '../lib/seo';
-import { useTitle } from '../lib/title';
 
 import PageHeader from '../components/PageHeader';
 import Footer from '../components/Footer';
@@ -17,11 +13,17 @@ function AppLoader({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{useTitle('Home Page')}</title>
-        <link href="/manifest.json" rel="manifest" />
-        <meta content="width=device-width, initial-scale=1, user-scalable=yes" name="viewport" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="profile" href="https://gmpg.org/xfn/11" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <link rel="canonical" href="https://tiarebalbi.com/" />
+        <link rel="dns-prefetch" href="//js.hsforms.net" />
+        <link rel="dns-prefetch" href="//s.w.org" />
       </Head>
-      <NextSeo {...seo} />
       <main className={styles.containerHolder}>
         <div className={styles.content}>
           <PageHeader />
