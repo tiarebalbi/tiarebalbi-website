@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 
-import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
+import { jsonLdScriptProps } from 'react-schemaorg';
 import { InlineShareButtons } from 'sharethis-reactjs';
 
 import PageTitle from '../../components/PageTitle';
@@ -13,6 +13,7 @@ import { useTitle } from '../../lib/title';
 
 import styles from '../../styles/pages/Article.module.css';
 import BlogCard from '../../components/BlogCard';
+import metadata, { jsonLdProps } from '../../metadata/blogArticle';
 
 export async function getServerSideProps({ params }) {
   const response = await client.query({
@@ -63,44 +64,31 @@ export async function getServerSideProps({ params }) {
   return {
     props: {
       post: response?.data?.blog_post,
-      similar: similarPost
+      similar: similarPost,
+      modifiedTime: new Date().toISOString()
     }
   };
 }
 
-export default function Article({ post, similar }) {
+export default function Article({ post, similar, modifiedTime }) {
   const title = post?.title[0]?.text;
   const description = post?.slogan[0]?.text;
+  const url = `https://tiarebalbi.com/article/${post?._meta?.uid}`;
+  const image = post?.media?.url;
+
+  const result = metadata(title, description, url, image);
 
   return (
     <section id="article">
       <Head>
         <title>{useTitle(title)}</title>
-        <meta content={description} name="description" />
+        {Object.keys(result).map((key) => (
+          <meta property={key} key={key} content={result[key]} />
+        ))}
+        <meta property="article:modified_time" content={modifiedTime} />
+        {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar))} />}
       </Head>
       <PageTitle date={post?.created_date} slogan={description} title={title} />
-      <NextSeo
-        openGraph={{
-          type: 'article',
-          url: `https://tiarebalbi.com/article/${post?._meta?.uid}`,
-          title: post?.title[0]?.text,
-          description: post?.slogan[0]?.text,
-          article: {
-            publishedTime: post?.created_date,
-            modifiedTime: post?.created_date,
-            section: 'Blog',
-            authors: ['@tiarebalbi']
-          },
-          images: [
-            {
-              url: post.media.url,
-              width: 800,
-              height: 600,
-              alt: post?.title[0]?.text
-            }
-          ]
-        }}
-      />
       <div className="container">
         <div className="ro mb-5">
           {post.media.url && (
