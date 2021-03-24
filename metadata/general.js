@@ -10,7 +10,7 @@ export const personSchema = {
     'https://twitter.com/tiarebalbi',
     'https://www.linkedin.com/in/tiarebalbi/?originalSubdomain=ie'
   ],
-  image: { '@id': 'https://tiarebalbi.com/#logo' },
+  image: { '@id': 'https://tiarebalbi.com/#primaryimage' },
   workLocation: 'Dublin, Ireland',
   homeLocation: 'São Paulo, Brazil',
   nationality: { address: 'São Paulo, Brazil' }
