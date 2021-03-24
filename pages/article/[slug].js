@@ -13,7 +13,7 @@ import { useTitle } from '../../lib/title';
 
 import styles from '../../styles/pages/Article.module.css';
 import BlogCard from '../../components/BlogCard';
-import metadata, { jsonLdProps } from '../../metadata/blogArticle';
+import metadata, { jsonLdProps, nameProps } from '../../metadata/blogArticle';
 
 export async function getServerSideProps({ params }) {
   const response = await client.query({
@@ -77,6 +77,7 @@ export default function Article({ post, similar, modifiedTime }) {
   const image = post?.media?.url;
 
   const result = metadata(title, description, url, image);
+  const nameProps = nameProps(title, description);
 
   return (
     <section id="article">
@@ -85,7 +86,9 @@ export default function Article({ post, similar, modifiedTime }) {
         {Object.keys(result).map((key) => (
           <meta property={key} key={key} content={result[key]} />
         ))}
-        <meta name="description" content={description} />
+        {Object.keys(nameProps).map((key) => (
+          <meta name={key} key={key} content={nameProps[key]} />
+        ))}
         <meta property="article:modified_time" content={modifiedTime} />
         {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar))} />}
       </Head>

@@ -6,7 +6,7 @@ import Blog from '../components/home/Blog';
 import { useTitle } from '../lib/title';
 import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
-import metadata, { jsonLdProps } from '../metadata/home';
+import metadata, { jsonLdProps, nameProps } from '../metadata/home';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import { defaultPageDescription } from '../lib/seo';
 
@@ -45,7 +45,10 @@ export default function Home(props) {
         {Object.keys(metadata).map((key) => (
           <meta property={key} key={key} content={metadata[key]} />
         ))}
-        <meta name="description" content={defaultPageDescription} />
+
+        {Object.keys(nameProps).map((key) => (
+          <meta name={key} key={key} content={metadata[key]} />
+        ))}
         <meta property="article:modified_time" content={props.modifiedTime} />
         <script {...jsonLdScriptProps(jsonLdProps())} />
       </Head>

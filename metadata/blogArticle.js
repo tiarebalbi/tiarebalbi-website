@@ -82,9 +82,17 @@ export const jsonLdProps = (post, similar) => {
   };
 };
 
-const headerProps = (title, description, url, image) => ({
+export const nameProps = (title, description) => ({
+  description: description,
   keywords:
     'blog, articles, dev topics, software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
+  'twitter:card': 'summary_large_image',
+  'twitter:site': '@tiarebalbi',
+  'twitter:label1': 'Reading time',
+  'twitter:data1': '8 minutes'
+});
+
+const headerProps = (title, description, url, image) => ({
   'og:locale': 'en_US',
   'og:type': 'website',
   'og:title': useTitle(title),
@@ -92,10 +100,6 @@ const headerProps = (title, description, url, image) => ({
   'og:url': url,
   'og:site_name': useTitle('Blog'),
   'article:publisher': 'https://github.com/tiarebalbi',
-  'og:image': image,
-  'twitter:card': 'summary_large_image',
-  'twitter:site': '@tiarebalbi',
-  'twitter:label1': 'Reading time',
-  'twitter:data1': '8 minutes'
+  'og:image': image
 });
 export default headerProps;

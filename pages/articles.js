@@ -7,7 +7,7 @@ import { client } from '../lib/graphql';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
 import { useTitle } from '../lib/title';
-import metadata, { jsonLdProps } from '../metadata/blog';
+import metadata, { jsonLdProps, nameProps } from '../metadata/blog';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -55,6 +55,9 @@ export default function Articles({ posts, modifiedTime }) {
         <Head>
           <title>{useTitle('Blog')}</title>
           {Object.keys(metadata).map((key) => (
+            <meta property={key} key={key} content={metadata[key]} />
+          ))}
+          {Object.keys(nameProps).map((key) => (
             <meta property={key} key={key} content={metadata[key]} />
           ))}
           <meta name="description" content={slogan} />
