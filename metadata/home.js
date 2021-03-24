@@ -30,13 +30,13 @@ export const jsonLdProps = {
       '@type': 'WebSite',
       '@id': 'https://tiarebalbi.com/#website',
       url: 'https://tiarebalbi.com/',
-      name: 'Rock Content - BR',
-      description: 'Marketing Content',
+      name: 'Tiarê Balbi',
+      description: 'Software Engineer',
       publisher: { '@id': 'https://tiarebalbi.com/#person' },
       potentialAction: [
         {
           '@type': 'SearchAction',
-          target: 'https://tiarebalbi.com/?s={search_term_string}',
+          target: 'https://tiarebalbi.com/articles?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       ],
@@ -46,10 +46,9 @@ export const jsonLdProps = {
       '@type': 'ImageObject',
       '@id': 'https://tiarebalbi.com/#primaryimage',
       inLanguage: 'en-US',
-      url:
-        'https://tiarebalbi.com/wp-content/uploads/sites/2/2021/02/rock-content-marketing-content.png',
-      width: 635,
-      height: 628
+      url: 'https://tiarebalbi.com/images/profile-1.jpg',
+      width: 400,
+      height: 400
     },
     {
       '@type': 'WebPage',
