@@ -1,5 +1,5 @@
 import { useTitle } from '../lib/title';
-import { mainWebSite, personSchema } from './general';
+import { imageObjectLogo, mainWebSite, personSchema } from './general';
 
 export const jsonLdProps = (post, similar) => {
   const title = post?.title[0]?.text;
@@ -18,6 +18,7 @@ export const jsonLdProps = (post, similar) => {
     '@graph': [
       personSchema,
       mainWebSite,
+      imageObjectLogo,
       {
         '@type': 'ImageObject',
         '@id': `${url}/#primaryimage`,

@@ -1,5 +1,5 @@
 import { useTitle } from '../lib/title';
-import { mainWebSite, personSchema } from './general';
+import { imageObjectLogo, mainWebSite, personSchema } from './general';
 
 const description =
   'I don’t just design and develop. Sometimes I also write down words. Here I share my insights and findings from my daily study.';
@@ -9,6 +9,7 @@ export const jsonLdProps = () => ({
   '@graph': [
     personSchema,
     mainWebSite,
+    imageObjectLogo,
     {
       '@type': 'ImageObject',
       '@id': 'https://tiarebalbi.com/articles/#primaryimage',
