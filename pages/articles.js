@@ -1,12 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import { gql } from '@apollo/client';
+import { jsonLdScriptProps } from 'react-schemaorg';
 
 import { client } from '../lib/graphql';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
-import { NextSeo } from 'next-seo';
 import { useTitle } from '../lib/title';
+import metadata, { jsonLdProps } from '../metadata/blog';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -30,12 +31,13 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      posts: response?.data?.allBlog_posts?.edges
+      posts: response?.data?.allBlog_posts?.edges,
+      modifiedTime: new Date().toISOString()
     }
   };
 }
 
-export default function Articles({ posts }) {
+export default function Articles({ posts, modifiedTime }) {
   const slogan =
     'I don’t just design and develop. Sometimes I also write down words. Here I share my insights and findings from my daily study.';
   const populatePost = (post) => (
@@ -52,25 +54,13 @@ export default function Articles({ posts }) {
       <section className="container">
         <Head>
           <title>{useTitle('Blog')}</title>
-          <meta content={slogan} name="description" />
+          {Object.keys(metadata).map((key) => (
+            <meta property={key} key={key} content={metadata[key]} />
+          ))}
+          <meta property="article:modified_time" content={modifiedTime} />
+          <script {...jsonLdScriptProps(jsonLdProps())} />
         </Head>
         <PageTitle slogan={slogan} title="Blog" />
-        <NextSeo
-          openGraph={{
-            type: 'website',
-            url: `https://tiarebalbi.com/articles`,
-            title: 'Blog',
-            description: slogan,
-            images: [
-              {
-                url: 'https://tiarebalbi.com/images/about-me.jpg',
-                width: 800,
-                height: 600,
-                alt: 'Tiarê Balbi Bonamini'
-              }
-            ]
-          }}
-        />
         <div className="row">{posts && posts.map(populatePost)}</div>
       </section>
     </div>
