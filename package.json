@@ -33,8 +33,45 @@
     "sharethis-reactjs": "^1.6.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@semantic-release/npm": "^7.0.10",
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^1.6.9",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "semantic-release": "^17.4.2"
+  },
+  "release": {
+    "branches": [
+      "master",
+      "next"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "components/",
+              "label": "Components"
+            },
+            {
+              "path": "lib/",
+              "label": "Lib"
+            },
+            {
+              "path": "pages/",
+              "label": "Internal Pages"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   }
 }
