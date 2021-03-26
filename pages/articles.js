@@ -8,26 +8,10 @@ import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
 import { useTitle } from '../lib/title';
 import metadata, { jsonLdProps, nameProps } from '../metadata/blog';
+import { allBlogPostsQuery } from '../lib/queries';
 
 export async function getServerSideProps() {
-  const response = await client.query({
-    query: gql`
-      {
-        allBlog_posts(tags: "blog", sortBy: created_date_DESC) {
-          edges {
-            node {
-              title
-              created_date
-              media
-              _meta {
-                uid
-              }
-            }
-          }
-        }
-      }
-    `
-  });
+  const response = await client.query(allBlogPostsQuery);
 
   return {
     props: {

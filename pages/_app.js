@@ -3,6 +3,7 @@ import '../styles/flexboxgrid.css';
 
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import PageHeader from '../components/PageHeader';
 import Footer from '../components/Footer';
@@ -10,6 +11,9 @@ import Footer from '../components/Footer';
 import styles from '../styles/AppLoader.module.css';
 
 function AppLoader({ Component, pageProps }) {
+  const router = useRouter();
+  const refLink = `https://tiarebalbi.com${router.asPath}`;
+
   return (
     <>
       <Head>
@@ -20,10 +24,10 @@ function AppLoader({ Component, pageProps }) {
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
-        <link rel="canonical" href="https://tiarebalbi.com/" />
+        <link rel="canonical" href={refLink} />
+        <link rel="shortlink" href={refLink} />
         <link rel="dns-prefetch" href="//js.hsforms.net" />
         <link rel="dns-prefetch" href="//s.w.org" />
-        <link rel="shortlink" href="https://tiarebalbi.com/" />
       </Head>
       <main className={styles.containerHolder}>
         <div className={styles.content}>

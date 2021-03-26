@@ -6,4 +6,4 @@ Allow: /
 Host: https://tiarebalbi.com
 
 # Sitemaps
-Sitemap: https://tiarebalbi.com/sitemap.xml
+Sitemap: https://tiarebalbi.com/server-sitemap.xml
