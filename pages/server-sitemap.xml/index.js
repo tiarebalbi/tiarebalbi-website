@@ -7,7 +7,6 @@ export const getServerSideProps = async (ctx) => {
   const response = await client.query(allBlogPostsQuery);
 
   const posts = response?.data?.allBlog_posts?.edges;
-  console.log(JSON.stringify(posts));
 
   const fields = [];
 
