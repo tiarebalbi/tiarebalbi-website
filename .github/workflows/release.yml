@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
       - run: npm run build
-      - run: npx semantic-release@17
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
