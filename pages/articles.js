@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import { gql } from '@apollo/client';
 import { jsonLdScriptProps } from 'react-schemaorg';
 
 import { client } from '../lib/graphql';

@@ -1,9 +1,11 @@
 # *
 User-agent: *
 Allow: /
+crawl-delay: 120
 
 # Host
 Host: https://tiarebalbi.com
 
 # Sitemaps
+Sitemap: https://tiarebalbi.com/sitemap.xml
 Sitemap: https://tiarebalbi.com/server-sitemap.xml
