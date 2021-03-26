@@ -11,7 +11,7 @@ const PageTitle = ({ title, slogan, date }) => (
         <span>{date}</span>
       </p>
     )}
-    <h1 className={styles.title}>{title}</h1>
+    <h2 className={styles.title}>{title}</h2>
     <p className={styles.slogan}>{slogan}</p>
   </section>
 );

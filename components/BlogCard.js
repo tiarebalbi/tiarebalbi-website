@@ -6,7 +6,14 @@ import { BsArrowRightShort } from 'react-icons/bs';
 const BlogCard = ({ uid, title, date, url }) => (
   <div className={`col-12 col-sm-6 col-md-4 ${styles.post}`} key={uid}>
     <div>
-      <Image layout="fill" objectFit="cover" objectPosition="50% 50%" quality={100} src={url} />
+      <Image
+        alt={`Post: ${title}`}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="50% 50%"
+        quality={100}
+        src={url}
+      />
     </div>
     <h3 className={styles.titleCard}>{title}</h3>
     {date && <p className={styles.dateCard}>{date}</p>}

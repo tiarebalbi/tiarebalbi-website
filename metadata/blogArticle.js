@@ -87,9 +87,7 @@ export const nameProps = (title, description) => ({
   keywords:
     'blog, articles, dev topics, software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
   'twitter:card': 'summary_large_image',
-  'twitter:site': '@tiarebalbi',
-  'twitter:label1': 'Reading time',
-  'twitter:data1': '8 minutes'
+  'twitter:site': '@tiarebalbi'
 });
 
 const headerProps = (title, description, url, image) => ({

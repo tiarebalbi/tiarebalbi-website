@@ -16,6 +16,7 @@ const Content = ({ details }) => {
       {details.type === 'image' && (
         <div className={styles.image}>
           <Image
+            alt="Page Reference"
             src={details.url}
             width={details.dimensions.width}
             height={details.dimensions.height}

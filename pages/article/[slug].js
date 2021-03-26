@@ -18,20 +18,20 @@ import metadata, { jsonLdProps, nameProps } from '../../metadata/blogArticle';
 export async function getServerSideProps({ params }) {
   const response = await client.query({
     query: gql`
-    {
-      blog_post(uid: "${params?.slug}", lang:"en-gb") {
-        title
-        slogan
-        content
-        media
-        created_date
-        _meta{
-          uid
-          id
-        }
-      }
-    }
-    `
+            {
+                blog_post(uid: "${params?.slug}", lang:"en-gb") {
+                    title
+                    slogan
+                    content
+                    media
+                    created_date
+                    _meta{
+                        uid
+                        id
+                    }
+                }
+            }
+        `
   });
 
   if (response.data.blog_post === null) {
@@ -42,22 +42,22 @@ export async function getServerSideProps({ params }) {
 
   const similarPosts = await client.query({
     query: gql`
-    {
-      allBlog_posts(similar: {documentId: "${response?.data?.blog_post?._meta.id}", max:3}, sortBy: created_date_DESC, first:3) {
-        edges {
-          node {
-            title
-            created_date
-            media
-            _meta {
-              uid
-              id
+            {
+                allBlog_posts(similar: {documentId: "${response?.data?.blog_post?._meta.id}", max:3}, sortBy: created_date_DESC, first:3) {
+                    edges {
+                        node {
+                            title
+                            created_date
+                            media
+                            _meta {
+                                uid
+                                id
+                            }
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    }
-    `
+        `
   });
   const similarPost = similarPosts.data.allBlog_posts.edges || [];
 
@@ -86,7 +86,7 @@ export default function Article({ post, similar, modifiedTime }) {
         {Object.keys(result).map((key) => (
           <meta property={key} key={key} content={result[key]} />
         ))}
-        {Object.keys(nameProps).map((key) => (
+        {Object.keys(namePropsResult).map((key) => (
           <meta name={key} key={key} content={namePropsResult[key]} />
         ))}
         <meta property="article:modified_time" content={modifiedTime} />
@@ -98,6 +98,7 @@ export default function Article({ post, similar, modifiedTime }) {
           {post.media.url && (
             <div className={styles.imageRow}>
               <Image
+                alt={title}
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
