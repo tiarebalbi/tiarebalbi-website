@@ -8,7 +8,6 @@ import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
 import metadata, { jsonLdProps, nameProps } from '../metadata/home';
 import { jsonLdScriptProps } from 'react-schemaorg';
-import { defaultPageDescription } from '../lib/seo';
 
 export async function getServerSideProps() {
   const response = await client.query({
@@ -35,6 +34,20 @@ export async function getServerSideProps() {
       modifiedTime: new Date().toISOString()
     }
   };
+}
+
+export function reportWebVitals(metric) {
+  const { id, name, label, value } = metric;
+  metric.label === 'web-vital' && console.log(metric);
+
+  window.gtag && window.gtag('send', 'event', {
+    eventCategory:
+        label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+    eventAction: name,
+    eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+    eventLabel: id, // id unique to current page load
+    nonInteraction: true, // avoids affecting bounce rate.
+  })
 }
 
 export default function Home(props) {
