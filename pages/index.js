@@ -39,6 +39,11 @@ export async function getServerSideProps() {
 export function reportWebVitals(metric) {
   const { id, name, label, value } = metric;
   console.log(metric);
+  
+  const body = JSON.stringify(metric);
+  // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
+  (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
+      fetch('/analytics', {body, method: 'POST', keepalive: true});
 
   window.gtag && window.gtag('send', 'event', {
     eventCategory:
