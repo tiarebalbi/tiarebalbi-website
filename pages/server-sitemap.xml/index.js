@@ -13,7 +13,7 @@ export const getServerSideProps = async (ctx) => {
   posts.map((record) => {
     const date = record?.node?.created_date || '2021-03-26';
     fields.push({
-      loc: `${domain}/articles/${record?.node?._meta?.uid}`,
+      loc: `${domain}/article/${record?.node?._meta?.uid}`,
       lastmod: new Date(date).toISOString(),
       priority: 0.8
     });
