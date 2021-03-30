@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { getCLS, getFID, getLCP } from 'web-vitals';
 
 import Banner from '../components/home/Banner';
 import Blog from '../components/home/Blog';
@@ -36,23 +37,29 @@ export async function getServerSideProps() {
   };
 }
 
-export function reportWebVitals(metric) {
-  const { id, name, label, value } = metric;
-  console.log(metric);
-  
+function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
-      fetch('/analytics', {body, method: 'POST', keepalive: true});
+    fetch('/analytics', { body, method: 'POST', keepalive: true });
+}
 
-  window.gtag && window.gtag('send', 'event', {
-    eventCategory:
-        label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
-    eventAction: name,
-    eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
-    eventLabel: id, // id unique to current page load
-    nonInteraction: true, // avoids affecting bounce rate.
-  })
+export function reportWebVitals(metric) {
+  const { id, name, label, value } = metric;
+  console.log(metric);
+
+  getCLS(sendToAnalytics);
+  getFID(sendToAnalytics);
+  getLCP(sendToAnalytics);
+
+  window.gtag &&
+    window.gtag('send', 'event', {
+      eventCategory: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+      eventAction: name,
+      eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+      eventLabel: id, // id unique to current page load
+      nonInteraction: true // avoids affecting bounce rate.
+    });
 }
 
 export default function Home(props) {

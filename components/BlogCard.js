@@ -19,7 +19,7 @@ const BlogCard = ({ uid, title, date, url }) => (
     {date && <p className={styles.dateCard}>{date}</p>}
     <a aria-label={` Read more: ${title}`} href={`/article/${uid}`}>
       <BsArrowRightShort />
-      <span aria-label={` Read more: ${title}`} >Read More</span>
+      <span aria-label={` Read more: ${title}`}>Read More</span>
     </a>
   </div>
 );
