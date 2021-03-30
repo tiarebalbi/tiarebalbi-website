@@ -26,8 +26,8 @@ function AppLoader({ Component, pageProps }) {
         />
         <link rel="canonical" href={refLink} />
         <link rel="shortlink" href={refLink} />
-        <link rel="dns-prefetch" href="//js.hsforms.net" />
-        <link rel="dns-prefetch" href="//s.w.org" />
+        <link rel="preconnect" href="https://tiarebalbi.com" />
+        <link rel="dns-prefetch" href="https://tiarebalbi.com" />
       </Head>
       <main className={styles.containerHolder}>
         <div className={styles.content}>
