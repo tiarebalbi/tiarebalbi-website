@@ -38,7 +38,7 @@ export async function getServerSideProps() {
 
 export function reportWebVitals(metric) {
   const { id, name, label, value } = metric;
-  metric.label === 'web-vital' && console.log(metric);
+  console.log(metric);
 
   window.gtag && window.gtag('send', 'event', {
     eventCategory:
