@@ -34,9 +34,9 @@ const Banner = () => (
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
       <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
       <p className={styles.slogan}>
-        Software engineer who can be described as a serious enthusiast of technology,
-        fortunate to work with one of my biggest passions: software development. Finding different
-        ways to solve different problems.
+        A software engineer who can be described as a serious enthusiast of technology, fortunate to
+        work with one of my biggest passions: software development. Finding different ways to solve
+        different problems.
       </p>
       <p className={styles.slogan}>
         Based in Dublin, Ireland, I have been working with software development since 2006, working
