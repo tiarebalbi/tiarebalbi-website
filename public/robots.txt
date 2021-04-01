@@ -5,4 +5,3 @@ crawl-delay: 120
 
 # Sitemaps
 Sitemap: https://tiarebalbi.com/sitemap.xml
-Sitemap: https://tiarebalbi.com/server-sitemap.xml

@@ -10,7 +10,7 @@ import { gql } from '@apollo/client';
 import metadata, { jsonLdProps, nameProps } from '../metadata/home';
 import { jsonLdScriptProps } from 'react-schemaorg';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await client.query({
     query: gql`
       {
@@ -33,7 +33,8 @@ export async function getServerSideProps() {
     props: {
       posts: response?.data?.allBlog_posts?.edges,
       modifiedTime: new Date().toISOString()
-    }
+    },
+    revalidate: 30
   };
 }
 

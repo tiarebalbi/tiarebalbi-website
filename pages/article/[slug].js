@@ -14,8 +14,21 @@ import { useTitle } from '../../lib/title';
 import styles from '../../styles/pages/Article.module.css';
 import BlogCard from '../../components/BlogCard';
 import metadata, { jsonLdProps, nameProps } from '../../metadata/blogArticle';
+import { allBlogPostsQuery } from '../../lib/queries';
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const response = await client.query(allBlogPostsQuery);
+  const posts = response?.data?.allBlog_posts?.edges || [];
+
+  const params = posts.map((post) => ({ params: { slug: post?.node?._meta?.uid } }));
+  console.log(2, params);
+  return {
+    paths: params,
+    fallback: true
+  };
+}
+
+export async function getStaticProps({ params }) {
   const response = await client.query({
     query: gql`
             {
@@ -66,7 +79,8 @@ export async function getServerSideProps({ params }) {
       post: response?.data?.blog_post,
       similar: similarPost,
       modifiedTime: new Date().toISOString()
-    }
+    },
+    revalidate: 30
   };
 }
 
@@ -95,7 +109,7 @@ export default function Article({ post, similar, modifiedTime }) {
       <PageTitle date={post?.created_date} slogan={description} title={title} />
       <div className="container">
         <div className="ro mb-5">
-          {post.media.url && (
+          {post?.media?.url && (
             <div className={styles.imageRow}>
               <Image
                 alt={title}
@@ -110,8 +124,8 @@ export default function Article({ post, similar, modifiedTime }) {
         </div>
         <div className="row">
           <div className="col-12">
-            {post.content &&
-              post.content.map((content, index) => <Content details={content} key={index} />)}
+            {post?.content &&
+              post?.content?.map((content, index) => <Content details={content} key={index} />)}
           </div>
         </div>
         <div className="row mb-5">

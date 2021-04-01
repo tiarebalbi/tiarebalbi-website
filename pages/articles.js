@@ -9,14 +9,15 @@ import { useTitle } from '../lib/title';
 import metadata, { jsonLdProps, nameProps } from '../metadata/blog';
 import { allBlogPostsQuery } from '../lib/queries';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await client.query(allBlogPostsQuery);
 
   return {
     props: {
       posts: response?.data?.allBlog_posts?.edges,
       modifiedTime: new Date().toISOString()
-    }
+    },
+    revalidate: 30
   };
 }
 

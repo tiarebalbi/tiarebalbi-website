@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://tiarebalbi.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-03-26T04:44:56.641Z</lastmod></url>
-<url><loc>https://tiarebalbi.com/articles</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-03-26T04:44:56.642Z</lastmod></url>
+<url><loc>https://tiarebalbi.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/articles</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/kotlin-delegated-properties</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/algorithms-stack</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/the-future-of-serverless-computing</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/week-4-the-rate-limit-pattern</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/week-3-the-retry-pattern</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/week-2-bulkhead-managing-concurrent-requests</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
+<url><loc>https://tiarebalbi.com/article/week-1-circuitbreaker-with-resilience4j</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-01T02:40:54.303Z</lastmod></url>
 </urlset>

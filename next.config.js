@@ -4,5 +4,19 @@ module.exports = {
   },
   future: {
     webpack5: true
+  },
+  async redirects() {
+    return [
+      {
+        source: '/articles/:slug*',
+        destination: '/article/:slug*',
+        permanent: true
+      },
+      {
+        source: '/server-sitemap.xml',
+        destination: '/sitemap.xml',
+        permanent: true
+      }
+    ];
   }
 };
