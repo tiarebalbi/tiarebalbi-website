@@ -4,6 +4,7 @@ import Head from 'next/head';
 const GoogleAnalytics = () => (
   <Head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G0QDFHYFC" />
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7a6faf189a9448889d5effc30aa8197b"}' />
     <script
       async
       dangerouslySetInnerHTML={{
