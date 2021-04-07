@@ -4,16 +4,16 @@ import http from 'k6/http';
 
 const domain = __ENV.DEPLOYMENT_DOMAIN ? __ENV.DEPLOYMENT_DOMAIN : __ENV.INPUT_DOMAIN ? __ENV.INPUT_DOMAIN : 'tiarebalbi.com';
 const vus = parseInt(__ENV.TARGET_VUS ? __ENV.TARGET_VUS : 10);
+const minTime = __ENV.MIN_TIME ? __ENV.MIN_TIME : '1m';
+const maxTime = __ENV.MAX_TIME ? __ENV.MAX_TIME : '5m';
 
 let errorRate = new Rate('error_rate');
 
 export const options = {
   stages: [
-    { duration: '10s', target: parseInt(vus * 0.3) },
-    { duration: '30s', target: parseInt(vus * 0.5) },
-    { duration: '1m', target: parseInt(vus * 0.75) },
-    { duration: '1.5m', target: parseInt(vus) },
-    { duration: '2m', target: 0 }
+    { duration: minTime, target: parseInt(vus * 0.3) },
+    { duration: maxTime, target: parseInt(vus) },
+    { duration: minTime, target: 0 }
   ],
   thresholds: {
     http_req_failed: ['rate<0.3'], // http errors should be less than 3%
@@ -31,7 +31,7 @@ export default function main() {
       'status equals 200': (response) => response.status.toString() === '200'
     });
     errorRate.add(response.status >= 400);
-    sleep(2);
+    sleep(4);
   });
 
   group(`Access list Articles - https://${domain}/articles`, function () {
@@ -41,7 +41,7 @@ export default function main() {
       'status equals 200': (response) => response.status.toString() === '200'
     });
     errorRate.add(response.status >= 400);
-    sleep(8);
+    sleep(5);
   });
 
   group(
@@ -53,7 +53,7 @@ export default function main() {
         'status equals 200': (response) => response.status.toString() === '200'
       });
       errorRate.add(response.status >= 400);
-      sleep(5);
+      sleep(12);
     }
   );
 
@@ -66,7 +66,7 @@ export default function main() {
         'status equals 200': (response) => response.status.toString() === '200'
       });
       errorRate.add(response.status >= 400);
-      sleep(12);
+      sleep(4);
     }
   );
 
