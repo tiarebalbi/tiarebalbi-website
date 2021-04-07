@@ -43,7 +43,7 @@ jobs:
         uses: jakepartusch/psi-action@v1.1
         id: psi
         with:
-          url: 'https://${{ github.event.deployment_status.target_url }}/'
+          url: '${{ github.event.deployment_status.target_url }}/'
           threshold: 80
           strategy: mobile
           
@@ -55,6 +55,6 @@ jobs:
         uses: jakepartusch/psi-action@v1.1
         id: psi
         with:
-          url: 'https://${{ github.event.inputs.domain }}/'
+          url: '${{ github.event.inputs.domain }}/'
           threshold: 80
           strategy: mobile
