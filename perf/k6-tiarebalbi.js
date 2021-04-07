@@ -31,7 +31,7 @@ export default function main() {
       'status equals 200': (response) => response.status.toString() === '200'
     });
     errorRate.add(response.status >= 400);
-    sleep(1.6);
+    sleep(2);
   });
 
   group(`Access list Articles - https://${domain}/articles`, function () {
@@ -41,7 +41,7 @@ export default function main() {
       'status equals 200': (response) => response.status.toString() === '200'
     });
     errorRate.add(response.status >= 400);
-    sleep(2.8);
+    sleep(8);
   });
 
   group(
@@ -53,7 +53,7 @@ export default function main() {
         'status equals 200': (response) => response.status.toString() === '200'
       });
       errorRate.add(response.status >= 400);
-      sleep(1.6);
+      sleep(5);
     }
   );
 
@@ -66,7 +66,7 @@ export default function main() {
         'status equals 200': (response) => response.status.toString() === '200'
       });
       errorRate.add(response.status >= 400);
-      sleep(1.3);
+      sleep(12);
     }
   );
 
@@ -79,7 +79,7 @@ export default function main() {
         'status equals 200': (response) => response.status.toString() === '200'
       });
       errorRate.add(response.status >= 400);
-      sleep(2.1);
+      sleep(2);
     }
   );
 }
