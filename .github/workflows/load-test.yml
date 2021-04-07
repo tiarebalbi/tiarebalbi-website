@@ -9,7 +9,7 @@ on:
         description: Domain (with https)
       vus:
         required: true
-        default: 1000
+        default: 10
         description: Number of virtual users
       minTime:
         required: true
@@ -57,4 +57,4 @@ jobs:
         with:
           url: '${{ github.event.inputs.domain }}/'
           threshold: 80
-          strategy: mobile
+          strategy: desktop
