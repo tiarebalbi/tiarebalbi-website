@@ -11,14 +11,6 @@ on:
         required: true
         default: 1000
         description: Number of virtual users
-      minTime:
-        required: true
-        default: 30s
-        description: Min Time
-      maxTime:
-        required: true
-        default: 3m
-        description: Max Time
 jobs:
   k6_local_perf:
     runs-on: ubuntu-latest
@@ -33,8 +25,6 @@ jobs:
             -e TARGET_VUS=${{ github.event.inputs.vus }} 
             -e INPUT_DOMAIN=${{ github.event.inputs.domain }} 
             -e DEPLOYMENT_DOMAIN=${{ github.event.deployment_status.target_url }} 
-            -e MIN_TIME=${{ github.event.inputs.minTime }} 
-            -e MAX_TIME=${{ github.event.inputs.maxTime }}
   google_insights_deploy:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.deployment_status }}
