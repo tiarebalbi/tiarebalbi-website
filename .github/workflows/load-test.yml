@@ -40,14 +40,14 @@ jobs:
     if: ${{ github.event_name == 'deployment_status'}}
     steps:
       - name: Running Page Speed Insights (Mobile)
-        uses: jakepartusch/psi-action@v1.1
+        uses: jakepartusch/psi-action@v1.2
         id: psi-mob
         with:
           url: '${{ github.event.deployment_status.target_url }}/'
           threshold: 75
           strategy: mobile
       - name: Running Page Speed Insights (Desktop)
-        uses: jakepartusch/psi-action@v1.1
+        uses: jakepartusch/psi-action@v1.2
         id: psi-des
         with:
           url: '${{ github.event.deployment_status.target_url }}/'
@@ -59,14 +59,14 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch'}}
     steps:
       - name: Running Page Speed Insights (Mobile)
-        uses: jakepartusch/psi-action@v1.1
+        uses: jakepartusch/psi-action@v1.2
         id: psi-mob
         with:
           url: '${{ github.event.inputs.domain }}/'
           threshold: 75
           strategy: mobile
       - name: Running Page Speed Insights (Desktop)
-        uses: jakepartusch/psi-action@v1.1
+        uses: jakepartusch/psi-action@v1.2
         id: psi-des
         with:
           url: '${{ github.event.inputs.domain }}/'
