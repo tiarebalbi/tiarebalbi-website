@@ -6,7 +6,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap",
