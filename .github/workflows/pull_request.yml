@@ -20,7 +20,7 @@ jobs:
         with:
           version: ${{ matrix.node_version }}
       - name: Cache multiple paths
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         with:
           path: |
             **/node_modules
