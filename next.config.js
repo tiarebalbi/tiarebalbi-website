@@ -2,7 +2,5 @@ module.exports = {
   images: {
     domains: ['images.unsplash.com', 'images.prismic.io', 'prismic-io.s3.amazonaws.com']
   },
-  future: {
-    webpack5: true
-  },
+  webpack5: true,
 };
