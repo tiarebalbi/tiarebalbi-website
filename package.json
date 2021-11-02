@@ -34,13 +34,13 @@
     "web-vitals": "^2.1.2"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.1",
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/github": "^8.0.0",
     "@semantic-release/npm": "^8.0.2",
     "generate-changelog": "^1.8.0",
-    "next-sitemap": "^1.6.179",
+    "next-sitemap": "^1.6.199",
     "prettier": "^2.4.1",
     "semantic-release": "^18.0.0"
   },
