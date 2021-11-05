@@ -40,7 +40,7 @@
     "@semantic-release/github": "^8.0.2",
     "@semantic-release/npm": "^8.0.3",
     "generate-changelog": "^1.8.0",
-    "next-sitemap": "^1.6.199",
+    "next-sitemap": "^1.6.203",
     "prettier": "^2.4.1",
     "semantic-release": "^18.0.0"
   },
