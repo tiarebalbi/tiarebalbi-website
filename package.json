@@ -38,7 +38,7 @@
     "@semantic-release/commit-analyzer": "^9.0.1",
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^8.0.2",
+    "@semantic-release/npm": "^8.0.3",
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^1.6.199",
     "prettier": "^2.4.1",
