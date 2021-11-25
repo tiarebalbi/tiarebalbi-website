@@ -41,7 +41,7 @@
     "@semantic-release/npm": "^8.0.3",
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^1.6.203",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "semantic-release": "^18.0.1"
   },
   "release": {
