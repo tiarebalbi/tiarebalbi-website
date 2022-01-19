@@ -42,7 +42,7 @@
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^1.6.203",
     "prettier": "^2.5.1",
-    "semantic-release": "^18.0.1"
+    "semantic-release": "^19.0.2"
   },
   "release": {
     "branches": [
