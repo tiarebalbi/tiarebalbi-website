@@ -2,6 +2,7 @@
 
 ![CI / Tests](https://github.com/tiarebalbi/tiarebalbi-website/workflows/CI%20/%20Tests/badge.svg)
 [![Scorecards supply-chain security](https://github.com/tiarebalbi/tiarebalbi-website/actions/workflows/scorecards-analysis.yml/badge.svg)](https://github.com/tiarebalbi/tiarebalbi-website/actions/workflows/scorecards-analysis.yml)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5543/badge)](https://bestpractices.coreinfrastructure.org/projects/5543)
 [![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/tiarebalbi/tiarebalbi-website)
 
