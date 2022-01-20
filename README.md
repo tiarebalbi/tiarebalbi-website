@@ -3,6 +3,7 @@
 ![CI / Tests](https://github.com/tiarebalbi/tiarebalbi-website/workflows/CI%20/%20Tests/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website/badge)](https://www.codefactor.io/repository/github/tiarebalbi/tiarebalbi-website)
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/tiarebalbi/tiarebalbi-website)
+[![Scorecards supply-chain security](https://github.com/tiarebalbi/tiarebalbi-website/actions/workflows/scorecards-analysis.yml/badge.svg)](https://github.com/tiarebalbi/tiarebalbi-website/actions/workflows/scorecards-analysis.yml)
 
 I am a software engineer who can be described as a serious enthusiast of technology, fortunate to work with one of my biggest passions: software development. Finding different ways to solve different problems.
 
