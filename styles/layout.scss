@@ -7,6 +7,6 @@
   }
 
   & > main {
-    @apply h-full w-tb-full flex-grow bg-primary-50 relative;
+    @apply relative h-full w-tb-full flex-grow bg-primary-50;
   }
 }
