@@ -1,0 +1,12 @@
+.tb-root-layout {
+  @apply flex h-screen w-screen items-start justify-between overflow-hidden;
+
+  & > aside {
+    @apply flex h-full w-[13rem] items-start justify-center border-r border-primary-400 bg-primary p-space;
+    @apply text-white shadow-2xl;
+  }
+
+  & > main {
+    @apply h-full w-tb-full flex-grow bg-primary-50 relative;
+  }
+}

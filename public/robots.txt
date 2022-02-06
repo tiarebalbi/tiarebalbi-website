@@ -1,7 +1,4 @@
-# *
 User-agent: *
-Allow: /
-crawl-delay: 120
-
-# Sitemaps
+Disallow:
+Disallow: /cgi-bin/
 Sitemap: https://tiarebalbi.com/sitemap.xml

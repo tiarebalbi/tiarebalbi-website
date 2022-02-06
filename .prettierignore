@@ -1,2 +1,13 @@
+coverage/
+node_modules/
+build/
+.github/
+
+
+**/*.md
+**/*.json
+**/*.html
+
+.vercel
+
 .next
-node_modules

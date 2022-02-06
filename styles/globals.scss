@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+@tailwind forms;
+
+:root {
+  @apply font-sans;
+}
+
+body {
+  @apply bg-primary-50;
+}
+
+// Pages
+@import './layout';

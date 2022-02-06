@@ -5,8 +5,6 @@ updates:
     rebase-strategy: 'auto'
     schedule:
       interval: 'daily'
-    reviewers:
-      - 'tiarebalbi'
 
   - package-ecosystem: 'npm'
     directory: '/'

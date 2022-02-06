@@ -1,78 +1,38 @@
 {
-  "name": "@tiarebalbi/tiarebalbi-website",
-  "version": "3.0.1",
   "private": false,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "name": "@tiarebalbi/tiarebalbi-website",
+  "version": "4.0.0",
+  "license": "MIT",
+  "author": "Tiarê Balbi <support-dev@tiarebalbi.com>",
+  "repository": "git@github.com:tiarebalbi/tiarebalbi-website.git",
   "scripts": {
-    "dev": "next dev ",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap",
-    "format": "prettier --write . ",
-    "release:major": "changelog -M &&  git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
-    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "type-check": "tsc"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.8",
-    "apollo-cache-inmemory": "^1.6.6",
-    "apollo-client": "^2.6.10",
-    "apollo-link-prismic": "^1.0.9",
-    "graphql": "^16.2.0",
-    "graphql-tag": "^2.12.6",
-    "next": "^12.0.9",
-    "next-seo": "^4.29.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.3.1",
-    "react-schemaorg": "^2.0.0",
-    "react-syntax-highlighter": "^15.4.5",
-    "schema-dts": "^1.0.0",
-    "sharethis-reactjs": "^1.6.0",
-    "web-vitals": "^2.1.4"
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.49.7"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^9.0.0",
-    "generate-changelog": "^1.8.0",
-    "next-sitemap": "^2.0.7",
+    "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.1",
+    "@types/node": "^17.0.15",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "semantic-release": "^19.0.2"
-  },
-  "release": {
-    "branches": [
-      "master",
-      "next"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/github",
-        {
-          "assets": [
-            {
-              "path": "components/",
-              "label": "Components"
-            },
-            {
-              "path": "lib/",
-              "label": "Lib"
-            },
-            {
-              "path": "pages/",
-              "label": "Internal Pages"
-            }
-          ]
-        }
-      ],
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
+    "prettier-plugin-tailwindcss": "^0.1.5",
+    "tailwindcss": "^3.0.18",
+    "typescript": "4.5"
   }
 }

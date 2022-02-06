@@ -1,9 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-.history
+
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+
+# ide
+.idea
 
 # testing
 /coverage
@@ -17,6 +20,7 @@
 
 # misc
 .DS_Store
+*.pem
 
 # debug
 npm-debug.log*
@@ -29,4 +33,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-.idea
+# vercel
+.vercel

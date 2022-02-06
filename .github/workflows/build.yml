@@ -1,0 +1,54 @@
+name: Build
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: Development
+    env:
+      GH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - name: Node.js Setup
+        uses: actions/setup-node@v2.5.1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com
+          always-auth: true
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+          token: ${{ secrets.NPM_TOKEN }}
+      - name: Install Yarn
+        run: npm install -g yarn
+      - uses: actions/cache@v2
+        id: yarn-cache
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Run Lint
+        run: yarn lint
+      - name: Run Tests
+        run: yarn test
+      - name: Run Build
+        run: yarn build
+        env:
+          REACT_APP_GOOGLE_ANALYTICS_ENABLED: false
+
