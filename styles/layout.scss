@@ -2,11 +2,39 @@
   @apply flex h-screen w-screen items-start justify-between overflow-hidden;
 
   & > aside {
-    @apply flex h-full w-[13rem] items-start justify-center border-r border-primary-400 bg-primary p-space;
+    @apply flex h-full w-[130px] items-start justify-center border-r border-primary-400 bg-primary;
     @apply text-white shadow-2xl;
+
+    .logo {
+      @apply flex h-[130px] w-[130px] items-center justify-center border-b border-b-primary-400;
+    }
   }
 
   & > main {
-    @apply relative h-full w-tb-full flex-grow bg-primary-50;
+    @apply relative h-full w-tb-full flex-grow overflow-hidden bg-primary-50;
+  }
+}
+
+.tb-background-home {
+  @apply absolute z-0 h-full w-full overflow-hidden;
+
+  background: url('/images/sky.jpeg') center center no-repeat;
+  background-size: cover;
+
+  & > .tb-background-cards {
+    @apply absolute inset-[-15px] overflow-hidden;
+
+    .card1 {
+      @apply absolute inset-0 z-10 h-screen h-full w-full object-cover;
+      @apply align-middle;
+    }
+  }
+
+  & > .tb-background-clouds {
+    @apply absolute inset-0 z-30 h-full w-full overflow-hidden;
+
+    & > div {
+      @apply absolute bottom-[20px] left-[-400px] z-40 h-[251px] w-[400px];
+    }
   }
 }

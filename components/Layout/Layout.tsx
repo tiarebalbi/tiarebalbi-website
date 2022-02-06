@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 
-import Logo from '@public/images/logo.svg';
+import Intro from '@components/Animation/Intro';
+import BackgroundHome from '@components/Animation/BackgroundHome';
+import SideNav from '@components/Layout/SideNav';
 
 type ILayoutProps = {
   children?: ReactNode;
@@ -29,17 +30,11 @@ const Layout: React.FC<ILayoutProps> = ({
         rel="stylesheet"
       />
     </Head>
+    <Intro />
     <div className="tb-root-layout">
-      <aside>
-        <Logo width={60} height={48} alt="Tiarê Balbi Bonamini" />
-      </aside>
+      <SideNav />
       <main>
-        {children}
-        <Image
-          src={'/images/bottom-background.png'}
-          quality={100}
-          layout="fill"
-        />
+        <BackgroundHome />
       </main>
     </div>
   </>

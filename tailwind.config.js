@@ -51,10 +51,10 @@ module.exports = {
         'in-out-back': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
       width: {
-        'tb-full': 'calc(100vw - 13rem)',
+        'tb-full': 'calc(100vw - 130px)',
       },
       minWidth: {
-        'tb-full': 'calc(100vw - 13rem)',
+        'tb-full': 'calc(100vw - 130px)',
       },
       spacing: {
         'space-md': '20px',
