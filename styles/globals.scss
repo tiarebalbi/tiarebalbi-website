@@ -4,16 +4,27 @@
 @tailwind screens;
 @tailwind forms;
 
-:root {
-  @apply font-sans;
-}
-
-body {
-  @apply bg-primary-50;
+@layer base {
+  :root {
+    @apply font-sans;
+  }
 }
 
 // Pages
+@import './layout';
 
 // Components
-@import './layout';
-@import './intro';
+@layer components {
+  .btn {
+    @apply rounded leading-loose shadow-lg py-[10px] px-[15px] transition-all duration-500;
+    @apply cursor-pointer no-underline select-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-900;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-black hover:bg-secondary-300;
+  }
+}

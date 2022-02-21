@@ -19,6 +19,18 @@ module.exports = {
           100: '#e6ebf3',
           50: '#f2f5f9',
         },
+        secondary: {
+          900: '#7d5100',
+          800: '#996400',
+          700: '#bf7d00',
+          600: '#e69500',
+          DEFAULT: '#ffa600',
+          400: '#ffc14d',
+          300: '#ffdb99',
+          200: '#ffe9bf',
+          100: '#fff6e6',
+          50: '#fffbf2',
+        },
       },
       fontFamily: {
         sans: "'PT Sans', sans-serif",

@@ -1,40 +1,39 @@
-.tb-root-layout {
-  @apply flex h-screen w-screen items-start justify-between overflow-hidden;
+.tb-header {
+  @apply relative h-[880px] w-screen;
 
-  & > aside {
-    @apply flex h-full w-[130px] items-start justify-center border-r border-primary-400 bg-primary;
-    @apply text-white shadow-2xl;
+  .header-content {
+    @apply relative z-50 py-space-md container mx-auto grid grid-cols-3;
 
     .logo {
-      @apply flex h-[130px] w-[130px] items-center justify-center border-b border-b-primary-400;
+      @apply fill-white text-white;
+    }
+
+    .menu {
+      @apply flex flex-row items-center justify-center space-x-8;
+
+      a {
+        @apply leading-relaxed cursor-pointer hover:font-semibold duration-500;
+      }
+    }
+
+    .actions {
+      @apply flex items-center justify-end;
     }
   }
 
-  & > main {
-    @apply relative h-full w-tb-full flex-grow overflow-hidden bg-primary-50;
-  }
-}
-
-.tb-background-home {
-  @apply absolute z-0 h-full w-full overflow-hidden;
-
-  background: url('/images/sky.jpeg') center center no-repeat;
-  background-size: cover;
-
-  & > .tb-background-cards {
-    @apply absolute inset-[-15px] overflow-hidden;
-
-    .card1 {
-      @apply absolute inset-0 z-10 h-screen h-full w-full object-cover;
-      @apply align-middle;
-    }
+  .element-3 {
+    @apply absolute z-0 top-[300px] left-[50vw];
   }
 
-  & > .tb-background-clouds {
-    @apply absolute inset-0 z-30 h-full w-full overflow-hidden;
+  .element-2 {
+    @apply absolute z-10 rounded shadow-xl bg-white top-[150px] w-[460px] h-[660px] bg-cover;
 
-    & > div {
-      @apply absolute bottom-[20px] left-[-400px] z-40 h-[251px] w-[400px];
-    }
+    background: url("https://tiarebalbi.com/_next/image?url=%2Fimages%2Fprofile-1.jpg&w=828&q=75") no-repeat top center;
+    background-size: cover;
+    left: calc(30vw * 0.5);
+  }
+
+  .element-1 {
+    @apply absolute z-0 bg-primary top-0 left-0 w-[30vw] h-[880px] [clip-path:polygon(0_0,_100%_0,_100%_100%,_0_95%)];
   }
 }

@@ -1,14 +1,12 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 
-import Intro from '@components/Animation/Intro';
-import BackgroundHome from '@components/Animation/BackgroundHome';
-import SideNav from '@components/Layout/SideNav';
+import Header from '@components/Layout/Header';
 
-type ILayoutProps = {
+interface ILayoutProps {
   children?: ReactNode;
   title?: string;
-};
+}
 
 const Layout: React.FC<ILayoutProps> = ({
   children,
@@ -30,12 +28,9 @@ const Layout: React.FC<ILayoutProps> = ({
         rel="stylesheet"
       />
     </Head>
-    <Intro />
     <div className="tb-root-layout">
-      <SideNav />
-      <main>
-        <BackgroundHome />
-      </main>
+      <Header />
+      <main>{children}</main>
     </div>
   </>
 );
