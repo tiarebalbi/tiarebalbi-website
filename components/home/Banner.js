@@ -54,7 +54,7 @@ const Banner = () => (
         </li>
         <li>
           <BiBuilding />
-          <span>Software Engineer @ Workday</span>
+          <span>Software Engineer</span>
         </li>
       </ul>
       <p className={styles.disclaimer}>
