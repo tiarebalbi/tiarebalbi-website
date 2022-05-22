@@ -11,10 +11,9 @@ I am a software engineer who can be described as a serious enthusiast of technol
 
 Based in Dublin, Ireland, I have been working with software development since 2006, working with an extensive range of small to large solutions, from designing the software until getting it out the door.
 
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_badge.svg)](https://repography.com)
-[![Timeline graph](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_timeline.svg)](https://github.com/strawberry-graphql/strawberry/commits)
-[![Issue status graph](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_issues.svg)](https://github.com/strawberry-graphql/strawberry/issues)
-[![Pull request status graph](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_prs.svg)](https://github.com/strawberry-graphql/strawberry/pulls)
-[![Trending topics](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_words.svg)](https://github.com/strawberry-graphql/strawberry/commits)
-[![Top contributors](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_users.svg)](https://github.com/strawberry-graphql/strawberry/graphs/contributors)
-
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/25902288/tiarebalbi/tiarebalbi-website/recent-activity/407aa818006a3f36d2b32e53a00a2cde_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/25902288/tiarebalbi/tiarebalbi-website/recent-activity/407aa818006a3f36d2b32e53a00a2cde_timeline.svg)](https://github.com/tiarebalbi/tiarebalbi-website/commits)
+[![Issue status graph](https://images.repography.com/25902288/tiarebalbi/tiarebalbi-website/recent-activity/407aa818006a3f36d2b32e53a00a2cde_issues.svg)](https://github.com/tiarebalbi/tiarebalbi-website/issues)
+[![Pull request status graph](https://images.repography.com/25902288/tiarebalbi/tiarebalbi-website/recent-activity/407aa818006a3f36d2b32e53a00a2cde_prs.svg)](https://github.com/tiarebalbi/tiarebalbi-website/pulls)
+[![Trending topics](https://images.repography.com/25902288/tiarebalbi/tiarebalbi-website/recent-activity/407aa818006a3f36d2b32e53a00a2cde_words.svg)](https://github.com/tiarebalbi/tiarebalbi-website/commits)
+[![Top contributors](https://images.repography.com/25902288/tiarebalbi/tiarebalbi-website/recent-activity/407aa818006a3f36d2b32e53a00a2cde_users.svg)](https://github.com/tiarebalbi/tiarebalbi-website/graphs/contributors)
