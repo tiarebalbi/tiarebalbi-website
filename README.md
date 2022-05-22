@@ -11,29 +11,10 @@ I am a software engineer who can be described as a serious enthusiast of technol
 
 Based in Dublin, Ireland, I have been working with software development since 2006, working with an extensive range of small to large solutions, from designing the software until getting it out the door.
 
-## Getting Start
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_timeline.svg)](https://github.com/strawberry-graphql/strawberry/commits)
+[![Issue status graph](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_issues.svg)](https://github.com/strawberry-graphql/strawberry/issues)
+[![Pull request status graph](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_prs.svg)](https://github.com/strawberry-graphql/strawberry/pulls)
+[![Trending topics](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_words.svg)](https://github.com/strawberry-graphql/strawberry/commits)
+[![Top contributors](https://images.repography.com/0/strawberry-graphql/strawberry/recent-activity/d751713988987e9331980363e24189ce_users.svg)](https://github.com/strawberry-graphql/strawberry/graphs/contributors)
 
-In the project directory, you can run:
-
-### `npm install`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm run test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
