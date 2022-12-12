@@ -1,3 +1,5 @@
+/** @type {import('next-sitemap').IConfig} */
+
 module.exports = {
   siteUrl: 'https://tiarebalbi.com',
   generateRobotsTxt: false,
