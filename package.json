@@ -22,7 +22,7 @@
     "apollo-link-prismic": "^1.1.1",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
-    "next": "^13.0.6",
+    "next": "^13.0.7",
     "next-seo": "^5.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
