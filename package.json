@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.2",
+    "@vercel/analytics": "^0.1.6",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link-prismic": "^1.1.1",
