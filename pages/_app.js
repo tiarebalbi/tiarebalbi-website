@@ -4,6 +4,8 @@ import '../styles/flexboxgrid.css';
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { Analytics } from '@vercel/analytics/react';
+
 
 import PageHeader from '../components/PageHeader';
 import Footer from '../components/Footer';
@@ -32,6 +34,7 @@ function AppLoader({ Component, pageProps }) {
       <main className={styles.containerHolder}>
         <div className={styles.content}>
           <PageHeader />
+          <Analytics />
           <Component {...pageProps} />
           <Footer />
         </div>
