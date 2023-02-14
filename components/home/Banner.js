@@ -33,16 +33,9 @@ const Banner = () => (
     </div>
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
       <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
-      <p className={styles.slogan}>
-        A software engineer who can be described as a serious enthusiast of technology, fortunate to
-        work with one of my biggest passions: software development. Finding different ways to solve
-        different problems.
-      </p>
-      <p className={styles.slogan}>
-        Based in Dublin, Ireland, I have been working with software development since 2006, working
-        with an extensive range of small to large solutions, from designing the software until
-        getting it out the door.
-      </p>
+      <p className={styles.slogan}>I am a software engineer based in Dublin, Ireland, with a deep passion for technology. I am grateful to have found a career that allows me to work with what I love the most: software development. I have a knack for finding innovative solutions to complex problems, and I am always up for a challenge.</p>
+      <p className={styles.slogan}>With over 17 years of experience in the field, I have had the privilege of working with an extensive range of software projects, from small to large-scale solutions. I have a hands-on approach to my work, and I take pride in every aspect of the software development process, from designing the software to ensuring its successful deployment.</p>
+      <p className={styles.slogan}>I am a serious enthusiast of technology, always striving to stay updated on the latest advancements in the field. My goal is to continue to improve my skills and grow as a software engineer while contributing to the development of innovative and impactful solutions.</p>
       <ul className={styles.items}>
         <li>
           <BiMailSend />
