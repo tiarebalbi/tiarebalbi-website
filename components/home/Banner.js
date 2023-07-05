@@ -33,17 +33,13 @@ const Banner = () => (
     </div>
     <div className={`col-sm-12 col-md-6 mb-sm-5  ${styles.contentArea}`}>
       <h1 className={styles.title}>Hey there, I'm Tiarê</h1>
-      <p className={styles.slogan}>I am a software engineer based in Dublin, Ireland, with a deep passion for technology. I am grateful to have found a career that allows me to work with what I love the most: software development. I have a knack for finding innovative solutions to complex problems, and I am always up for a challenge.</p>
-      <p className={styles.slogan}>With over 17 years of experience in the field, I have had the privilege of working with an extensive range of software projects, from small to large-scale solutions. I have a hands-on approach to my work, and I take pride in every aspect of the software development process, from designing the software to ensuring its successful deployment.</p>
-      <p className={styles.slogan}>I am a serious enthusiast of technology, always striving to stay updated on the latest advancements in the field. My goal is to continue to improve my skills and grow as a software engineer while contributing to the development of innovative and impactful solutions.</p>
+      <p className={styles.slogan}>I am a highly experienced software engineer with a deep passion for technology. I am fortunate to have established a career that revolves around my love for software development. Renowned for finding innovative solutions to complex problems, I am always ready to embrace a challenge.</p>
+      <p className={styles.slogan}>With over 17 years of experience in the field, I have had the privilege of working on a wide array of software projects, ranging from small to large-scale solutions. I possess a hands-on approach to my work, taking pride in every facet of the software development process, from design to successful deployment.</p>
+      <p className={styles.slogan}>As a fervent enthusiast of technology, I am continually striving to keep myself updated with the latest advancements in the field. My aim is to perpetually enhance my skills and grow as a software engineer, while contributing to the creation of innovative and impactful solutions.</p>
       <ul className={styles.items}>
         <li>
           <BiMailSend />
           <span>me@tiarebalbi.com</span>
-        </li>
-        <li>
-          <BiCurrentLocation />
-          <span>Dublin, Ireland</span>
         </li>
         <li>
           <BiBuilding />
