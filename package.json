@@ -24,7 +24,7 @@
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "next": "^13.4.2",
-    "next-seo": "^5.15.0",
+    "next-seo": "^6.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
