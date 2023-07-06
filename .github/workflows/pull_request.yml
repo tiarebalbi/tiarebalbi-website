@@ -16,7 +16,7 @@ jobs:
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           version: ${{ matrix.node_version }}
       - name: Cache multiple paths
