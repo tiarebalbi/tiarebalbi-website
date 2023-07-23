@@ -28,21 +28,21 @@ const PageHeader = () => {
             </Link>
           </div>
           <div className={`col-8 ${styles.menu}`}>
-            <a
+            <Link
               aria-label="All blog posts"
               className={pathname === '/articles' ? styles.selected : ''}
               href="/articles">
               <span>Blog</span>
-            </a>
-            <a aria-label="Getting in Touch" href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
+            </Link>
+            <Link aria-label="Getting in Touch" href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
               <BiEnvelope />
               <span>Get in Touch</span>
-            </a>
+            </Link>
           </div>
           <div className={`col-8 ${styles.mobileMenu}`}>
-            <a aria-label="Menu" onClick={() => setShowMenu(!showMenu)}>
+            <button aria-label="Menu" onClick={() => setShowMenu(!showMenu)}>
               <RiMenuLine />
-            </a>
+            </button>
           </div>
         </div>
         {showMenu && (
@@ -55,22 +55,22 @@ const PageHeader = () => {
             </a>
             <ul>
               <li>
-                <a href="/">
+                <Link href="/">
                   <BiRightArrow />
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/articles">
+                <Link href="/articles">
                   <BiRightArrow />
                   <span>Blog</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
+                <Link href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
                   <BiRightArrow />
                   <span>Get in Touch</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

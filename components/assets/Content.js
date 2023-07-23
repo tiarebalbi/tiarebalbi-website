@@ -4,7 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import styles from '../../styles/components/assets/Content.module.css';
 import codeStyle from '../../lib/codeStyle';
-import { GoArrowSmallRight } from 'react-icons/go';
+import {AiOutlineDoubleLeft} from "react-icons/ai";
 
 const Content = ({ details }) => {
   return (
@@ -31,7 +31,7 @@ const Content = ({ details }) => {
       {details.type === 'heading6' && <h6>{details.text}</h6>}
       {details.type === 'list-item' && (
         <p className={styles.listItem}>
-          <GoArrowSmallRight />
+          <AiOutlineDoubleLeft />
           <span>{details.text}</span>
         </p>
       )}

@@ -16,34 +16,37 @@
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.3",
-    "@vercel/analytics": "^0.1.8",
+    "@apollo/client": "^3.7.17",
+    "@vercel/analytics": "^1.0.1",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
-    "apollo-link-prismic": "^1.1.1",
-    "graphql": "^16.6.0",
+    "apollo-link-prismic": "^1.1.2",
+    "graphql": "^16.7.1",
     "graphql-tag": "^2.12.6",
-    "next": "^13.4.2",
-    "next-seo": "^5.15.0",
+    "next": "^13.4.12",
+    "next-seo": "^6.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1",
+    "react-icons": "^4.10.1",
     "react-schemaorg": "^2.0.0",
     "react-syntax-highlighter": "^15.5.0",
-    "schema-dts": "^1.1.0",
+    "schema-dts": "^1.1.2",
     "sharethis-reactjs": "^1.6.0",
-    "web-vitals": "^3.3.1"
+    "sharp": "^0.32.4",
+    "web-vitals": "^3.4.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.2",
-    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.7",
-    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.4",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
     "generate-changelog": "^1.8.0",
-    "next-sitemap": "^3.1.52",
-    "prettier": "^2.8.1",
-    "semantic-release": "^21.0.2"
+    "next-sitemap": "^4.1.8",
+    "prettier": "^3.0.0",
+    "semantic-release": "^21.0.7"
   },
   "release": {
     "branches": [
