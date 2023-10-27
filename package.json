@@ -42,7 +42,7 @@
     "@semantic-release/github": "^9.0.4",
     "@semantic-release/npm": "^10.0.4",
     "eslint": "8.45.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-config-next": "14.0.0",
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^4.1.8",
     "prettier": "^3.0.0",
