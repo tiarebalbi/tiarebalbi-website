@@ -45,7 +45,7 @@
     "eslint-config-next": "13.4.12",
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^4.1.8",
-    "prettier": "^3.0.0",
+    "prettier": "^3.1.0",
     "semantic-release": "^21.0.7"
   },
   "release": {
