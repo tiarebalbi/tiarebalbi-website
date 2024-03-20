@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.1.0
       - name: Run local k6 test (${{ github.event_name }})
-        uses: k6io/action@v0.3.0
+        uses: k6io/action@v0.3.1
         with:
           filename: perf/k6-tiarebalbi.js
           flags: >-
