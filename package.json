@@ -1,7 +1,6 @@
 {
   "name": "@tiarebalbi/tiarebalbi-website",
-  "version": "3.0.1",
-  "private": false,
+  "version": "4.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -76,5 +75,6 @@
       "@semantic-release/npm",
       "@semantic-release/git"
     ]
-  }
+  },
+  "packageManager": "yarn@4.9.1"
 }
