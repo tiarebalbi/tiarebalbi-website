@@ -1,6 +1,6 @@
 {
   "name": "@tiarebalbi/tiarebalbi-website",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
