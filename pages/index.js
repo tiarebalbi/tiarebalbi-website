@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import { getCLS, getFID, getLCP } from 'web-vitals';
 
 import Banner from '../components/home/Banner';
 import Blog from '../components/home/Blog';
@@ -49,9 +48,7 @@ export function reportWebVitals(metric) {
   const { id, name, label, value } = metric;
   console.log(metric);
 
-  getCLS(sendToAnalytics);
-  getFID(sendToAnalytics);
-  getLCP(sendToAnalytics);
+  sendToAnalytics(metric);
 
   window.gtag &&
     window.gtag('send', 'event', {
