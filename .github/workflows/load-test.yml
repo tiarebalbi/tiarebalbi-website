@@ -17,7 +17,7 @@ on:
         description: Min time
       maxTime:
         required: true
-        default: '5m'
+        default: '3m'
         description: Max time
 jobs:
   k6_local_perf:
