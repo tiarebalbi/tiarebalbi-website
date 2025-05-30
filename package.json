@@ -39,7 +39,7 @@
     "@semantic-release/github": "^11.0.2",
     "@semantic-release/npm": "^12.0.0",
     "eslint": "^9.27.0",
-    "eslint-config-next": "^15.0.0",
+    "eslint-config-next": "^15.3.3",
     "generate-changelog": "^1.8.0",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.3.3",
