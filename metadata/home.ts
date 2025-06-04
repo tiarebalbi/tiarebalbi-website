@@ -47,7 +47,7 @@ export const jsonLdProps = () => ({
   ]
 });
 
-export const nameProps = {
+export const nameProps: Record<string, string> = {
   description: defaultPageDescription,
   keywords:
     'software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
@@ -57,7 +57,7 @@ export const nameProps = {
   'twitter:data1': '6 minutes'
 };
 
-const headerProps = {
+const headerProps: Record<string, string> = {
   'article:publisher': 'https://github.com/tiarebalbi',
   'og:locale': 'en_US',
   'og:type': 'website',

@@ -21,10 +21,15 @@ export async function getStaticProps() {
   };
 }
 
-export default function Articles({ posts, modifiedTime }) {
+export interface ArticlesProps {
+  posts: any[];
+  modifiedTime: string;
+}
+
+export default function Articles({ posts, modifiedTime }: ArticlesProps) {
   const slogan =
     'I don’t just design and develop. Sometimes I also write down words. Here I share my insights and findings from my daily study.';
-  const populatePost = (post) => (
+  const populatePost = (post: any) => (
     <BlogCard
       date={post.node?.created_date}
       key={post.node?._meta?.uid}
@@ -46,7 +51,7 @@ export default function Articles({ posts, modifiedTime }) {
           ))}
           <meta name="description" content={slogan} />
           <meta property="article:modified_time" content={modifiedTime} />
-          <script {...jsonLdScriptProps(jsonLdProps())} />
+          <script {...jsonLdScriptProps(jsonLdProps() as any)} />
         </Head>
         <PageTitle slogan={slogan} title="Blog" />
         <div className="row">{posts && posts.map(populatePost)}</div>

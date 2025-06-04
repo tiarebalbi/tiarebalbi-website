@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Dots = (props) => {
+export interface DotsProps {
+  c?: string;
+}
+
+const Dots: React.FC<DotsProps> = (props) => {
   const fillColor = 'rgba(255,255,255,0.3)';
 
   return (

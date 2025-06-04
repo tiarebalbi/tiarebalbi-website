@@ -5,6 +5,7 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
+import type { AppProps } from 'next/app';
 
 
 import PageHeader from '../components/PageHeader';
@@ -12,7 +13,7 @@ import Footer from '../components/Footer';
 
 import styles from '../styles/AppLoader.module.css';
 
-function AppLoader({ Component, pageProps }) {
+function AppLoader({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const refLink = `https://tiarebalbi.com${router.asPath}`;
 

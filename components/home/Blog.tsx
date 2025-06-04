@@ -2,7 +2,11 @@ import React from 'react';
 
 import BlogCard from '../BlogCard';
 
-const Blog = ({ posts }) => (
+export interface BlogProps {
+  posts: any[];
+}
+
+const Blog: React.FC<BlogProps> = ({ posts }) => (
   <section className="row mb-5" id="blog">
     <div className="col-12 mb-5 mt-5">
       <h2>From my Blog</h2>

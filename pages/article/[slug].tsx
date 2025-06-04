@@ -20,7 +20,9 @@ export async function getStaticPaths() {
   const response = await client.query(allBlogPostsQuery);
   const posts = response?.data?.allBlog_posts?.edges || [];
 
-  const params = posts.map((post) => ({ params: { slug: post?.node?._meta?.uid } }));
+  const params = posts.map((post: any) => ({
+    params: { slug: post?.node?._meta?.uid },
+  }));
   console.log(2, params);
   return {
     paths: params,
@@ -28,7 +30,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const response = await client.query({
     query: gql`
             {
@@ -84,7 +86,13 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Article({ post, similar, modifiedTime }) {
+export interface ArticleProps {
+  post: any;
+  similar: any[];
+  modifiedTime: string;
+}
+
+export default function Article({ post, similar, modifiedTime }: ArticleProps) {
   const title = post?.title[0]?.text;
   const description = post?.slogan[0]?.text;
   const url = `https://tiarebalbi.com/article/${post?._meta?.uid}`;
@@ -104,7 +112,9 @@ export default function Article({ post, similar, modifiedTime }) {
           <meta name={key} key={key} content={namePropsResult[key]} />
         ))}
         <meta property="article:modified_time" content={modifiedTime} />
-        {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar))} />}
+        {post && (
+          <script {...jsonLdScriptProps(jsonLdProps(post, similar) as any)} />
+        )}
       </Head>
       <PageTitle date={post?.created_date} slogan={description} title={title} />
       <div className="container">
@@ -125,7 +135,9 @@ export default function Article({ post, similar, modifiedTime }) {
         <div className="row">
           <div className="col-12">
             {post?.content &&
-              post?.content?.map((content, index) => <Content details={content} key={index} />)}
+              post?.content?.map((content: any, index: number) => (
+                <Content details={content} key={index} />
+              ))}
           </div>
         </div>
         <div className="row mb-5">

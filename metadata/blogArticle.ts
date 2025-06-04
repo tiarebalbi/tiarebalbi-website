@@ -1,14 +1,14 @@
 import { useTitle } from '../lib/title';
 import { imageObjectLogo, mainWebSite, personSchema } from './general';
 
-export const jsonLdProps = (post, similar) => {
+export const jsonLdProps = (post: any, similar: any) => {
   const title = post?.title[0]?.text;
   const description = post?.slogan[0]?.text;
   const url = `https://tiarebalbi.com/blog/${post?._meta?.uid}`;
   const similarLinks = [url];
 
   if (similar && similar.length > 0) {
-    similar.map((link) =>
+    similar.map((link: any) =>
       similarLinks.push(`https://tiarebalbi.com/blog/${link?.node?._meta?.uid}`)
     );
   }
@@ -82,7 +82,10 @@ export const jsonLdProps = (post, similar) => {
   };
 };
 
-export const nameProps = (title, description) => ({
+export const nameProps = (
+  title: string,
+  description: string
+): Record<string, string> => ({
   description: description,
   keywords:
     'blog, articles, dev topics, software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
@@ -90,7 +93,12 @@ export const nameProps = (title, description) => ({
   'twitter:site': '@tiarebalbi'
 });
 
-const headerProps = (title, description, url, image) => ({
+const headerProps = (
+  title: string,
+  description: string,
+  url: string,
+  image: string
+): Record<string, string> => ({
   'og:locale': 'en_US',
   'og:type': 'website',
   'og:title': useTitle(title),

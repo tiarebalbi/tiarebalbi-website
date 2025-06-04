@@ -38,14 +38,14 @@ export async function getStaticProps() {
   };
 }
 
-function sendToAnalytics(metric) {
+function sendToAnalytics(metric: any) {
   const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
     fetch('/analytics', { body, method: 'POST', keepalive: true });
 }
 
-export function reportWebVitals(metric) {
+export function reportWebVitals(metric: any) {
   const { id, name, label, value } = metric;
   console.log(metric);
 
@@ -53,8 +53,8 @@ export function reportWebVitals(metric) {
   getFID(sendToAnalytics);
   getLCP(sendToAnalytics);
 
-  window.gtag &&
-    window.gtag('send', 'event', {
+  (window as any).gtag &&
+    (window as any).gtag('send', 'event', {
       eventCategory: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
       eventAction: name,
       eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
@@ -63,7 +63,12 @@ export function reportWebVitals(metric) {
     });
 }
 
-export default function Home(props) {
+export interface HomeProps {
+  posts: any[];
+  modifiedTime: string;
+}
+
+export default function Home(props: HomeProps) {
   return (
     <main className="container-fluid">
       <Head>
@@ -76,7 +81,7 @@ export default function Home(props) {
           <meta name={key} key={key} content={nameProps[key]} />
         ))}
         <meta property="article:modified_time" content={props.modifiedTime} />
-        <script {...jsonLdScriptProps(jsonLdProps())} />
+        <script {...jsonLdScriptProps(jsonLdProps() as any)} />
       </Head>
       <section className="container">
         <Banner />

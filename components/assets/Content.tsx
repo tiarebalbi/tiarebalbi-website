@@ -4,9 +4,13 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import styles from '../../styles/components/assets/Content.module.css';
 import codeStyle from '../../lib/codeStyle';
-import {AiOutlineDoubleLeft} from "react-icons/ai";
+import { AiOutlineDoubleLeft } from 'react-icons/ai';
 
-const Content = ({ details }) => {
+export interface ContentProps {
+  details: any;
+}
+
+const Content: React.FC<ContentProps> = ({ details }) => {
   return (
     <>
       {details.type === 'paragraph' && <p className={styles.paragraph}>{details.text}</p>}
