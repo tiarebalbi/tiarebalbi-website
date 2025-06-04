@@ -10,21 +10,21 @@ const Banner = () => (
   <div className={`row mt-5 d-flex align-items-center justify-content-around ${styles.rowHeader}`}>
     <div className={styles.socials}>
       <a
-        aria-label="Checkout my latest projects on GitHub"
+        aria-label="Check out my latest projects on GitHub"
         href="https://github.com/tiarebalbi"
         rel="noreferrer"
         target="_blank">
         <RiGithubFill />
       </a>
       <a
-        aria-label="Checkout my latest updates on twitter"
+        aria-label="Check out my latest updates on Twitter"
         href="https://twitter.com/tiarebalbi"
         rel="noreferrer"
         target="_blank">
         <RiTwitterFill />
       </a>
       <a
-        aria-label="Read more all my posts published on LinkedIn"
+        aria-label="Read my posts on LinkedIn"
         href="https://ie.linkedin.com/in/tiarebalbi"
         rel="noreferrer"
         target="_blank">
@@ -48,7 +48,7 @@ const Banner = () => (
       </ul>
       <p className={styles.disclaimer}>
         <ImWarning />
-        Any idea or content shared in this website is on my own.
+        Any ideas or content shared on this website are my own.
       </p>
     </div>
     <div className="col-sm-12 col-md-6 d-flex align-items-end justify-content-end">

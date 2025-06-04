@@ -10,7 +10,7 @@ import { CgClose } from 'react-icons/cg';
 import GoogleAnalytics from './GoogleAnalytics';
 import Logo from './assets/Logo';
 
-import styles from '../styles/components/PageHader.module.css';
+import styles from '../styles/components/PageHeader.module.css';
 
 const PageHeader = () => {
   const [showMenu, setShowMenu] = useState(false);

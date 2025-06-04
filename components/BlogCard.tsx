@@ -24,9 +24,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ uid, title, date, url }) => (
     </div>
     <h3 className={styles.titleCard}>{title}</h3>
     {date && <p className={styles.dateCard}>{date}</p>}
-    <a aria-label={` Read more: ${title}`} href={`/article/${uid}`}>
+    <a aria-label={`Read more: ${title}`} href={`/article/${uid}`}>
       <BsArrowRightShort />
-      <span aria-label={` Read more: ${title}`}>Read More</span>
+      <span aria-label={`Read more: ${title}`}>Read More</span>
     </a>
   </div>
 );
