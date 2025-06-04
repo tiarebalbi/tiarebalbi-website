@@ -25,6 +25,11 @@ export const options = {
   }
 };
 
+/**
+ * Simulates a user journey through the website by sequentially visiting the main page, articles list, and specific article pages, performing status checks and recording HTTP errors.
+ *
+ * Each step includes a pause to emulate realistic user behavior and updates a custom error rate metric if any HTTP response status is 400 or higher.
+ */
 export default function main() {
   let response;
 

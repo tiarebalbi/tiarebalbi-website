@@ -12,6 +12,11 @@ import Footer from '../components/Footer';
 
 import styles from '../styles/AppLoader.module.css';
 
+/**
+ * Serves as the main application wrapper for the Next.js app, providing global layout, metadata, and analytics.
+ *
+ * Renders the page component with its props, sets up essential meta tags and canonical URLs, and includes shared header, footer, and layout elements.
+ */
 function AppLoader({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const refLink = `https://tiarebalbi.com${router.asPath}`;

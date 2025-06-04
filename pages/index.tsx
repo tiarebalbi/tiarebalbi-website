@@ -9,6 +9,11 @@ import { gql } from '@apollo/client';
 import metadata, { jsonLdProps, nameProps } from '../metadata/home';
 import { jsonLdScriptProps } from 'react-schemaorg';
 
+/**
+ * Fetches the latest three blog posts tagged "blog" for static generation.
+ *
+ * @returns An object containing the fetched posts, the current timestamp as {@link modifiedTime}, and a revalidation interval for incremental static regeneration.
+ */
 export async function getStaticProps() {
   const response = await client.query({
     query: gql`
@@ -37,6 +42,13 @@ export async function getStaticProps() {
   };
 }
 
+/**
+ * Sends a metric object to the server analytics endpoint.
+ *
+ * Uses `navigator.sendBeacon` for asynchronous background transmission when available; otherwise, falls back to a POST request with `fetch` and `keepalive` enabled.
+ *
+ * @param metric - The metric data to be sent for analytics tracking.
+ */
 function sendToAnalytics(metric: any) {
   const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
@@ -44,6 +56,13 @@ function sendToAnalytics(metric: any) {
     fetch('/analytics', { body, method: 'POST', keepalive: true });
 }
 
+/**
+ * Reports web performance metrics to analytics services.
+ *
+ * Sends the provided metric to a server analytics endpoint and, if Google Analytics is available, dispatches a corresponding event.
+ *
+ * @param metric - The web performance metric object to report.
+ */
 export function reportWebVitals(metric: any) {
   const { id, name, label, value } = metric;
   console.log(metric);
@@ -65,6 +84,11 @@ export interface HomeProps {
   modifiedTime: string;
 }
 
+/**
+ * Renders the home page with SEO metadata, structured data, and a list of recent blog posts.
+ *
+ * @param props - Contains the blog posts to display and the last modified time for the page.
+ */
 export default function Home(props: HomeProps) {
   return (
     <main className="container-fluid">
