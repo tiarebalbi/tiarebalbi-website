@@ -16,6 +16,13 @@ import BlogCard from '../../components/BlogCard';
 import metadata, { jsonLdProps, nameProps } from '../../metadata/blogArticle';
 import { allBlogPostsQuery } from '../../lib/queries';
 
+/**
+ * Generates static paths for all blog articles based on their unique slugs.
+ *
+ * Fetches all blog posts and constructs route parameters for static generation, enabling incremental static regeneration for new posts.
+ *
+ * @returns An object containing the list of paths and a `fallback` flag set to `true`.
+ */
 export async function getStaticPaths() {
   const response = await client.query(allBlogPostsQuery);
   const posts = response?.data?.allBlog_posts?.edges || [];
@@ -30,6 +37,14 @@ export async function getStaticPaths() {
   };
 }
 
+/**
+ * Fetches blog post data and related posts for static generation of an article page.
+ *
+ * Retrieves a single blog post by its slug, along with up to three similar posts based on the current post's document ID. Returns the post data, similar posts, and the current timestamp as `modifiedTime` in the props. If the post is not found, returns `notFound: true` to trigger a 404 page. Enables incremental static regeneration with a 30-second revalidation interval.
+ *
+ * @param params - Route parameters containing the article slug.
+ * @returns An object with `props` for the article page, or `{ notFound: true }` if the post does not exist.
+ */
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const response = await client.query({
     query: gql`
@@ -92,6 +107,15 @@ export interface ArticleProps {
   modifiedTime: string;
 }
 
+/**
+ * Renders a blog article page with SEO metadata, social sharing buttons, and a list of similar posts.
+ *
+ * Displays the article's title, slogan, publication date, main image, and content blocks. Generates dynamic metadata and schema.org JSON-LD for SEO. Includes social share buttons and a section of related articles.
+ *
+ * @param post - The blog post data to display.
+ * @param similar - An array of similar blog posts to suggest.
+ * @param modifiedTime - The ISO timestamp representing the last modification time of the article.
+ */
 export default function Article({ post, similar, modifiedTime }: ArticleProps) {
   const title = post?.title[0]?.text;
   const description = post?.slogan[0]?.text;
