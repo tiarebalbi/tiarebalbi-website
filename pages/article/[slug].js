@@ -108,7 +108,7 @@ export default function Article({ post, similar, modifiedTime }) {
       </Head>
       <PageTitle date={post?.created_date} slogan={description} title={title} />
       <div className="container">
-        <div className="ro mb-5">
+        <div className="row mb-5">
           {post?.media?.url && (
             <div className={styles.imageRow}>
               <Image
