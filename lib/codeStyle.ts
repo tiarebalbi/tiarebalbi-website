@@ -1,4 +1,4 @@
-const style = {
+const style: { [key: string]: React.CSSProperties } = {
   hljs: {
     display: 'block',
     overflowX: 'auto',

@@ -3,7 +3,14 @@ import styles from '../styles/components/home/Blog.module.css';
 import Image from 'next/image';
 import { BsArrowRightShort } from 'react-icons/bs';
 
-const BlogCard = ({ uid, title, date, url }) => (
+export interface BlogCardProps {
+  uid: string;
+  title: string;
+  date?: string;
+  url: string;
+}
+
+const BlogCard: React.FC<BlogCardProps> = ({ uid, title, date, url }) => (
   <div className={`col-12 col-sm-6 col-md-4 ${styles.post}`} key={uid}>
     <div>
       <Image

@@ -5,10 +5,15 @@ import { jsonLdScriptProps } from 'react-schemaorg';
 import { client } from '../lib/graphql';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
-import { useTitle } from '../lib/title';
+import { formatTitle } from '../lib/title';
 import metadata, { jsonLdProps, nameProps } from '../metadata/blog';
 import { allBlogPostsQuery } from '../lib/queries';
 
+/**
+ * Fetches all blog posts and provides them as props for static generation.
+ *
+ * @returns An object containing the list of blog posts, the current ISO timestamp as {@link modifiedTime}, and a revalidation interval of 30 seconds.
+ */
 export async function getStaticProps() {
   const response = await client.query(allBlogPostsQuery);
 
@@ -21,10 +26,23 @@ export async function getStaticProps() {
   };
 }
 
-export default function Articles({ posts, modifiedTime }) {
+export interface ArticlesProps {
+  posts: any[];
+  modifiedTime: string;
+}
+
+/**
+ * Renders the blog articles page, displaying a list of blog posts with SEO metadata and structured data.
+ *
+ * @param posts - Array of blog post objects to display.
+ * @param modifiedTime - ISO timestamp indicating the last modification time of the articles page.
+ *
+ * @returns The blog articles page as a React component.
+ */
+export default function Articles({ posts, modifiedTime }: ArticlesProps) {
   const slogan =
     'I don’t just design and develop. Sometimes I also write down words. Here I share my insights and findings from my daily study.';
-  const populatePost = (post) => (
+  const populatePost = (post: any) => (
     <BlogCard
       date={post.node?.created_date}
       key={post.node?._meta?.uid}
@@ -37,7 +55,7 @@ export default function Articles({ posts, modifiedTime }) {
     <div className="container-fluid">
       <section className="container">
         <Head>
-          <title>{useTitle('Blog')}</title>
+          <title>{formatTitle('Blog')}</title>
           {Object.keys(metadata).map((key) => (
             <meta property={key} key={key} content={metadata[key]} />
           ))}
@@ -46,7 +64,7 @@ export default function Articles({ posts, modifiedTime }) {
           ))}
           <meta name="description" content={slogan} />
           <meta property="article:modified_time" content={modifiedTime} />
-          <script {...jsonLdScriptProps(jsonLdProps())} />
+          <script {...jsonLdScriptProps(jsonLdProps() as any)} />
         </Head>
         <PageTitle slogan={slogan} title="Blog" />
         <div className="row">{posts && posts.map(populatePost)}</div>
