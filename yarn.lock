@@ -1273,7 +1273,7 @@ __metadata:
     sharethis-reactjs: "npm:^1.6.0"
     sharp: "npm:^0.34.2"
     typescript: "npm:^5.8.3"
-    web-vitals: "npm:^3.5.2"
+    web-vitals: "npm:^5.0.2"
   languageName: unknown
   linkType: soft
 
@@ -8886,10 +8886,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web-vitals@npm:^3.5.2":
-  version: 3.5.2
-  resolution: "web-vitals@npm:3.5.2"
-  checksum: 10c0/662b385d6e96a18677cf8726454b65f3aecfdca330df72a82f73f293a5708ba9d191964649f8d363a1e64062a826a99805ade8c573a6492b91e02275b6860308
+"web-vitals@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "web-vitals@npm:5.0.2"
+  checksum: 10c0/8bf808b8c9c8020dd6a19c2499629e35a3c14dc04bb9dd4b6e2e555ac8125d99fe9f39a1afad0e059ace8232e3689f6b73d3bf8c645296a1a2e8afc3bc52c91c
   languageName: node
   linkType: hard
 
