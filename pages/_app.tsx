@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 
-
 import PageHeader from '../components/PageHeader';
 import Footer from '../components/Footer';
 

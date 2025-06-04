@@ -2,8 +2,25 @@ import React from 'react';
 
 import BlogCard from '../BlogCard';
 
+interface PostNode {
+  created_date?: string;
+  _meta?: {
+    uid: string;
+  };
+  title: Array<{
+    text: string;
+  }>;
+  media?: {
+    url: string;
+  };
+}
+
+interface Post {
+  node: PostNode;
+}
+
 export interface BlogProps {
-  posts: any[];
+  posts: Post[];
 }
 
 const Blog: React.FC<BlogProps> = ({ posts }) => (
@@ -17,8 +34,8 @@ const Blog: React.FC<BlogProps> = ({ posts }) => (
           date={post.node.created_date}
           key={post.node?._meta?.uid}
           title={post.node.title[0].text}
-          uid={post.node?._meta?.uid}
-          url={post.node.media?.url}
+          uid={post.node?._meta?.uid || ''}
+          url={post.node.media?.url || ''}
         />
       ))}
   </section>

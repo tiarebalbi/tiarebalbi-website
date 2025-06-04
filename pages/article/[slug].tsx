@@ -9,7 +9,7 @@ import { InlineShareButtons } from 'sharethis-reactjs';
 import PageTitle from '../../components/PageTitle';
 import Content from '../../components/assets/Content';
 import { client } from '../../lib/graphql';
-import { useTitle } from '../../lib/title';
+import { formatTitle } from '../../lib/title';
 
 import styles from '../../styles/pages/Article.module.css';
 import BlogCard from '../../components/BlogCard';
@@ -21,7 +21,7 @@ export async function getStaticPaths() {
   const posts = response?.data?.allBlog_posts?.edges || [];
 
   const params = posts.map((post: any) => ({
-    params: { slug: post?.node?._meta?.uid },
+    params: { slug: post?.node?._meta?.uid }
   }));
   console.log(2, params);
   return {
@@ -104,7 +104,7 @@ export default function Article({ post, similar, modifiedTime }: ArticleProps) {
   return (
     <section id="article">
       <Head>
-        <title>{useTitle(title)}</title>
+        <title>{formatTitle(title)}</title>
         {Object.keys(result).map((key) => (
           <meta property={key} key={key} content={result[key]} />
         ))}
@@ -112,9 +112,7 @@ export default function Article({ post, similar, modifiedTime }: ArticleProps) {
           <meta name={key} key={key} content={namePropsResult[key]} />
         ))}
         <meta property="article:modified_time" content={modifiedTime} />
-        {post && (
-          <script {...jsonLdScriptProps(jsonLdProps(post, similar) as any)} />
-        )}
+        {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar) as any)} />}
       </Head>
       <PageTitle date={post?.created_date} slogan={description} title={title} />
       <div className="container">

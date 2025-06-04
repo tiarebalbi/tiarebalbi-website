@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Banner from '../components/home/Banner';
 import Blog from '../components/home/Blog';
-import { useTitle } from '../lib/title';
+import { formatTitle } from '../lib/title';
 import { client } from '../lib/graphql';
 import { gql } from '@apollo/client';
 import metadata, { jsonLdProps, nameProps } from '../metadata/home';
@@ -69,7 +69,7 @@ export default function Home(props: HomeProps) {
   return (
     <main className="container-fluid">
       <Head>
-        <title>{useTitle('Software Engineer')}</title>
+        <title>{formatTitle('Software Engineer')}</title>
         {Object.keys(metadata).map((key) => (
           <meta property={key} key={key} content={metadata[key]} />
         ))}

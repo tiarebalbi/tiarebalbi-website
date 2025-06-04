@@ -1,2 +1,2 @@
 const prefix = `Tiarê Balbi Bonamini`;
-export const useTitle = (page: string): string => `${prefix} - ${page}`;
+export const formatTitle = (page: string): string => `${prefix} - ${page}`;

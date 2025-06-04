@@ -5,7 +5,7 @@ import { jsonLdScriptProps } from 'react-schemaorg';
 import { client } from '../lib/graphql';
 import PageTitle from '../components/PageTitle';
 import BlogCard from '../components/BlogCard';
-import { useTitle } from '../lib/title';
+import { formatTitle } from '../lib/title';
 import metadata, { jsonLdProps, nameProps } from '../metadata/blog';
 import { allBlogPostsQuery } from '../lib/queries';
 
@@ -42,7 +42,7 @@ export default function Articles({ posts, modifiedTime }: ArticlesProps) {
     <div className="container-fluid">
       <section className="container">
         <Head>
-          <title>{useTitle('Blog')}</title>
+          <title>{formatTitle('Blog')}</title>
           {Object.keys(metadata).map((key) => (
             <meta property={key} key={key} content={metadata[key]} />
           ))}
