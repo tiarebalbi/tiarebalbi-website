@@ -31,10 +31,14 @@ const PageHeader = () => {
             <Link
               aria-label="All blog posts"
               className={pathname === '/articles' ? styles.selected : ''}
-              href="/articles">
+              href="/articles"
+            >
               <span>Blog</span>
             </Link>
-            <Link aria-label="Getting in Touch" href="mailto:me@tiarebalbi.com?subject=GetInTouchV3">
+            <Link
+              aria-label="Getting in Touch"
+              href="mailto:me@tiarebalbi.com?subject=GetInTouchV3"
+            >
               <BiEnvelope />
               <span>Get in Touch</span>
             </Link>
@@ -50,7 +54,8 @@ const PageHeader = () => {
             <a
               aria-label="Menu"
               className={styles.closeMobileMenu}
-              onClick={() => setShowMenu(!showMenu)}>
+              onClick={() => setShowMenu(!showMenu)}
+            >
               <CgClose />
             </a>
             <ul>

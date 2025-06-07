@@ -1,4 +1,5 @@
 # Contributing to tiarebalbi-website
+
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
 - Reporting a bug
@@ -6,6 +7,7 @@ We love your input! We want to make contributing to this project as easy and tra
 - Submitting a fix
 - Proposing new features
 - Becoming a maintainer
+
 
 ## We Develop with GitHub
 We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
@@ -21,6 +23,7 @@ Pull requests are the best way to propose changes to the codebase (we use [GitHu
 6. Issue that pull request!
 
 ## Any contributions you make will be under the MIT Software License
+
 In short, when you submit code changes, your submissions are understood to be under the same [MIT License](https://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
 ## Report bugs using GitHub's [issues](https://github.com/tiarebalbi/tiarebalbi-website/issues)
@@ -39,16 +42,19 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 - What actually happens
 - Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
 
-People *love* thorough bug reports. I'm not even kidding.
+People _love_ thorough bug reports. I'm not even kidding.
 
 ## Use a Consistent Coding Style
+
 I'm again borrowing these from [Facebook's Guidelines](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
 
-* 2 spaces for indentation rather than tabs
-* You can try running `npm run lint` for style unification
+- 2 spaces for indentation rather than tabs
+- You can try running `npm run lint` for style unification
 
 ## License
+
 By contributing, you agree that your contributions will be licensed under its MIT License.
 
 ## References
+
 This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)

@@ -9,18 +9,27 @@ import { InlineShareButtons } from 'sharethis-reactjs';
 import PageTitle from '../../components/PageTitle';
 import Content from '../../components/assets/Content';
 import { client } from '../../lib/graphql';
-import { useTitle } from '../../lib/title';
+import { formatTitle } from '../../lib/title';
 
 import styles from '../../styles/pages/Article.module.css';
 import BlogCard from '../../components/BlogCard';
 import metadata, { jsonLdProps, nameProps } from '../../metadata/blogArticle';
 import { allBlogPostsQuery } from '../../lib/queries';
 
+/**
+ * Generates static paths for all blog articles based on their unique slugs.
+ *
+ * Fetches all blog posts and constructs route parameters for static generation, enabling incremental static regeneration for new posts.
+ *
+ * @returns An object containing the list of paths and a `fallback` flag set to `true`.
+ */
 export async function getStaticPaths() {
   const response = await client.query(allBlogPostsQuery);
   const posts = response?.data?.allBlog_posts?.edges || [];
 
-  const params = posts.map((post) => ({ params: { slug: post?.node?._meta?.uid } }));
+  const params = posts.map((post: any) => ({
+    params: { slug: post?.node?._meta?.uid }
+  }));
   console.log(2, params);
   return {
     paths: params,
@@ -28,7 +37,15 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+/**
+ * Fetches blog post data and related posts for static generation of an article page.
+ *
+ * Retrieves a single blog post by its slug, along with up to three similar posts based on the current post's document ID. Returns the post data, similar posts, and the current timestamp as `modifiedTime` in the props. If the post is not found, returns `notFound: true` to trigger a 404 page. Enables incremental static regeneration with a 30-second revalidation interval.
+ *
+ * @param params - Route parameters containing the article slug.
+ * @returns An object with `props` for the article page, or `{ notFound: true }` if the post does not exist.
+ */
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const response = await client.query({
     query: gql`
             {
@@ -84,7 +101,22 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Article({ post, similar, modifiedTime }) {
+export interface ArticleProps {
+  post: any;
+  similar: any[];
+  modifiedTime: string;
+}
+
+/**
+ * Renders a blog article page with SEO metadata, social sharing buttons, and a list of similar posts.
+ *
+ * Displays the article's title, slogan, publication date, main image, and content blocks. Generates dynamic metadata and schema.org JSON-LD for SEO. Includes social share buttons and a section of related articles.
+ *
+ * @param post - The blog post data to display.
+ * @param similar - An array of similar blog posts to suggest.
+ * @param modifiedTime - The ISO timestamp representing the last modification time of the article.
+ */
+export default function Article({ post, similar, modifiedTime }: ArticleProps) {
   const title = post?.title[0]?.text;
   const description = post?.slogan[0]?.text;
   const url = `https://tiarebalbi.com/article/${post?._meta?.uid}`;
@@ -96,7 +128,7 @@ export default function Article({ post, similar, modifiedTime }) {
   return (
     <section id="article">
       <Head>
-        <title>{useTitle(title)}</title>
+        <title>{formatTitle(title)}</title>
         {Object.keys(result).map((key) => (
           <meta property={key} key={key} content={result[key]} />
         ))}
@@ -104,7 +136,7 @@ export default function Article({ post, similar, modifiedTime }) {
           <meta name={key} key={key} content={namePropsResult[key]} />
         ))}
         <meta property="article:modified_time" content={modifiedTime} />
-        {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar))} />}
+        {post && <script {...jsonLdScriptProps(jsonLdProps(post, similar) as any)} />}
       </Head>
       <PageTitle date={post?.created_date} slogan={description} title={title} />
       <div className="container">
@@ -125,7 +157,9 @@ export default function Article({ post, similar, modifiedTime }) {
         <div className="row">
           <div className="col-12">
             {post?.content &&
-              post?.content?.map((content, index) => <Content details={content} key={index} />)}
+              post?.content?.map((content: any, index: number) => (
+                <Content details={content} key={index} />
+              ))}
           </div>
         </div>
         <div className="row mb-5">

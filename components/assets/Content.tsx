@@ -4,9 +4,49 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import styles from '../../styles/components/assets/Content.module.css';
 import codeStyle from '../../lib/codeStyle';
-import {AiOutlineDoubleLeft} from "react-icons/ai";
+import { AiOutlineDoubleLeft } from 'react-icons/ai';
 
-const Content = ({ details }) => {
+interface ParagraphContent {
+  type: 'paragraph';
+  text: string;
+}
+
+interface PreformattedContent {
+  type: 'preformatted';
+  text: string;
+}
+
+interface ImageContent {
+  type: 'image';
+  url: string;
+  dimensions: {
+    width: number;
+    height: number;
+  };
+}
+
+interface HeadingContent {
+  type: 'heading1' | 'heading2' | 'heading3' | 'heading4' | 'heading5' | 'heading6';
+  text: string;
+}
+
+interface ListItemContent {
+  type: 'list-item';
+  text: string;
+}
+
+type ContentDetail =
+  | ParagraphContent
+  | PreformattedContent
+  | ImageContent
+  | HeadingContent
+  | ListItemContent;
+
+export interface ContentProps {
+  details: ContentDetail;
+}
+
+const Content: React.FC<ContentProps> = ({ details }) => {
   return (
     <>
       {details.type === 'paragraph' && <p className={styles.paragraph}>{details.text}</p>}

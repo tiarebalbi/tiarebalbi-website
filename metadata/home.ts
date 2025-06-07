@@ -1,5 +1,5 @@
 import { defaultPageDescription } from '../lib/seo';
-import { useTitle } from '../lib/title';
+import { formatTitle } from '../lib/title';
 import { imageObjectLogo, mainWebSite, personSchema } from './general';
 
 export const jsonLdProps = () => ({
@@ -12,7 +12,7 @@ export const jsonLdProps = () => ({
       '@type': 'WebPage',
       '@id': 'https://tiarebalbi.com/#webpage',
       url: 'https://tiarebalbi.com/',
-      name: useTitle('Software Engineer'),
+      name: formatTitle('Software Engineer'),
       isPartOf: { '@id': 'https://tiarebalbi.com/#website' },
       about: { '@id': 'https://tiarebalbi.com/#person' },
       primaryImageOfPage: { '@id': 'https://tiarebalbi.com/#primaryimage' },
@@ -47,7 +47,7 @@ export const jsonLdProps = () => ({
   ]
 });
 
-export const nameProps = {
+export const nameProps: Record<string, string> = {
   description: defaultPageDescription,
   keywords:
     'software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
@@ -57,14 +57,14 @@ export const nameProps = {
   'twitter:data1': '6 minutes'
 };
 
-const headerProps = {
+const headerProps: Record<string, string> = {
   'article:publisher': 'https://github.com/tiarebalbi',
   'og:locale': 'en_US',
   'og:type': 'website',
-  'og:title': useTitle('Software Engineer'),
+  'og:title': formatTitle('Software Engineer'),
   'og:description': defaultPageDescription,
   'og:url': 'https://tiarebalbi.com/',
-  'og:site_name': useTitle('Software Engineer'),
+  'og:site_name': formatTitle('Software Engineer'),
   'og:image': 'https://tiarebalbi.com/images/icons/icon-512x512.png'
 };
 export default headerProps;

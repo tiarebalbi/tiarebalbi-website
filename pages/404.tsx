@@ -5,8 +5,8 @@ const Custom404 = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/10', undefined, { shallow: true })
-  }, [router])
+    router.push('/10', undefined, { shallow: true });
+  }, [router]);
 
   return <div />;
 };

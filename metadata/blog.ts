@@ -1,4 +1,4 @@
-import { useTitle } from '../lib/title';
+import { formatTitle } from '../lib/title';
 import { imageObjectLogo, mainWebSite, personSchema } from './general';
 
 const description =
@@ -22,7 +22,7 @@ export const jsonLdProps = () => ({
       '@type': 'WebPage',
       '@id': 'https://tiarebalbi.com/articles/#webpage',
       url: 'https://tiarebalbi.com/articles',
-      name: useTitle('Blog'),
+      name: formatTitle('Blog'),
       isPartOf: { '@id': 'https://tiarebalbi.com/#website' },
       about: { '@id': 'https://tiarebalbi.com/#person' },
       primaryImageOfPage: { '@id': 'https://tiarebalbi.com/articles/#primaryimage' },
@@ -62,7 +62,7 @@ export const jsonLdProps = () => ({
   ]
 });
 
-export const nameProps = {
+export const nameProps: Record<string, string> = {
   description: description,
   keywords:
     'blog, articles, dev topics, software development engineer, software architecture, blog, software and engineering, developer, code, scala, kotlin, java, cloud platform, cloud software, cloud native, tiare, tiare balbi, tiare balbi bonamini',
@@ -72,13 +72,13 @@ export const nameProps = {
   'twitter:data1': '6 minutes'
 };
 
-const headerProps = {
+const headerProps: Record<string, string> = {
   'og:locale': 'en_US',
   'og:type': 'website',
-  'og:title': useTitle('Blog'),
+  'og:title': formatTitle('Blog'),
   'og:description': description,
   'og:url': 'https://tiarebalbi.com/articles',
-  'og:site_name': useTitle('Blog'),
+  'og:site_name': formatTitle('Blog'),
   'article:publisher': 'https://github.com/tiarebalbi',
   'og:image': 'https://tiarebalbi.com/images/about-me.jpg'
 };
