@@ -31,7 +31,7 @@
     "react-syntax-highlighter": "^15.6.1",
     "schema-dts": "^1.1.5",
     "sharethis-reactjs": "^1.6.0",
-    "sharp": "^0.34.2",
+    "sharp": "^0.34.4",
     "web-vitals": "^5.0.3"
   },
   "devDependencies": {
